@@ -1,0 +1,673 @@
+@import "tailwindcss";
+
+/* ========================================
+   recuere Corporate - Design System
+   決定カラーパレット適用版
+   ======================================== */
+
+/* ========================================
+   1. CSS Variables - 決定カラーパレット
+   ======================================== */
+:root {
+  /* Brand Colors - 決定カラーパレット */
+  --color-primary: #004582;           /* 揺るがない軸 */
+  --color-secondary: #FF99FF;         /* 内なる輝き・マゼンタ */
+  --color-tertiary: #7FA6BF;          /* 寄り添い */
+  --color-accent: #E6C978;            /* 気づき */
+  --color-background: #EAF2F7;        /* 余白・静けさ */
+  --color-foreground: #2C3E50;        /* テキスト */
+
+  /* Derived Colors */
+  --color-primary-light: #2267A3;     /* Primary のライトバリエーション */
+  --color-text-secondary: #4A5568;    /* 補足テキスト */
+  --color-text-muted: #718096;        /* 最も薄いテキスト */
+
+  /* Background Variations */
+  --color-bg: #EAF2F7;                /* メイン背景 */
+  --color-bg-white: #FFFFFF;          /* カード背景 */
+
+  /* Border */
+  --color-border: #D1DDE6;
+  --color-border-light: #E5EDF3;
+
+  /* Shadows - 控えめ */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow-md: 0 2px 8px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 4px 16px -4px rgb(0 0 0 / 0.08);
+
+  /* Animation */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* Spacing - 余白たっぷり */
+  --section-padding-y: clamp(5rem, 12vw, 8rem);
+  --section-padding-y-lg: clamp(6rem, 15vw, 10rem);
+  --container-padding-x: clamp(1.5rem, 5vw, 2.5rem);
+  --max-width: 1200px;
+
+  /* Typography */
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --line-height-relaxed: 1.9;
+  --line-height-tight: 1.4;
+  --letter-spacing-wide: 0.04em;
+  --letter-spacing-normal: 0.02em;
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-foreground);
+  --font-sans: var(--font-noto-sans-jp), Inter, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --font-serif: var(--font-noto-serif-jp), "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* ========================================
+   2. Base Styles
+   ======================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  background-attachment: fixed;
+  color: var(--color-foreground);
+  font-size: var(--font-size-base);
+  font-feature-settings: "palt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  min-height: 100vh;
+}
+
+/* ========================================
+   3. Typography - 静かで上質
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* H1: ページタイトル */
+.heading-1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 200;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+}
+
+/* H2: セクションタイトル */
+.heading-2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+/* H3: サブセクション */
+.heading-3 {
+  font-size: clamp(1.125rem, 3vw, 1.375rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* 本文 */
+.body-text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.body-text-lg {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* ラベル: 小さく・トラッキング広め */
+.label {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ========================================
+   4. Layout Components
+   ======================================== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+}
+
+.section {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+.section-lg {
+  padding-top: var(--section-padding-y-lg);
+  padding-bottom: var(--section-padding-y-lg);
+}
+
+/* ========================================
+   5. UI Components
+   ======================================== */
+
+/* Card - 透明感のある */
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Button - Primary */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: all var(--duration-normal) var(--ease-out-quart);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Button - Outline */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  transition: all var(--duration-normal) var(--ease-out-quart);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ========================================
+   6. Interactive States
+   ======================================== */
+::selection {
+  background: var(--color-primary-light);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out-quart);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* Animated underline */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width var(--duration-normal) var(--ease-out-expo);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========================================
+   7. Scrollbar - Minimal
+   ======================================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ========================================
+   8. Image
+   ======================================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================================
+   9. Hero Catch Animation
+   ======================================== */
+.hero-catch {
+  background: linear-gradient(
+    90deg,
+    #0a0a0a 0%,
+    #4e6f9d 50%,
+    #0a0a0a 100%
+  );
+  background-size: 200% auto;
+  animation: shineMove 6s ease-in-out infinite alternate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes shineMove {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+
+/* Hero Gradient Text - 動くグラデーション */
+.hero-gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-tertiary) 25%,
+    var(--color-secondary) 50%,
+    var(--color-tertiary) 75%,
+    var(--color-primary) 100%
+  );
+  background-size: 200% auto;
+  animation: gradientMove 8s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Services Gradient Text - 落ち着いたグラデーション */
+.services-gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--color-foreground) 0%,
+    var(--color-primary) 30%,
+    var(--color-tertiary) 50%,
+    var(--color-primary) 70%,
+    var(--color-foreground) 100%
+  );
+  background-size: 200% auto;
+  animation: servicesGradientMove 6s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes servicesGradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* ========================================
+   9.1 Drift Animation (Gradient Background)
+   ======================================== */
+@keyframes drift {
+  0% {
+    transform: translate(-2%, -1%) scale(1.02);
+  }
+  50% {
+    transform: translate(2%, 1%) scale(1.05);
+  }
+  100% {
+    transform: translate(-2%, -1%) scale(1.02);
+  }
+}
+
+@keyframes floatGradient {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(5%, 3%) scale(1.1);
+  }
+  50% {
+    transform: translate(-3%, 5%) scale(0.95);
+  }
+  75% {
+    transform: translate(-5%, -3%) scale(1.05);
+  }
+}
+
+/* ========================================
+   10. Hero Animation Keyframes
+   ======================================== */
+@keyframes loading-line {
+  0% { transform: scaleX(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+@keyframes infinite-zoom {
+  0% { transform: scale(1.1); }
+  100% { transform: scale(1.4); }
+}
+
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0) scaleX(1.1); }
+  50% { transform: translateY(-2%) scaleX(1.1); }
+}
+
+@keyframes scroll-line {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes scroll-line-vertical {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-loading-line {
+  animation: loading-line 2.2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+.animate-infinite-zoom {
+  animation: infinite-zoom 15s ease-in-out infinite alternate;
+}
+
+.animate-subtle-float {
+  animation: subtle-float 10s ease-in-out infinite;
+}
+
+.animate-scroll-line {
+  animation: scroll-line 2.5s infinite ease-in-out;
+}
+
+.animate-scroll-line-vertical {
+  animation: scroll-line-vertical 2s infinite ease-in-out;
+}
+
+/* Marquee - 無限スクロール */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee-fast {
+  animation: marquee 12s linear infinite;
+}
+
+/* Marquee Vertical - 縦方向の無限スクロール */
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical 20s linear infinite;
+}
+
+/* Marquee Vertical Reverse - 逆方向 */
+@keyframes marquee-vertical-reverse {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee-vertical-reverse {
+  animation: marquee-vertical-reverse 20s linear infinite;
+}
+
+/* Shimmer - 光が流れるエフェクト */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(15deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(15deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* Gentle Pulse - 静かに脈打つ */
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+/* Float Animations - Session Page */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(-2deg); }
+}
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-40px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+.animate-float-slower {
+  animation: float-slower 10s ease-in-out infinite;
+}
+
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* ========================================
+   11. Service Card Glow Effect + 3D Tilt
+   ======================================== */
+.service-card {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* PC版のみ3Dチルト効果を有効化 */
+@media (min-width: 768px) {
+  .service-card {
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+    transition: transform 150ms ease-out,
+                box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* ホバー時に浮き上がる + 3D効果 */
+.service-card:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+              0 0 80px rgba(100, 180, 255, 0.2),
+              0 0 120px rgba(100, 180, 255, 0.1);
+}
+
+.service-card::before,
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 400ms;
+  pointer-events: none;
+}
+
+/* Hover時の内側のグロー - シアン〜パープルグラデーション */
+.service-card::before {
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(100, 200, 255, 0.25),
+    rgba(180, 100, 255, 0.1) 40%,
+    transparent 60%
+  );
+  z-index: 3;
+}
+
+/* Hover時のボーダーグロー - 強化版 */
+.service-card::after {
+  background: radial-gradient(
+    350px circle at var(--mouse-x) var(--mouse-y),
+    rgba(100, 200, 255, 1),
+    rgba(150, 100, 255, 0.5) 30%,
+    transparent 50%
+  );
+  z-index: 1;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-card > .card-content {
+  position: relative;
+  z-index: 2;
+  background: #0a2540;
+  border-radius: inherit;
+  margin: 1px;
+  transition: background 300ms ease;
+}
+
+/* ホバー時にカード内の背景も少し明るく */
+.service-card:hover > .card-content {
+  background: #0c2a47;
+}
+
+/* ========================================
+   12. Utility Classes
+   ======================================== */
+/* スクロールバーを非表示（横スクロール用） */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   13. Motion Preference
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
