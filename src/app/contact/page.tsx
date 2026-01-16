@@ -109,7 +109,7 @@ export default function ContactPage() {
               text="お問い合わせ"
               delay={100}
               charDelay={60}
-              className="font-sans text-[clamp(2rem,4vw,3rem)] tracking-[0.02em] font-normal leading-[1.5] text-[#1a1a1a] mb-4"
+              className="font-sans text-[clamp(2rem,4vw,3rem)] tracking-[0.02em] font-normal leading-[1.5] text-[#333] mb-4"
             />
             <FadeIn delay={0.2}>
               <p className="text-[0.95rem] leading-[2.0] text-[#666]">
@@ -151,7 +151,7 @@ export default function ContactPage() {
                     className="flex-1 py-5 text-[0.95rem] tracking-[0.05em] transition-all duration-300 rounded-tl-2xl"
                     style={{
                       backgroundColor: inquiryType === 'business' ? '#ffffff' : '#f5f0eb',
-                      color: inquiryType === 'business' ? '#1a1a1a' : '#888',
+                      color: inquiryType === 'business' ? '#333' : '#888',
                       fontWeight: inquiryType === 'business' ? '500' : '400',
                     }}
                   >
@@ -164,7 +164,7 @@ export default function ContactPage() {
                     className="flex-1 py-5 text-[0.95rem] tracking-[0.05em] transition-all duration-300 rounded-tr-2xl"
                     style={{
                       backgroundColor: inquiryType === 'personal' ? '#ffffff' : '#f5f0eb',
-                      color: inquiryType === 'personal' ? '#1a1a1a' : '#888',
+                      color: inquiryType === 'personal' ? '#333' : '#888',
                       fontWeight: inquiryType === 'personal' ? '500' : '400',
                     }}
                   >
@@ -201,7 +201,7 @@ export default function ContactPage() {
                           type="text"
                           name="company"
                           required
-                          className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#1a1a1a] focus:outline-none focus:bg-white transition-all duration-300"
+                          className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#333] focus:outline-none focus:bg-white transition-all duration-300"
                           placeholder="株式会社〇〇"
                         />
                       </div>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                         type="text"
                         name="name"
                         required
-                        className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#1a1a1a] focus:outline-none focus:bg-white transition-all duration-300"
+                        className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#333] focus:outline-none focus:bg-white transition-all duration-300"
                         placeholder="山田 太郎"
                       />
                     </div>
@@ -230,7 +230,7 @@ export default function ContactPage() {
                         type="email"
                         name="email"
                         required
-                        className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#1a1a1a] focus:outline-none focus:bg-white transition-all duration-300"
+                        className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#333] focus:outline-none focus:bg-white transition-all duration-300"
                         placeholder="example@email.com"
                       />
                     </div>
@@ -243,7 +243,7 @@ export default function ContactPage() {
                       <input
                         type="tel"
                         name="phone"
-                        className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#1a1a1a] focus:outline-none focus:bg-white transition-all duration-300"
+                        className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#333] focus:outline-none focus:bg-white transition-all duration-300"
                         placeholder="090-1234-5678"
                       />
                     </div>
@@ -257,7 +257,7 @@ export default function ContactPage() {
                         name="message"
                         required
                         rows={6}
-                        className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#1a1a1a] focus:outline-none focus:bg-white transition-all duration-300 resize-none"
+                        className="w-full px-4 py-4 text-[1rem] bg-white/80 border border-[#e0e0e0] rounded-lg focus:border-[#333] focus:outline-none focus:bg-white transition-all duration-300 resize-none"
                         placeholder={
                           inquiryType === 'business'
                             ? 'ご相談内容をご記入ください（例：経営課題について相談したい、研修について詳しく知りたい など）'
@@ -274,7 +274,7 @@ export default function ContactPage() {
                         className="w-full py-5 text-[0.95rem] tracking-[0.1em] font-medium transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl"
                         style={{
                           backgroundColor: isSubmitting ? '#e8e3de' : '#f5f0eb',
-                          color: '#1a1a1a',
+                          color: '#333',
                         }}
                         onMouseEnter={(e) => {
                           if (!isSubmitting) e.currentTarget.style.backgroundColor = '#ebe6e1';

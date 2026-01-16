@@ -62,7 +62,7 @@ export default function MainContent({ className = '' }: MainContentProps) {
             }`}
             style={{ transitionDelay: '0ms' }}
           >
-            <h3 className="text-lg font-medium text-[#1a1a1a] mb-4">企業理念</h3>
+            <h3 className="text-lg font-medium text-[#333] mb-4">企業理念</h3>
             <p className="text-[#555] text-sm leading-relaxed">
               一人ひとりが本来の自分に気づき、その力を自然に発揮できる状態をつくること。
             </p>
@@ -75,7 +75,7 @@ export default function MainContent({ className = '' }: MainContentProps) {
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            <h3 className="text-lg font-medium text-[#1a1a1a] mb-4">アプローチ</h3>
+            <h3 className="text-lg font-medium text-[#333] mb-4">アプローチ</h3>
             <p className="text-[#555] text-sm leading-relaxed">
               経営の論理性と心理学の知見を融合し、持続的な成長を支援します。
             </p>
@@ -88,7 +88,7 @@ export default function MainContent({ className = '' }: MainContentProps) {
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            <h3 className="text-lg font-medium text-[#1a1a1a] mb-4">サービス</h3>
+            <h3 className="text-lg font-medium text-[#333] mb-4">サービス</h3>
             <p className="text-[#555] text-sm leading-relaxed">
               企業向けコンサルティングから、個人向けセッションまで幅広く対応。
             </p>

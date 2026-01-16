@@ -39,7 +39,7 @@ export default function ContactThanksPage() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <h1 className="text-[clamp(1.6rem,3vw,2.2rem)] tracking-[0.02em] font-light leading-[1.6] text-[#1a1a1a] mb-8">
+            <h1 className="text-[clamp(1.6rem,3vw,2.2rem)] tracking-[0.02em] font-light leading-[1.6] text-[#333] mb-8">
               お問い合わせを<br className="md:hidden" />
               受け付けました
             </h1>
@@ -58,7 +58,7 @@ export default function ContactThanksPage() {
           <FadeIn delay={0.3}>
             <Link
               href="/"
-              className="inline-flex items-center text-[0.85rem] tracking-[0.1em] text-[#1a1a1a] hover:text-[#7FA6BF] transition-colors duration-300"
+              className="inline-flex items-center text-[0.85rem] tracking-[0.1em] text-[#333] hover:text-[#7FA6BF] transition-colors duration-300"
             >
               トップページへ戻る
               <span className="ml-4 w-10 h-[1px] bg-current"></span>

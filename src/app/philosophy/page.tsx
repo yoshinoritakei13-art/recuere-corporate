@@ -58,7 +58,7 @@ export default function PhilosophyPage() {
 
               {/* メインキャッチコピー */}
               <FadeIn delay={0.1}>
-                <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#1a1a1a] mb-6">
+                <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#333] mb-6">
                   気づきから、<br />
                   豊かさへ。
                 </h1>
@@ -90,7 +90,7 @@ export default function PhilosophyPage() {
               <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">Mission / Vision / Value（MVV）</p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] mb-12">
+              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-12">
                 私たちが大切にしていること
               </h2>
             </FadeIn>
@@ -200,7 +200,7 @@ export default function PhilosophyPage() {
 
             {/* 大きなタイトル */}
             <FadeIn delay={0.2}>
-              <h3 className="text-[clamp(2rem,5vw,3.5rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] mb-6 leading-[1.3]">
+              <h3 className="text-[clamp(2rem,5vw,3.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-6 leading-[1.3]">
                 recuere®（リキュウレ®）について
               </h3>
             </FadeIn>
@@ -214,7 +214,7 @@ export default function PhilosophyPage() {
                 <span className="text-[1.2rem] md:text-[1.4rem] font-light text-[#002d5a]">re</span>
                 <span className="text-[0.75rem] text-[#888]">再び・繰り返し</span>
                 <span className="text-[1.3rem] text-[#ccc]">=</span>
-                <span className="text-[1.4rem] md:text-[1.8rem] font-extralight text-[#1a1a1a] tracking-wide">recuere</span>
+                <span className="text-[1.4rem] md:text-[1.8rem] font-extralight text-[#333] tracking-wide">recuere</span>
               </div>
             </FadeIn>
 
@@ -254,7 +254,7 @@ export default function PhilosophyPage() {
               <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-10 uppercase font-medium">Contact</p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] font-extralight leading-[1.4] text-[#1a1a1a] mb-10">
+              <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] font-extralight leading-[1.4] text-[#333] mb-10">
                 まずは、お気軽に<br className="md:hidden" />ご相談ください
               </h2>
             </FadeIn>

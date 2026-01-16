@@ -82,7 +82,7 @@ export default function SessionPage() {
           <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
             <FadeIn className="md:ml-[10%]">
               <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">Session</p>
-              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#1a1a1a] mb-6">
+              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#333] mb-6">
                 心と向き合い、<br />
                 本来の自分を<br />
                 取り戻す
@@ -109,7 +109,7 @@ export default function SessionPage() {
                   <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
                     Awakening Session
                   </p>
-                  <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                  <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                     アウェイキング<br />セッション
                   </h2>
                   <p className="text-[0.85rem] text-[#666] mt-2 relative z-10">（気づきのセッション）</p>
@@ -153,7 +153,7 @@ export default function SessionPage() {
                   <FadeIn direction="clipReveal" delay={0.4} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-8">
                     Awakening Session
                   </FadeIn>
-                  <FadeIn direction="clipReveal" delay={0.8} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                  <FadeIn direction="clipReveal" delay={0.8} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                     アウェイキングセッション
                   </FadeIn>
                   <FadeIn delay={1.0} className="text-[0.9rem] text-[#666] mt-2 relative z-10">
@@ -297,7 +297,7 @@ export default function SessionPage() {
                 <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
                   Personal Coaching
                 </p>
-                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                   パーソナルコーチング<br />セッション
                 </h2>
               </div>
@@ -338,7 +338,7 @@ export default function SessionPage() {
                     <FadeIn direction="clipReveal" delay={0.3} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
                       Personal Coaching
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.6} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                    <FadeIn direction="clipReveal" delay={0.6} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                       パーソナルコーチングセッション
                     </FadeIn>
                   </div>
@@ -376,7 +376,7 @@ export default function SessionPage() {
                 <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
                   Hypnotherapy
                 </p>
-                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                   ヒプノセラピー
                 </h2>
               </div>
@@ -451,7 +451,7 @@ export default function SessionPage() {
                     <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
                       Hypnotherapy
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                    <FadeIn direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                       ヒプノセラピー
                     </FadeIn>
                   </div>
@@ -531,7 +531,7 @@ export default function SessionPage() {
                 <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
                   Branding
                 </p>
-                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                   ブランディング<br />構築セッション
                 </h2>
               </div>
@@ -549,7 +549,7 @@ export default function SessionPage() {
                     <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
                       Branding
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.4} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                    <FadeIn direction="clipReveal" delay={0.4} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                       ブランディング構築セッション
                     </FadeIn>
                   </div>
@@ -599,7 +599,7 @@ export default function SessionPage() {
           <div className="max-w-3xl mx-auto px-6 text-center">
             <FadeIn direction="scaleUp">
               <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-8 uppercase font-medium">Contact</p>
-              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] mb-6">
+              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-6">
                 まずはお気軽にご相談ください
               </h2>
               <p className="text-[#666] text-[0.95rem] leading-[2] mb-10 font-light">

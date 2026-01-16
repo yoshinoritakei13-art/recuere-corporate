@@ -32,7 +32,6 @@ export default function Header() {
   }, [isMenuOpen]);
 
   const menuItems = [
-    { href: '/', label: 'Top' },
     { href: '/company', label: 'Company' },
     { href: '/philosophy', label: 'Philosophy' },
     { href: '/services', label: 'Services' },
@@ -71,21 +70,21 @@ export default function Header() {
           aria-expanded={isMenuOpen}
         >
           {isMenuOpen && (
-            <span className="text-[0.75rem] tracking-[0.15em] text-[#1a1a1a]/60 uppercase">Close</span>
+            <span className="text-[0.75rem] tracking-[0.15em] text-[#333]/60 uppercase">Close</span>
           )}
           <div className="flex flex-col justify-center items-center w-8 h-8 gap-1.5">
             <span
-              className={`block w-6 h-[1.5px] bg-[#1a1a1a] transition-all duration-300 ${
+              className={`block w-6 h-[1.5px] bg-[#333] transition-all duration-300 ${
                 isMenuOpen ? 'rotate-45 translate-y-[7px]' : ''
               }`}
             />
             <span
-              className={`block w-6 h-[1.5px] bg-[#1a1a1a] transition-all duration-300 ${
+              className={`block w-6 h-[1.5px] bg-[#333] transition-all duration-300 ${
                 isMenuOpen ? 'opacity-0' : ''
               }`}
             />
             <span
-              className={`block w-6 h-[1.5px] bg-[#1a1a1a] transition-all duration-300 ${
+              className={`block w-6 h-[1.5px] bg-[#333] transition-all duration-300 ${
                 isMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''
               }`}
             />

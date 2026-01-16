@@ -54,7 +54,7 @@ export default function TextReveal({
       {text.split('').map((char, index) => (
         <span
           key={index}
-          className="inline-block transition-all duration-[1200ms] ease-out"
+          className="inline-block transition-all duration-[600ms] ease-out"
           style={{
             opacity: shown ? 1 : 0,
             filter: shown ? 'blur(0px)' : 'blur(10px)',

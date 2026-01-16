@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12 relative">
           {/* 左側: ロゴ + 説明 */}
           <div>
-            <p className="text-xl font-normal tracking-[0.08em] text-[#1a1a1a] mb-4">
+            <p className="text-xl font-normal tracking-[0.08em] text-[#333] mb-4">
               recuere®
             </p>
             <p className="text-[0.85rem] leading-[1.8] text-[#666] mb-6">
@@ -34,25 +34,25 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <Link
                 href="/"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#1a1a1a]"
+                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
               >
                 Top
               </Link>
               <Link
                 href="/company"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#1a1a1a]"
+                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
               >
                 Company
               </Link>
               <Link
                 href="/philosophy"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#1a1a1a]"
+                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
               >
                 Philosophy
               </Link>
               <Link
                 href="/services"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#1a1a1a]"
+                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
               >
                 Services
               </Link>
@@ -61,19 +61,19 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <Link
                 href="/session"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#1a1a1a]"
+                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
               >
                 Session
               </Link>
               <Link
                 href="/hypnotherapy"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#1a1a1a]"
+                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
               >
                 Hypnotherapy
               </Link>
               <Link
                 href="/contact"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#1a1a1a]"
+                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
               >
                 Contact
               </Link>

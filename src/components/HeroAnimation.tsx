@@ -175,7 +175,7 @@ export default function HeroAnimation() {
               }`}
             >
               <h1 className="text-[18vw] md:text-[14vw] font-black tracking-tighter leading-none text-center mix-blend-difference text-[#1a1a2e] scale-x-110 animate-subtle-float">
-                recuere
+                recuere<span className="inline-block text-[3vw] md:text-[2vw] font-light relative top-[1vw] md:top-[0.5vw]" style={{ transform: 'scaleX(0.8) scaleY(1.1)' }}>®</span>
               </h1>
             </div>
 
@@ -190,10 +190,10 @@ export default function HeroAnimation() {
               }`}
             >
               <div className="flex flex-col items-center">
-                <p className="text-[4vw] md:text-[1.8vw] font-black tracking-[0.4em] text-[#1a1a1a] text-center leading-relaxed">
+                <p className="text-[4vw] md:text-[1.8vw] font-black tracking-[0.4em] text-[#333] text-center leading-relaxed">
                   「気づき」から始まる、
                 </p>
-                <p className="text-[3.5vw] md:text-[1.5vw] font-bold tracking-[0.4em] text-[#1a1a1a] text-center mt-1">
+                <p className="text-[3.5vw] md:text-[1.5vw] font-bold tracking-[0.4em] text-[#333] text-center mt-1">
                   組織と個人の持続的成長。
                 </p>
               </div>

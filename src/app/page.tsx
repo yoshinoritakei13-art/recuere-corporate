@@ -44,13 +44,12 @@ export default function HomePage() {
             <FadeIn>
               <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-8 uppercase">Philosophy</p>
             </FadeIn>
-            <ParallaxText
-              text="気づきから、豊かさへ。"
-              delay={300}
-              charDelay={180}
-              className="font-sans text-[clamp(2rem,4vw,3rem)] tracking-[0.02em] font-bold leading-[1.5] text-[#1a1a1a] mb-4"
-            />
-            <FadeIn delay={1.5}>
+            <FadeIn delay={0.2}>
+              <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-[0.02em] leading-[1.5] text-[#333] mb-4 !font-bold">
+                気づきから、豊かさへ。
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.8}>
               <p className="text-[0.95rem] tracking-[0.1em] text-[#666] mb-16">
                 ひとつの気づきが、道をひらき、現実を動かす
               </p>
@@ -58,19 +57,19 @@ export default function HomePage() {
 
             <div className="text-[1rem] leading-[2.4] text-[#333] space-y-12">
               <p>
-                <TextReveal text="人は、教えられて変わるのではなく、" delay={1500} charDelay={30} />
+                <TextReveal text="人は、教えられて変わるのではなく、" delay={600} charDelay={15} />
                 <br />
-                <TextReveal text="自分で気づいたときに、自然と動き出します。" delay={1800} charDelay={30} />
+                <TextReveal text="自分で気づいたときに、自然と動き出します。" delay={800} charDelay={15} />
               </p>
 
               <p>
-                <TextReveal text="一人ひとりが本来の自分に気づき、" delay={2300} charDelay={30} />
+                <TextReveal text="一人ひとりが本来の自分に気づき、" delay={1100} charDelay={15} />
                 <br />
-                <TextReveal text="その力を、無理なく発揮できる状態をつくること。" delay={2600} charDelay={30} />
+                <TextReveal text="その力を、無理なく発揮できる状態をつくること。" delay={1300} charDelay={15} />
                 <br />
-                <TextReveal text="それが、個人と組織の豊かさを、" delay={2900} charDelay={30} />
+                <TextReveal text="それが、個人と組織の豊かさを、" delay={1500} charDelay={15} />
                 <br />
-                <TextReveal text="静かに、そして確かに育てていくと考えています。" delay={3200} charDelay={25} />
+                <TextReveal text="静かに、そして確かに育てていくと考えています。" delay={1700} charDelay={15} />
               </p>
             </div>
           </div>
@@ -81,11 +80,11 @@ export default function HomePage() {
               <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-4 uppercase">Philosophy</p>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <h2 className="font-sans text-[1.5rem] tracking-[0.02em] font-bold leading-[1.6] text-[#1a1a1a] mb-3">
+              <h2 className="font-sans text-[1.5rem] tracking-[0.02em] font-bold leading-[1.6] text-[#333] mb-3">
                 気づきから、<br />豊かさへ。
               </h2>
             </FadeIn>
-            <FadeIn delay={0.4}>
+            <FadeIn delay={0.3}>
               <p className="text-[0.85rem] tracking-[0.1em] text-[#666] mb-10">
                 ひとつの気づきが、道をひらき、現実を動かす
               </p>
@@ -93,14 +92,14 @@ export default function HomePage() {
 
             <div className="text-[0.9rem] leading-[2.2] text-[#333] space-y-6">
               <p>
-                <TextReveal text="人は、教えられて変わるのではなく、" delay={800} charDelay={25} />
-                <TextReveal text="自分で気づいたときに、自然と動き出します。" delay={1100} charDelay={25} />
+                <TextReveal text="人は、教えられて変わるのではなく、" delay={400} charDelay={15} />
+                <TextReveal text="自分で気づいたときに、自然と動き出します。" delay={600} charDelay={15} />
               </p>
 
               <p>
-                <TextReveal text="一人ひとりが本来の自分に気づき、" delay={1500} charDelay={25} />
-                <TextReveal text="その力を、無理なく発揮できる状態をつくること。" delay={1800} charDelay={25} />
-                <TextReveal text="それが、個人と組織の豊かさを、静かに、そして確かに育てていくと考えています。" delay={2100} charDelay={20} />
+                <TextReveal text="一人ひとりが本来の自分に気づき、" delay={900} charDelay={15} />
+                <TextReveal text="その力を、無理なく発揮できる状態をつくること。" delay={1100} charDelay={15} />
+                <TextReveal text="それが、個人と組織の豊かさを、静かに、そして確かに育てていくと考えています。" delay={1300} charDelay={12} />
               </p>
             </div>
           </div>
@@ -146,7 +145,7 @@ export default function HomePage() {
                 <article className="bg-white p-8 md:p-10 lg:p-12 border border-[#eee] hover:border-[var(--color-primary)] transition-colors duration-300 shadow-sm">
                   <div className="h-[2px] w-12 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-tertiary)] mb-8"></div>
 
-                  <h3 className="text-[1.4rem] tracking-[0.01em] font-normal mb-4 text-[#1a1a1a]">
+                  <h3 className="text-[1.4rem] tracking-[0.01em] font-normal mb-4 text-[#333]">
                     企業向けサービス
                   </h3>
                   <p className="text-[#888] leading-[1.9] mb-6 text-[0.9rem]">
@@ -184,7 +183,7 @@ export default function HomePage() {
                 <article className="bg-white p-8 md:p-10 lg:p-12 border border-[#eee] hover:border-[var(--color-secondary)] transition-colors duration-300 shadow-sm">
                   <div className="h-[2px] w-12 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-accent)] mb-8"></div>
 
-                  <h3 className="text-[1.4rem] tracking-[0.01em] font-normal mb-4 text-[#1a1a1a]">
+                  <h3 className="text-[1.4rem] tracking-[0.01em] font-normal mb-4 text-[#333]">
                     個人向けサービス
                   </h3>
                   <p className="text-[#888] leading-[1.9] mb-6 text-[0.9rem]">
@@ -262,7 +261,7 @@ export default function HomePage() {
                   <p className="text-[#666] tracking-[0.15em] text-[0.75rem] mb-2">
                     経営コンサルタント・心理カウンセラー
                   </p>
-                  <h3 className="text-[1.6rem] tracking-[0.02em] font-light text-[#1a1a1a] mb-6">
+                  <h3 className="text-[1.6rem] tracking-[0.02em] font-light text-[#333] mb-6">
                     たなか里乃
                   </h3>
                   <p className="leading-[2.2] text-[#444] text-[0.9rem] mb-8">
@@ -287,7 +286,7 @@ export default function HomePage() {
                     <p className="text-[#666] tracking-[0.15em] text-[0.75rem] mb-2">
                       経営コンサルタント・心理カウンセラー
                     </p>
-                    <h3 className="text-[2rem] tracking-[0.02em] font-light text-[#1a1a1a] mb-6">
+                    <h3 className="text-[2rem] tracking-[0.02em] font-light text-[#333] mb-6">
                       たなか里乃
                     </h3>
                     <p className="leading-[2.2] text-[#444] text-[0.9rem] mb-8">
@@ -357,7 +356,7 @@ export default function HomePage() {
               <p className="tracking-[0.3em] text-[0.7rem] text-[#555] mb-8 uppercase">Contact</p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] tracking-[-0.02em] font-light leading-[1.6] text-[#1a1a1a] mb-8">
+              <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] tracking-[-0.02em] font-light leading-[1.6] text-[#333] mb-8">
                 まずは、お気軽にご相談ください
               </h2>
             </FadeIn>

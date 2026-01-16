@@ -144,7 +144,7 @@ export default function HypnotherapyPage() {
           <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
             <FadeIn className="md:ml-[10%]">
               <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">Hypnotherapy</p>
-              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#1a1a1a] mb-6">
+              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#333] mb-6">
                 ヒプノセラピー
               </h1>
               <p className="text-[#666] leading-[2] max-w-md font-light">
@@ -168,7 +168,7 @@ export default function HypnotherapyPage() {
                   <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
                     What is Hypnotherapy
                   </p>
-                  <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                  <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                     ヒプノセラピーとは
                   </h2>
                 </div>
@@ -217,7 +217,7 @@ export default function HypnotherapyPage() {
                     <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-8">
                       What is Hypnotherapy
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] relative z-10">
+                    <FadeIn direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
                       ヒプノセラピーとは
                     </FadeIn>
                   </div>
@@ -269,7 +269,7 @@ export default function HypnotherapyPage() {
                     Expected Changes
                   </p>
                 </div>
-                <h2 className="text-[clamp(1.6rem,3vw,2rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] mt-4">
+                <h2 className="text-[clamp(1.6rem,3vw,2rem)] tracking-[-0.02em] font-extralight text-[#333] mt-4">
                   期待できる変化の一例
                 </h2>
               </div>
@@ -279,7 +279,7 @@ export default function HypnotherapyPage() {
               {changeCategories.map((category, i) => (
                 <FadeIn key={i} delay={0.1 * i}>
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-100 h-full shadow-sm">
-                    <h3 className="text-[#1a1a1a] text-lg font-medium mb-3">{category.title}</h3>
+                    <h3 className="text-[#333] text-lg font-medium mb-3">{category.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{category.items}</p>
                   </div>
                 </FadeIn>
@@ -307,7 +307,7 @@ export default function HypnotherapyPage() {
                     Methods
                   </p>
                 </div>
-                <h2 className="text-[clamp(1.6rem,3vw,2rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] mt-4">
+                <h2 className="text-[clamp(1.6rem,3vw,2rem)] tracking-[-0.02em] font-extralight text-[#333] mt-4">
                   ヒプノセラピーで用いる主なアプローチ
                 </h2>
               </div>
@@ -399,7 +399,7 @@ export default function HypnotherapyPage() {
                     Testimonials
                   </p>
                 </div>
-                <h2 className="text-[clamp(1.6rem,3vw,2rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] mt-4">
+                <h2 className="text-[clamp(1.6rem,3vw,2rem)] tracking-[-0.02em] font-extralight text-[#333] mt-4">
                   体験者の声
                 </h2>
               </div>
@@ -416,7 +416,7 @@ export default function HypnotherapyPage() {
           <div className="max-w-3xl mx-auto px-6 text-center">
             <FadeIn direction="scaleUp">
               <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-8 uppercase font-medium">Contact</p>
-              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#1a1a1a] mb-6">
+              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-6">
                 まずはお気軽にご相談ください
               </h2>
               <p className="text-[#666] text-[0.95rem] leading-[2] mb-10 font-light">

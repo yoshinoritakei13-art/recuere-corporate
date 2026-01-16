@@ -22,7 +22,7 @@ export default function ArrowLink({
   variant = 'dark'
 }: ArrowLinkProps) {
   const isDark = variant === 'dark';
-  const color = isDark ? '#1a1a1a' : '#ffffff';
+  const color = isDark ? '#333' : '#ffffff';
 
   return (
     <Link
