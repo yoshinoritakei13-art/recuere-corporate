@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import FloatingParticles from '@/components/FloatingParticles';
 import ArrowLink from '@/components/ArrowLink';
 import FadeIn from '@/components/FadeIn';
@@ -69,23 +70,50 @@ export default function HypnotherapyMethodsPage() {
           <div className="absolute right-[10%] top-[20%] w-[200px] h-[200px] rounded-full border border-white/5 opacity-30 max-md:hidden" />
 
           <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-            <FadeIn className="md:ml-[10%]">
-              <Link
-                href="/hypnotherapy"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-white/70 transition-colors text-sm mb-6"
-              >
-                <span>←</span>
-                <span>ヒプノセラピーに戻る</span>
-              </Link>
-              <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-6 uppercase font-medium">Hypnotherapy Methods</p>
-              <h1 className="text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-white mb-4">
-                ヒプノセラピー療法について
-              </h1>
-              <p className="text-white/60 leading-[2] max-w-lg font-light">
-                ヒプノセラピーで用いる主なアプローチをご紹介します。<br />
-                セッションでは、お悩みやご希望に応じて最適な療法を選択します。
-              </p>
-            </FadeIn>
+            <div className="flex items-center justify-between gap-8">
+              {/* 左側：テキスト */}
+              <FadeIn className="md:ml-[10%] flex-1">
+                <Link
+                  href="/hypnotherapy"
+                  className="inline-flex items-center gap-2 text-white/50 hover:text-white/70 transition-colors text-sm mb-6"
+                >
+                  <span>←</span>
+                  <span>ヒプノセラピーに戻る</span>
+                </Link>
+                <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-6 uppercase font-medium">Hypnotherapy Methods</p>
+                <h1 className="text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-white mb-4">
+                  ヒプノセラピー療法について
+                </h1>
+                <p className="text-white/60 leading-[2] max-w-lg font-light">
+                  ヒプノセラピーで用いる主なアプローチをご紹介します。<br />
+                  セッションでは、お悩みやご希望に応じて最適な療法を選択します。
+                </p>
+              </FadeIn>
+
+              {/* 右側：四角の挿絵（PC版のみ） */}
+              <FadeIn delay={0.3} className="hidden lg:block flex-shrink-0 mr-[5%] mt-16">
+                <div
+                  className="relative w-[320px] h-[240px] overflow-hidden rounded-2xl"
+                  style={{
+                    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)',
+                  }}
+                >
+                  <Image
+                    src="/images/AdobeStock_1686407697_Preview.jpeg"
+                    alt="ヒプノセラピーイメージ"
+                    fill
+                    className="object-cover"
+                  />
+                  {/* オーバーレイ */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(to bottom, transparent 50%, rgba(10, 22, 40, 0.3) 100%)',
+                    }}
+                  />
+                </div>
+              </FadeIn>
+            </div>
           </div>
         </section>
 

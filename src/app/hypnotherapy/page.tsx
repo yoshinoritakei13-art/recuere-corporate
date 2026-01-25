@@ -50,57 +50,44 @@ const testimonials = [
   { text: '過去の自分を受け入れることで、今の自分が楽になりました。', author: '40代男性' },
 ];
 
-// 体験者の声 - 横スクロール（矢印ボタン付き）
+// 体験者の声 - 自動横スクロール（ゆっくり）
 function TestimonialsScroll({ testimonials }: { testimonials: { text: string; author: string }[] }) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = 300;
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
+  // 無限ループ用にアイテムを複製
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <div className="relative">
-      {/* 左矢印ボタン */}
-      <button
-        onClick={() => scroll('left')}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 rounded-full shadow-md flex items-center justify-center hover:bg-white transition-colors -ml-5 max-md:hidden"
-        aria-label="前へ"
+    <div className="relative overflow-hidden">
+      <div
+        className="flex gap-4 animate-scroll-slow"
+        style={{ width: 'max-content' }}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="2">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
-      </button>
-
-      {/* 右矢印ボタン */}
-      <button
-        onClick={() => scroll('right')}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 rounded-full shadow-md flex items-center justify-center hover:bg-white transition-colors -mr-5 max-md:hidden"
-        aria-label="次へ"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="2">
-          <path d="M9 18l6-6-6-6" />
-        </svg>
-      </button>
-
-      <div ref={scrollRef} className="overflow-x-auto pb-4 scrollbar-hide scroll-smooth">
-        <div className="flex gap-4" style={{ width: 'max-content' }}>
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className="bg-white/70 rounded-xl p-5 w-[280px] shrink-0 border border-gray-100"
-            >
-              <p className="text-gray-600 text-sm leading-relaxed mb-3">"{t.text}"</p>
-              <p className="text-gray-500 text-xs text-right">— {t.author}</p>
-            </div>
-          ))}
-        </div>
+        {duplicatedTestimonials.map((t, i) => (
+          <div
+            key={i}
+            className="bg-white/70 rounded-xl p-5 w-[280px] shrink-0 border border-gray-100"
+          >
+            <p className="text-gray-600 text-sm leading-relaxed mb-3">"{t.text}"</p>
+            <p className="text-gray-500 text-xs text-right">— {t.author}</p>
+          </div>
+        ))}
       </div>
+
+      <style jsx>{`
+        @keyframes scroll-slow {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll-slow {
+          animation: scroll-slow 60s linear infinite;
+        }
+        .animate-scroll-slow:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </div>
   );
 }

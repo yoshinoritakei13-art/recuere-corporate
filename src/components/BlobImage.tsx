@@ -134,11 +134,11 @@ export default function BlobImage({
         <g className={`blob-image-wrapper ${isVisible ? 'visible' : ''}`}>
           <image
             href={imageSrc}
-            x="-20"
-            y={imagePosition === 'top' ? '-40' : imagePosition === 'bottom' ? '0' : '-20'}
-            width="240"
-            height="240"
-            preserveAspectRatio={imagePosition === 'top' ? 'xMidYMin slice' : imagePosition === 'bottom' ? 'xMidYMax slice' : 'xMidYMid slice'}
+            x="-50"
+            y={imagePosition === 'top' ? '-50' : imagePosition === 'bottom' ? '-50' : '-50'}
+            width="300"
+            height="300"
+            preserveAspectRatio="xMidYMid meet"
             clipPath={`url(#${clipId})`}
             className="blob-image"
           />

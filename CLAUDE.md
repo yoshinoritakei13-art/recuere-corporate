@@ -257,6 +257,72 @@ Phase 5: 個人向けサービス / 会社概要
   - フッター導線の整備
 ```
 
+## TOPページ仕様（2025年1月更新）
+
+### スナップスクロール
+```yaml
+実装方式: JavaScript制御（SnapScrollContainer.tsx）
+対象セクション:
+  - Hero: HeroAnimationコンポーネント
+  - Philosophy: 理念セクション
+  - Services: 企業/個人向けサービス（横並びカード）
+  - Founder: 代表者紹介
+
+非スナップセクション:
+  - Contact: 通常スクロール（Footerへ自然に繋がる）
+
+スクロール動作:
+  - イージング: easeOutQuart
+  - 遷移時間: 900ms
+  - タッチ対応: 80px以上のスワイプで発火
+  - 連続スクロール防止: 300ms間隔制限
+```
+
+### Servicesセクション
+```yaml
+レイアウト: 横並びカード（2カラム）
+装飾:
+  - ぽよぽよ浮遊画像（BlobImage + animate-poyopoyo）
+  - 左エリア: ビル写真（200px + 100px）
+  - 右下エリア: 朝日写真（190px）
+  - CircleAnimation背景
+
+カード内容:
+  企業向け:
+    - 経営コンサルティング
+    - 医療法人・歯科医院向けコンサルティング
+    - プロジェクト遂行支援
+    - 人材育成研修
+  個人向け:
+    - Personal Awakening Session
+    - Hypnotherapy（催眠療法）
+    - Branding Awakening Session
+    - Personal Coaching
+```
+
+### Founderセクション
+```yaml
+表示内容:
+  - 写真: rinosan2.jpg（1枚のみ）
+  - 名前: たなか里乃
+  - 肩書き: 経営コンサルタント・心理カウンセラー・ヒプノセラピスト
+  - リンク: "プロフィールはこちらから" → /company#founder
+
+背景: PastelLiquidGradient（ピンク系パステル）
+```
+
+### ヘッダー
+```yaml
+ロゴ: "recuere"（®マークなし）
+メニュー項目:
+  - Company
+  - Philosophy
+  - Services
+  - Session
+  - Hypnotherapy
+  - Contact
+```
+
 ## 最新技術情報（知識カットオフ対応）
 ```yaml
 # Web検索で解決した破壊的変更を記録

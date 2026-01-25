@@ -13,16 +13,22 @@ import { useMouseGlow } from '@/hooks/useMouseGlow';
  * マウス追従エフェクト + グラスモーフィズム
  */
 
-// 資格データ（短縮版）
+// 経歴データ
+const career = [
+  '元大手外資系メーカーに35年勤務',
+  '2022年9月　recuere 開業',
+];
+
+// 資格・所属団体データ
 const qualifications = [
-  'メンタル心理カウンセラー',
-  '上級心理カウンセラー',
-  'アドラー流メンタルトレーナー',
-  '米国催眠療法協会認定員',
-  'ヒプノセラピーインストラクター',
-  'ボイジャータロット国際認定',
-  'グロービス経営大学院修了',
-  'SJCD会員',
+  '日本能力開発推進協会　メンタル心理カウンセラー資格取得',
+  '日本能力開発推進協会　上級心理カウンセラー資格取得',
+  '自己肯定感アカデミー/torie　アドラー流メンタルコーチ資格取得',
+  '日本ヒプノセラピーアカデミー ヒプノセラピープロフェッショナル資格取得（米国催眠療法協会認定会員/インストラクター/臨床会員 ABHタスクリーダー）',
+  'ボイジャー　国際認定トレーナー',
+  'ボイジャー　国際認定インストラクター',
+  'グロービス経営大学院　経営学修士（MBA）取得',
+  'SJCD（Society of Japan Clinical Dentistry）会員',
 ];
 
 export default function CompanyPage() {
@@ -91,7 +97,7 @@ export default function CompanyPage() {
                 <div className="relative z-10 space-y-0">
                   <div className="flex flex-col md:flex-row py-6 border-b border-[#eee]">
                     <span className="text-[0.7rem] text-[#002d5a] w-[160px] shrink-0 mb-3 md:mb-0 tracking-[0.2em] uppercase font-medium">Business Name</span>
-                    <span className="text-[1.1rem] text-[#333] font-light tracking-wide">recuere®（リキュウレ®）</span>
+                    <span className="text-[1.1rem] text-[#333] font-light tracking-wide">recuere（リキュウレ）</span>
                   </div>
 
                   <div className="flex flex-col md:flex-row py-6 border-b border-[#eee]">
@@ -187,13 +193,27 @@ export default function CompanyPage() {
                 </div>
               </FadeIn>
 
-              {/* 資格 */}
+              {/* 経歴 */}
               <FadeIn delay={0.4}>
                 <div className="pt-6 border-t border-white/10">
-                  <p className="text-[0.6rem] text-white/40 mb-3 tracking-[0.3em] uppercase">Qualifications</p>
-                  <p className="text-[0.75rem] text-white/60 leading-[2] font-light">
-                    {qualifications.join(' · ')}
-                  </p>
+                  <p className="text-[0.6rem] text-white/40 mb-3 tracking-[0.3em] uppercase">Career</p>
+                  <ul className="text-[0.8rem] text-white/70 leading-[2] font-light space-y-1">
+                    {career.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+
+              {/* 資格・所属団体 */}
+              <FadeIn delay={0.5}>
+                <div className="pt-6 border-t border-white/10">
+                  <p className="text-[0.6rem] text-white/40 mb-3 tracking-[0.3em] uppercase">Qualifications & Affiliations</p>
+                  <ul className="text-[0.75rem] text-white/60 leading-[2] font-light space-y-1">
+                    {qualifications.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
               </FadeIn>
             </div>
@@ -264,13 +284,27 @@ export default function CompanyPage() {
                         </p>
                       </div>
                     </FadeIn>
-                    {/* 資格 */}
+                    {/* 経歴 */}
                     <FadeIn delay={0.8} direction="up" duration={0.7}>
                       <div className="pt-8 border-t border-white/10">
-                        <p className="text-[0.65rem] text-white/40 mb-4 tracking-[0.3em] uppercase">Qualifications</p>
-                        <p className="text-[0.8rem] text-white/60 leading-[2.2] font-light tracking-wide">
-                          {qualifications.join('  ·  ')}
-                        </p>
+                        <p className="text-[0.65rem] text-white/40 mb-4 tracking-[0.3em] uppercase">Career</p>
+                        <ul className="text-[0.85rem] text-white/70 leading-[2] font-light space-y-1">
+                          {career.map((item, index) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </FadeIn>
+
+                    {/* 資格・所属団体 */}
+                    <FadeIn delay={0.9} direction="up" duration={0.7}>
+                      <div className="pt-8 border-t border-white/10">
+                        <p className="text-[0.65rem] text-white/40 mb-4 tracking-[0.3em] uppercase">Qualifications & Affiliations</p>
+                        <ul className="text-[0.8rem] text-white/60 leading-[2.2] font-light space-y-1">
+                          {qualifications.map((item, index) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
                       </div>
                     </FadeIn>
                   </div>

@@ -82,7 +82,7 @@ export default function PhilosophyPage() {
         </section>
 
         {/* Vision & Mission - カード形式 / スティッキー */}
-        <section className="sticky top-0 z-10 bg-white py-[100px] pb-[350px] px-8 max-md:py-[60px] max-md:pb-[250px]"
+        <section className="md:sticky md:top-0 z-10 bg-white py-[60px] md:py-[100px] md:pb-[350px] px-6 md:px-8"
           style={{ boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.05)' }}
         >
           <div className="max-w-[1100px] mx-auto">
@@ -90,18 +90,18 @@ export default function PhilosophyPage() {
               <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">Mission / Vision / Value（MVV）</p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-12">
+              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-8 md:mb-12">
                 私たちが大切にしていること
               </h2>
             </FadeIn>
 
-            {/* カードグリッド - SPは横スクロール / 3Dチルト効果 */}
-            <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 -mx-8 px-8 md:mx-0 md:px-0 snap-x snap-mandatory">
+            {/* カードグリッド - SP: 縦並び / PC: 3列グリッド */}
+            <div className="flex flex-col md:grid md:grid-cols-3 gap-6">
               {/* Mission | Brilliant */}
               <FadeIn delay={0.1}>
-                <TiltCard className="w-[300px] md:w-auto shrink-0 md:shrink snap-center">
+                <TiltCard className="w-full">
                   <div
-                    className="relative h-[450px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer"
+                    className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer"
                     style={{
                       backgroundImage: 'url(/images/AdobeStock_1816208131_Preview.jpeg)',
                       backgroundSize: 'cover',
@@ -125,9 +125,9 @@ export default function PhilosophyPage() {
 
               {/* Vision | Abundance */}
               <FadeIn delay={0.2}>
-                <TiltCard className="w-[300px] md:w-auto shrink-0 md:shrink snap-center">
+                <TiltCard className="w-full">
                   <div
-                    className="relative h-[450px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer"
+                    className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer"
                     style={{
                       backgroundImage: 'url(/images/AdobeStock_770224949_Preview.jpeg)',
                       backgroundSize: 'cover',
@@ -151,9 +151,9 @@ export default function PhilosophyPage() {
 
               {/* Value | Trust & Treasure */}
               <FadeIn delay={0.3}>
-                <TiltCard className="w-[300px] md:w-auto shrink-0 md:shrink snap-center">
+                <TiltCard className="w-full">
                   <div
-                    className="relative h-[450px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer"
+                    className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer"
                     style={{
                       backgroundImage: 'url(/images/AdobeStock_1718433882_Preview.jpeg)',
                       backgroundSize: 'cover',
@@ -180,7 +180,7 @@ export default function PhilosophyPage() {
 
         {/* Brand Story Section - スティッキーで迫り出す / 白背景 */}
         <section
-          className="sticky top-0 pt-[140px] pb-[450px] px-8 max-md:pt-[100px] max-md:pb-[350px] rounded-t-[40px] md:rounded-t-[60px] z-20 bg-white overflow-hidden"
+          className="md:sticky md:top-0 pt-[80px] md:pt-[140px] pb-[60px] md:pb-[450px] px-6 md:px-8 md:rounded-t-[60px] z-20 bg-white overflow-hidden"
           style={{
             boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.08)',
           }}
@@ -246,7 +246,7 @@ export default function PhilosophyPage() {
 
         {/* Contact CTA Section - スティッキーで迫り出す */}
         <section
-          className="sticky top-0 pt-[140px] pb-[200px] px-8 max-md:pt-[100px] max-md:pb-[150px] bg-white z-30 min-h-screen rounded-t-[40px] md:rounded-t-[60px]"
+          className="md:sticky md:top-0 pt-[80px] md:pt-[140px] pb-[100px] md:pb-[200px] px-6 md:px-8 bg-white z-30 md:min-h-screen md:rounded-t-[60px]"
           style={{ boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.1)' }}
         >
           <div className="relative z-10 max-w-[800px] mx-auto text-center">
