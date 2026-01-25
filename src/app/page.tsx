@@ -123,14 +123,14 @@ function ServicesFloatingImages() {
       {/* 左エリア - ビル写真 */}
       <FadeIn delay={0.6} direction="up" duration={1.2}>
         <div className="absolute top-[40%] left-[2%] animate-poyopoyo-slow">
-          <BlobImage imageSrc="/images/S__69246981.jpg" size={280} direction="left" />
+          <BlobImage imageSrc="/images/S__69246981.jpg" size={280} direction="left" disableScrollEffect />
         </div>
       </FadeIn>
 
       {/* 右エリア */}
       <FadeIn delay={0.9} direction="up" duration={1.2}>
         <div className="absolute bottom-[10%] right-[3%] animate-poyopoyo-slow" style={{ animationDelay: '1s' }}>
-          <BlobImage imageSrc="/images/s7.jpg" size={280} direction="right" imagePosition="top" />
+          <BlobImage imageSrc="/images/s7.jpg" size={280} direction="right" imagePosition="top" disableScrollEffect />
         </div>
       </FadeIn>
     </div>

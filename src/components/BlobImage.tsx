@@ -9,6 +9,7 @@ interface BlobImageProps {
   speed?: number; // スクロール追従の速度
   direction?: 'right' | 'left'; // 入ってくる方向
   imagePosition?: 'center' | 'top' | 'bottom'; // 画像の表示位置
+  disableScrollEffect?: boolean; // スクロール追従を無効にする
 }
 
 export default function BlobImage({
@@ -18,13 +19,17 @@ export default function BlobImage({
   speed = 0.2,
   direction = 'right',
   imagePosition = 'center',
+  disableScrollEffect = false,
 }: BlobImageProps) {
   const uniqueId = useId();
   const clipId = `blobClip-${uniqueId.replace(/:/g, '')}`;
   const ref = useRef<HTMLDivElement>(null);
-  const initialX = direction === 'right' ? 100 : -100;
-  const [offset, setOffset] = useState({ x: initialX, y: -80, scale: 0.85 }); // 斜め上からスタート + 小さめ
-  const targetOffset = useRef({ x: initialX, y: -80, scale: 0.85 });
+  const initialX = disableScrollEffect ? 0 : (direction === 'right' ? 100 : -100);
+  const initialState = disableScrollEffect
+    ? { x: 0, y: 0, scale: 1 }
+    : { x: initialX, y: -80, scale: 0.85 };
+  const [offset, setOffset] = useState(initialState);
+  const targetOffset = useRef(initialState);
   const animationFrame = useRef<number>(undefined);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -48,6 +53,9 @@ export default function BlobImage({
   }, []);
 
   useEffect(() => {
+    // スクロールエフェクト無効時はアニメーションなし
+    if (disableScrollEffect) return;
+
     // 滑らかな補間アニメーション
     const animate = () => {
       setOffset(prev => ({
@@ -64,9 +72,12 @@ export default function BlobImage({
         cancelAnimationFrame(animationFrame.current);
       }
     };
-  }, []);
+  }, [disableScrollEffect]);
 
   useEffect(() => {
+    // スクロールエフェクト無効時は何もしない
+    if (disableScrollEffect) return;
+
     const handleScroll = () => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
@@ -90,13 +101,13 @@ export default function BlobImage({
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [speed]);
+  }, [speed, disableScrollEffect]);
 
   return (
     <div
       ref={ref}
       className={`blob-image-container ${className}`}
-      style={{
+      style={disableScrollEffect ? {} : {
         transform: `translateX(${offset.x}px) translateY(${offset.y}px) scale(${offset.scale})`,
       }}
     >
