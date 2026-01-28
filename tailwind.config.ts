@@ -112,6 +112,18 @@ const config: Config = {
         'gradient-navy': 'linear-gradient(180deg, #001a33 0%, #002d5a 30%, #004582 100%)',
         'gradient-cta': 'linear-gradient(135deg, #002d5a 0%, #004582 50%, #1a5a8a 100%)',
         'gradient-session': 'linear-gradient(to right, #E8D5E3, #D5E3E8)',
+        // Hero Overlays
+        'hero-overlay-navy': 'linear-gradient(180deg, rgba(0,26,51,0.3) 0%, rgba(0,45,90,0.5) 40%, rgba(0,45,90,0.8) 70%, #002d5a 100%)',
+        'hero-overlay-white': 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.5) 40%, rgba(255,255,255,0.9) 70%, #ffffff 100%)',
+        // Hero Images
+        'hero-services': "url('/images/heroimage.jpg')",
+      },
+
+      // ===== Box Shadow =====
+      boxShadow: {
+        'section-top': '0 -20px 60px rgba(0, 0, 0, 0.1)',
+        'section-top-light': '0 -20px 60px rgba(0, 0, 0, 0.05)',
+        'section-top-medium': '0 -20px 60px rgba(0, 0, 0, 0.08)',
       },
     },
   },

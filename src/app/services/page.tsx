@@ -29,21 +29,9 @@ export default function ServicesPage() {
         {/* Hero Section - Session風の左寄せレイアウト */}
         <section className="relative min-h-[80vh] flex items-center pt-20 pb-32 px-8 overflow-hidden">
           {/* 背景画像（ヒーローセクションのみ） */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: 'url(/images/heroimage.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center top',
-            }}
-          />
+          <div className="absolute inset-0 bg-hero-services bg-cover bg-[center_top]" />
           {/* グラデーションオーバーレイ */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(180deg, rgba(0,26,51,0.3) 0%, rgba(0,45,90,0.5) 40%, rgba(0,45,90,0.8) 70%, #002d5a 100%)',
-            }}
-          />
+          <div className="absolute inset-0 bg-hero-overlay-navy" />
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             <div className="md:ml-[10%]">
               <FadeIn>

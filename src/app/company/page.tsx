@@ -54,15 +54,15 @@ export default function CompanyPage() {
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             <div className="md:ml-[10%]">
             <FadeIn>
-              <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-8 uppercase font-medium">Company</p>
+              <p className="tracking-wide-4xl text-label-xs text-navy mb-8 uppercase font-medium">Company</p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#333] mb-6">
+              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-text mb-6">
                 会社情報
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-[#888] text-[0.9rem] tracking-[0.1em] font-light">
+              <p className="text-text-faint text-body-sm tracking-wide-md font-light">
                 About recuere
               </p>
             </FadeIn>
@@ -70,26 +70,19 @@ export default function CompanyPage() {
           </div>
 
           {/* ネイビーのアクセントライン */}
-          <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-gradient-to-r from-transparent via-[#002d5a] to-transparent opacity-20" />
+          <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-gradient-to-r from-transparent via-navy to-transparent opacity-20" />
         </section>
 
         {/* Company Info Section - 白背景 / スティッキー */}
         <section className="sticky top-0 py-[60px] px-8 md:py-[80px] z-10 bg-white" ref={cardsRef}>
           <div className="max-w-[900px] mx-auto">
             <FadeIn>
-              <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-12 uppercase font-medium">Overview</p>
+              <p className="tracking-wide-4xl text-label-xs text-navy mb-12 uppercase font-medium">Overview</p>
             </FadeIn>
 
             {/* シンプルなカード - 白背景＋ネイビーボーダー */}
             <FadeIn delay={0.1}>
-              <div
-                className="glass-card relative rounded-2xl p-8 md:p-12 overflow-hidden"
-                style={{
-                  background: '#fafafa',
-                  border: '1px solid #e5e5e5',
-                  boxShadow: '0 10px 40px rgba(0, 45, 90, 0.05)',
-                }}
-              >
+              <div className="glass-card relative rounded-2xl p-8 md:p-12 overflow-hidden bg-[#fafafa] border border-ui-border-light shadow-[0_10px_40px_rgba(0,45,90,0.05)]">
                 {/* マウス追従グラデーション */}
                 <div
                   className="pointer-events-none absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
@@ -100,30 +93,30 @@ export default function CompanyPage() {
 
                 {/* 会社情報テーブル */}
                 <div className="relative z-10 space-y-0">
-                  <div className="flex flex-col md:flex-row py-6 border-b border-[#eee]">
-                    <span className="text-[0.7rem] text-[#002d5a] w-[160px] shrink-0 mb-3 md:mb-0 tracking-[0.2em] uppercase font-medium">Business Name</span>
-                    <span className="text-[1.1rem] text-[#333] font-light tracking-wide">recuere（リキュウレ）</span>
+                  <div className="flex flex-col md:flex-row py-6 border-b border-ui-border">
+                    <span className="text-label-sm text-navy w-[160px] shrink-0 mb-3 md:mb-0 uppercase font-medium">Business Name</span>
+                    <span className="text-heading-sm text-text font-light tracking-wide">recuere（リキュウレ）</span>
                   </div>
 
-                  <div className="flex flex-col md:flex-row py-6 border-b border-[#eee]">
-                    <span className="text-[0.7rem] text-[#002d5a] w-[160px] shrink-0 mb-3 md:mb-0 tracking-[0.2em] uppercase font-medium">Representative</span>
-                    <span className="text-[1.1rem] text-[#333] font-light tracking-wide">たなか里乃</span>
+                  <div className="flex flex-col md:flex-row py-6 border-b border-ui-border">
+                    <span className="text-label-sm text-navy w-[160px] shrink-0 mb-3 md:mb-0 uppercase font-medium">Representative</span>
+                    <span className="text-heading-sm text-text font-light tracking-wide">たなか里乃</span>
                   </div>
 
-                  <div className="flex flex-col md:flex-row py-6 border-b border-[#eee]">
-                    <span className="text-[0.7rem] text-[#002d5a] w-[160px] shrink-0 mb-3 md:mb-0 tracking-[0.2em] uppercase font-medium">Founded</span>
-                    <span className="text-[1.1rem] text-[#333] font-light tracking-wide">2022年9月</span>
+                  <div className="flex flex-col md:flex-row py-6 border-b border-ui-border">
+                    <span className="text-label-sm text-navy w-[160px] shrink-0 mb-3 md:mb-0 uppercase font-medium">Founded</span>
+                    <span className="text-heading-sm text-text font-light tracking-wide">2022年9月</span>
                   </div>
 
                   <div className="flex flex-col md:flex-row py-6">
-                    <span className="text-[0.7rem] text-[#002d5a] w-[160px] shrink-0 mb-5 md:mb-0 tracking-[0.2em] uppercase font-medium">Services</span>
-                    <div className="text-[1rem] text-[#555] leading-[2.2] space-y-5 font-light">
+                    <span className="text-label-sm text-navy w-[160px] shrink-0 mb-5 md:mb-0 uppercase font-medium">Services</span>
+                    <div className="text-body-lg text-text-light leading-[2.2] space-y-5 font-light">
                       <p>
-                        <span className="text-[#002d5a] text-[0.75rem] tracking-[0.15em] uppercase block mb-2 font-medium">For Business</span>
+                        <span className="text-navy text-[0.75rem] tracking-wide-lg uppercase block mb-2 font-medium">For Business</span>
                         経営コンサルティング / 医療法人・歯科医院向けコンサルティング / 人材育成研修
                       </p>
                       <p>
-                        <span className="text-[#002d5a] text-[0.75rem] tracking-[0.15em] uppercase block mb-2 font-medium">For Individual</span>
+                        <span className="text-navy text-[0.75rem] tracking-wide-lg uppercase block mb-2 font-medium">For Individual</span>
                         自己実現セッション / ヒプノセラピー / パーソナルブランディング構築
                       </p>
                     </div>
@@ -139,28 +132,11 @@ export default function CompanyPage() {
         <div id="founder" className="relative top-[500px] md:top-[850px]" />
 
         {/* Founder Section - スティッキーで競り上がり */}
-        <section
-          className="sticky top-[60vh] md:top-[70vh] pt-[60px] pb-[550px] px-6 md:pt-[120px] md:pb-[1000px] md:px-8 rounded-t-[40px] md:rounded-t-[60px] z-20 overflow-hidden"
-          style={{
-            boxShadow: '0 -20px 60px rgba(0, 45, 90, 0.3)',
-          }}
-        >
+        <section className="sticky top-[60vh] md:top-[70vh] pt-[60px] pb-[550px] px-6 md:pt-[120px] md:pb-[1000px] md:px-8 rounded-t-section md:rounded-t-section-lg z-20 overflow-hidden shadow-[0_-20px_60px_rgba(0,45,90,0.3)]">
           {/* 背景画像 */}
-          <div
-            className="absolute inset-0 z-0"
-            style={{
-              backgroundImage: 'url(/images/business-hero.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          />
+          <div className="absolute inset-0 z-0 bg-[url('/images/business-hero.jpg')] bg-cover bg-center" />
           {/* ネイビーオーバーレイ（上は薄く、下は濃く） */}
-          <div
-            className="absolute inset-0 z-[1]"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(0, 45, 90, 0.4) 0%, rgba(0, 45, 90, 0.65) 50%, rgba(0, 45, 90, 0.75) 100%)',
-            }}
-          />
+          <div className="absolute inset-0 z-[1] bg-gradient-to-b from-navy/40 via-navy/65 to-navy/75" />
           <div className="max-w-[900px] mx-auto relative z-[2]">
             {/* SP版: 画像（円形）→タイトル→テキスト */}
             <div className="md:hidden">
@@ -171,10 +147,7 @@ export default function CompanyPage() {
               {/* 画像 - SP版は円形で上部に中央配置 */}
               <FadeIn delay={0.1}>
                 <div className="flex justify-center mb-8">
-                  <div
-                    className="w-[180px] h-[180px] rounded-full overflow-hidden"
-                    style={{ boxShadow: '0 15px 30px rgba(0, 0, 0, 0.3)' }}
-                  >
+                  <div className="w-[180px] h-[180px] rounded-full overflow-hidden shadow-[0_15px_30px_rgba(0,0,0,0.3)]">
                     <img
                       src="/images/rinosan2.jpg"
                       alt="代表 たなか里乃"
@@ -246,23 +219,11 @@ export default function CompanyPage() {
               </FadeIn>
 
               <FadeIn delay={0.2} duration={1.0}>
-                <div
-                  className="flex flex-row gap-16 items-start p-12 rounded-2xl"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    boxShadow: '0 30px 60px rgba(0, 0, 0, 0.3)',
-                  }}
-                >
+                <div className="flex flex-row gap-16 items-start p-12 rounded-2xl bg-white/5 backdrop-blur-[10px] border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
                   {/* 画像 */}
                   <FadeIn delay={0.4} direction="up" duration={0.8}>
                     <div className="w-[280px] shrink-0">
-                      <div
-                        className="relative overflow-hidden rounded-xl"
-                        style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)' }}
-                      >
+                      <div className="relative overflow-hidden rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                         <img
                           src="/images/rinosan2.jpg"
                           alt="代表 たなか里乃"
