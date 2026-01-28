@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import Link from 'next/link';
 import FloatingParticles from '@/components/FloatingParticles';
 import ArrowLink from '@/components/ArrowLink';
 import FadeIn from '@/components/FadeIn';
@@ -38,6 +37,47 @@ const changeCategories = [
   {
     title: '人生・自己探求',
     items: '人生の方向性、目的、抱えているテーマへの気づき',
+  },
+];
+
+// 療法の詳細データ
+const methods = [
+  {
+    id: 'age-regression',
+    title: '年齢退行療法（インナーチャイルド療法）',
+    description: `現在抱えている問題、心の痛みや苦しみ、抜け出せない行動パターン、心理的反応の原因となっている過去の出来事へ遡っていき、問題の軽減、解消につなげる療法です。
+
+そのほとんどが幼少の頃の体験に起因しています。ずっと癒されないまま放置され続けてきた潜在意識下のインナーチャイルドに、目を向け、耳を傾け、トラウマを癒していきます。`,
+  },
+  {
+    id: 'past-life',
+    title: '前世療法',
+    description: `催眠下において見えてくる前世イメージ（信じる、信じないは別としても）は、見事にその時抱えている問題、出来事にシンクロし、ある行動パターンや反応の癖、体の状態と同類のテーマが隠されていたりします。
+
+前世の記憶にアクセスすることで、現在の課題に対する新たな視点や気づきを得ることができます。`,
+  },
+  {
+    id: 'psychosomatic',
+    title: '心身緩和セラピー',
+    description: `病は気からという言葉通り、心身の病には心理的要素が働いています。
+
+過去のトラウマや感情が病気の直接的な原因となっていたり、抑圧されたサブパーソナリティーが対応処置や休息などを求めて病気にさせることもあります。
+
+潜在意識の中に潜んでいる要因を解放し、病気以前の自分以上に豊かさを手に入れていきます。`,
+  },
+  {
+    id: 'grief',
+    title: 'グリーフセラピー',
+    description: `大切な人（家族、パートナー、親友など）を亡くされた方のためのセラピーです。
+
+死そのものがどのような目的を果たしたのか。生前伝えられなかったことを伝え、又聞けなかった思いを聞き、メッセージを受け取ることで、心の整理がつき、生き貫く力が蘇ってきます。`,
+  },
+  {
+    id: 'future-pacing',
+    title: 'フューチャーペーシング',
+    description: `少し先の未来の自分が、どのような環境の中で、また精神状態で生きているかを確認していきます。
+
+本来の自分を取り戻し、解放された状態で、潜在意識から浮かび上がってくる理想の自分像と未来ビジョンは、希望の光となり、自分自身に大きな自信と活力を与えてくれます。`,
   },
 ];
 
@@ -113,6 +153,21 @@ export default function HypnotherapyPage() {
 
         {/* ===== ヒーロー ===== */}
         <section className="min-h-[80vh] flex items-center pt-20 pb-32 relative overflow-hidden">
+          {/* 背景画像 */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(/images/AdobeStock_1686407697.jpeg)',
+            }}
+          />
+          {/* オーバーレイ */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.9) 100%)',
+            }}
+          />
+
           {/* 浮遊パーティクル */}
           <FloatingParticles count={15} color="#7FA6BF" />
 
@@ -130,7 +185,7 @@ export default function HypnotherapyPage() {
 
           <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
             <FadeIn className="md:ml-[10%]">
-              <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">Hypnotherapy</p>
+              <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] mb-6 uppercase font-medium">Hypnotherapy</p>
               <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#333] mb-6">
                 ヒプノセラピー
               </h1>
@@ -144,102 +199,38 @@ export default function HypnotherapyPage() {
 
         {/* ===== ヒプノセラピーとは ===== */}
         <section className="py-16 md:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            {/* SP版 */}
-            <div className="md:hidden">
-              <div className="mb-8">
-                <div className="relative">
-                  <div className="text-[#002d5a]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
-                    About
-                  </div>
-                  <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
-                    What is Hypnotherapy
-                  </p>
-                  <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
-                    ヒプノセラピーとは
-                  </h2>
+          <div className="max-w-3xl mx-auto px-6 text-center">
+            <FadeIn direction="up" duration={1}>
+              <div className="relative inline-block mb-8">
+                <div className="text-[#7FA6BF]/10 text-4xl md:text-6xl font-extralight tracking-wider">
+                  About
                 </div>
+                <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] mb-3 uppercase font-medium relative z-10 -mt-3">
+                  What is Hypnotherapy
+                </p>
               </div>
+            </FadeIn>
+            <FadeIn delay={0.15} direction="up" duration={1}>
+              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-8">
+                ヒプノセラピーとは
+              </h2>
+            </FadeIn>
 
-              <FadeIn delay={0.1} className="mb-8">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                  <Image
-                    src="/images/AdobeStock_1686407697_Preview.jpeg"
-                    alt="ヒプノセラピーイメージ"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.2}>
-                <div className="text-gray-600 text-[0.9rem] leading-relaxed space-y-4 mb-8">
-                  <p>
-                    ヒプノセラピーは、<br />
-                    催眠状態（深くリラックスした状態）で、<br />
-                    潜在意識（普段は意識に上りにくい思考や感情）に<br />
-                    静かに意識を向けていく心理療法です。
-                  </p>
-                  <p>
-                    安心できる空間の中で、<br />
-                    心の深い部分にあるテーマに気づき、<br />
-                    自分自身への理解を深めていくセッションです。
-                  </p>
-                  <p className="text-gray-500 text-xs">
-                    ※事前面談・セラピー・事後面談を含め、<br />
-                    3時間程度のセッションとなります。
-                  </p>
-                </div>
-              </FadeIn>
-            </div>
-
-            {/* PC版 */}
-            <div className="hidden md:grid md:grid-cols-2 gap-16 items-center">
-              <FadeIn direction="left">
-                <div>
-                  <div className="relative mb-8">
-                    <FadeIn direction="clipReveal" delay={0} className="text-[#002d5a]/10 text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
-                      About
-                    </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-8">
-                      What is Hypnotherapy
-                    </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
-                      ヒプノセラピーとは
-                    </FadeIn>
-                  </div>
-                  <div className="text-gray-500 text-[0.95rem] leading-[2.2] space-y-4">
-                    <p>
-                      ヒプノセラピーは、<br />
-                      催眠状態（深くリラックスした状態）で、<br />
-                      潜在意識（普段は意識に上りにくい思考や感情）に<br />
-                      静かに意識を向けていく心理療法です。
-                    </p>
-                    <p>
-                      安心できる空間の中で、<br />
-                      心の深い部分にあるテーマに気づき、<br />
-                      自分自身への理解を深めていくセッションです。
-                    </p>
-                    <p className="text-gray-400 text-sm">
-                      ※事前面談・セラピー・事後面談を含め、<br />
-                      3時間程度のセッションとなります。
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.2} direction="right">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                  <Image
-                    src="/images/AdobeStock_1686407697_Preview.jpeg"
-                    alt="ヒプノセラピーイメージ"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent" />
-                </div>
-              </FadeIn>
-            </div>
+            <FadeIn delay={0.3} direction="up" duration={1}>
+              <p className="text-gray-500 text-[0.95rem] leading-[2.2] mb-6">
+                ヒプノセラピーは、催眠状態（深くリラックスした状態）で、潜在意識（普段は意識に上りにくい思考や感情）に静かに意識を向けていく心理療法です。
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.45} direction="up" duration={1}>
+              <p className="text-gray-500 text-[0.95rem] leading-[2.2] mb-6">
+                安心できる空間の中で、心の深い部分にあるテーマに気づき、自分自身への理解を深めていくセッションです。
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.6} direction="up" duration={1}>
+              <p className="text-gray-400 text-sm">
+                ※事前面談・セラピー・事後面談を含め、3時間程度のセッションとなります。
+              </p>
+            </FadeIn>
           </div>
         </section>
 
@@ -249,10 +240,10 @@ export default function HypnotherapyPage() {
             <FadeIn>
               <div className="text-center mb-12">
                 <div className="relative inline-block">
-                  <p className="text-[#002d5a]/10 text-4xl md:text-5xl font-extralight tracking-wider">
+                  <p className="text-[#7FA6BF]/10 text-4xl md:text-5xl font-extralight tracking-wider">
                     Changes
                   </p>
-                  <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] uppercase font-medium relative z-10 -mt-3">
+                  <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] uppercase font-medium relative z-10 -mt-3">
                     Expected Changes
                   </p>
                 </div>
@@ -281,46 +272,73 @@ export default function HypnotherapyPage() {
           </div>
         </section>
 
-        {/* ===== 主なアプローチ ===== */}
+        {/* ===== 主なアプローチ（詳細） ===== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <FadeIn>
               <div className="text-center mb-12">
                 <div className="relative inline-block">
-                  <p className="text-[#002d5a]/10 text-4xl md:text-5xl font-extralight tracking-wider">
+                  <p className="text-[#7FA6BF]/10 text-4xl md:text-5xl font-extralight tracking-wider">
                     Approach
                   </p>
-                  <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] uppercase font-medium relative z-10 -mt-3">
+                  <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] uppercase font-medium relative z-10 -mt-3">
                     Methods
                   </p>
                 </div>
-                <h2 className="text-[clamp(1.6rem,3vw,2rem)] tracking-[-0.02em] font-extralight text-[#333] mt-4">
-                  ヒプノセラピーで用いる主なアプローチ
+                <h2 className="text-[clamp(1.4rem,3vw,2rem)] tracking-[-0.02em] font-extralight text-[#333] mt-4">
+                  ヒプノセラピーで用いる<br className="md:hidden" />主なアプローチ
                 </h2>
+                <p className="text-gray-500 text-sm mt-4">
+                  セッションでは、お悩みやご希望に応じて最適な療法を選択します。
+                </p>
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.2}>
-              <div className="max-w-2xl mx-auto text-center">
-                <div className="flex flex-wrap justify-center gap-3 mb-10">
-                  {['年齢退行療法', '前世療法', '心身緩和セラピー', 'グリーフセラピー', 'フューチャーペーシング'].map((theme, i) => (
-                    <span
-                      key={i}
-                      className="px-5 py-2.5 bg-gray-100 text-gray-600 text-sm rounded-full"
-                    >
-                      {theme}
-                    </span>
-                  ))}
-                </div>
-
-                <Link
-                  href="/hypnotherapy/methods"
-                  className="inline-flex items-center gap-2 text-[#002d5a] hover:text-[#004080] transition-colors text-sm"
-                >
-                  <span>詳しく知りたい方へ</span>
-                  <span className="text-lg">→</span>
-                </Link>
+            {/* 3-2 カードレイアウト */}
+            <div className="max-w-5xl mx-auto">
+              {/* 上段: 3カラム */}
+              <div className="grid md:grid-cols-3 gap-5 mb-5">
+                {methods.slice(0, 3).map((method, i) => (
+                  <FadeIn key={method.id} delay={0.1 * i}>
+                    <article className="bg-[#faf8f5] rounded-xl p-6 h-full">
+                      <span className="text-[#7FA6BF] text-xs font-medium">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <h3 className="text-[#333] text-base font-medium mt-2 mb-3 leading-snug">
+                        {method.title}
+                      </h3>
+                      <p className="text-gray-500 text-[0.8rem] leading-[1.9] whitespace-pre-line">
+                        {method.description}
+                      </p>
+                    </article>
+                  </FadeIn>
+                ))}
               </div>
+
+              {/* 下段: 2カラム（PC版のみ中央寄せ） */}
+              <div className="grid md:grid-cols-2 gap-5 md:px-[16.666%]">
+                {methods.slice(3, 5).map((method, i) => (
+                  <FadeIn key={method.id} delay={0.1 * (i + 3)}>
+                    <article className="bg-[#faf8f5] rounded-xl p-6 h-full">
+                      <span className="text-[#7FA6BF] text-xs font-medium">
+                        {String(i + 4).padStart(2, '0')}
+                      </span>
+                      <h3 className="text-[#333] text-base font-medium mt-2 mb-3 leading-snug">
+                        {method.title}
+                      </h3>
+                      <p className="text-gray-500 text-[0.8rem] leading-[1.9] whitespace-pre-line">
+                        {method.description}
+                      </p>
+                    </article>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+
+            <FadeIn delay={0.5}>
+              <p className="text-gray-400 text-xs text-center mt-12">
+                ※ ヒプノセラピーは医療行為ではありません。精神疾患の治療を目的としたものではなく、心の探求や自己理解を深めるためのセッションです。
+              </p>
             </FadeIn>
           </div>
         </section>
@@ -331,10 +349,10 @@ export default function HypnotherapyPage() {
             <FadeIn>
               <div className="text-center mb-12">
                 <div className="relative inline-block">
-                  <p className="text-[#002d5a]/10 text-4xl md:text-5xl font-extralight tracking-wider">
+                  <p className="text-[#7FA6BF]/10 text-4xl md:text-5xl font-extralight tracking-wider">
                     Price
                   </p>
-                  <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] uppercase font-medium relative z-10 -mt-3">
+                  <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] uppercase font-medium relative z-10 -mt-3">
                     料金表
                   </p>
                 </div>
@@ -379,10 +397,10 @@ export default function HypnotherapyPage() {
             <FadeIn>
               <div className="text-center mb-8">
                 <div className="relative inline-block">
-                  <p className="text-[#002d5a]/10 text-4xl md:text-5xl font-extralight tracking-wider">
+                  <p className="text-[#7FA6BF]/10 text-4xl md:text-5xl font-extralight tracking-wider">
                     Voice
                   </p>
-                  <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] uppercase font-medium relative z-10 -mt-3">
+                  <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] uppercase font-medium relative z-10 -mt-3">
                     Testimonials
                   </p>
                 </div>
@@ -392,7 +410,20 @@ export default function HypnotherapyPage() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.2}>
+            {/* SP版: 縦リスト */}
+            <div className="md:hidden space-y-4">
+              {testimonials.map((t, i) => (
+                <FadeIn key={i} delay={0.1 * i}>
+                  <div className="bg-white/70 rounded-xl p-5 border border-gray-100">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-3">"{t.text}"</p>
+                    <p className="text-gray-500 text-xs text-right">— {t.author}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+
+            {/* PC版: カルーセル */}
+            <FadeIn delay={0.2} className="hidden md:block">
               <TestimonialsScroll testimonials={testimonials} />
             </FadeIn>
           </div>
@@ -402,12 +433,12 @@ export default function HypnotherapyPage() {
         <section className="py-24 bg-[#faf8f5]">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <FadeIn direction="scaleUp">
-              <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-8 uppercase font-medium">Contact</p>
+              <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] mb-8 uppercase font-medium">Contact</p>
               <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-6">
                 まずはお気軽にご相談ください
               </h2>
               <p className="text-[#666] text-[0.95rem] leading-[2] mb-10 font-light">
-                ご不明な点やご質問がございましたら、<br className="md:hidden" />お気軽にお問い合わせください。
+                ご不明な点やご質問がございましたら、お気軽にお問い合わせください。
               </p>
               <ArrowLink href="/contact">
                 Contact Us

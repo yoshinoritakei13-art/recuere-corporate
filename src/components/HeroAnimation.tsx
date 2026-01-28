@@ -22,13 +22,13 @@ export default function HeroAnimation() {
     };
   }, []);
 
-  // スクロールで背景をフェードアウト
+  // スクロールで背景をフェードアウト（3画面分かけてゆっくり）
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
-      // 1画面分スクロールしたら完全に消える
-      const opacity = Math.max(0, 1 - (scrollY / windowHeight));
+      // 3画面分スクロールしたら完全に消える（さらにゆっくり）
+      const opacity = Math.max(0, 1 - (scrollY / (windowHeight * 3)));
       setScrollOpacity(opacity);
     };
 
@@ -97,7 +97,7 @@ export default function HeroAnimation() {
             phase === 'active' ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
-            backgroundImage: 'url(/images/hero-bg.jpg)',
+            backgroundImage: 'url(/images/heroimage.jpg)',
             transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
             filter: 'saturate(0.4)',
           }}
@@ -143,23 +143,11 @@ export default function HeroAnimation() {
               isContentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
-            <p className="text-[10px] font-bold tracking-[0.3em] mb-2 text-neutral-500">recuere Inc.</p>
-            <p className="text-[9px] tracking-[0.1em] text-neutral-400 font-medium italic">Sustainable Growth</p>
+            <p className="text-[10px] font-bold tracking-[0.3em] mb-2 text-neutral-500">recuere</p>
+            <p className="text-[9px] tracking-[0.1em] font-medium italic" style={{ color: '#004582' }}>Sustainable Growth</p>
           </div>
 
-          {/* 装飾テキスト - 右 */}
-          <div
-            className={`absolute right-6 md:right-12 top-[18%] z-20 text-right hidden md:block transition-all duration-1000 ${
-              isContentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
-          >
-            <p className="text-[10px] tracking-[0.2em] text-neutral-500 leading-relaxed uppercase font-medium">
-              Consulting & Development
-              <br />
-              Unlocking Potential
-            </p>
-          </div>
-
+          
           {/* Center Text Sequence */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-30 flex flex-col items-center w-full">
             {/* 英語ロゴ (RECUERE) */}
@@ -175,7 +163,7 @@ export default function HeroAnimation() {
               }`}
             >
               <h1 className="text-[18vw] md:text-[14vw] font-black tracking-tighter leading-none text-center mix-blend-difference text-[#1a1a2e] scale-x-110 animate-subtle-float">
-                recuere<span className="inline-block text-[3vw] md:text-[2vw] font-light relative top-[1vw] md:top-[0.5vw]" style={{ transform: 'scaleX(0.8) scaleY(1.1)' }}>®</span>
+                recuere<span className="inline-block text-[3vw] md:text-[2vw] font-light relative -top-[6vw] md:-top-[5vw]" style={{ transform: 'scaleX(0.8) scaleY(1.1)' }}>®</span>
               </h1>
             </div>
 

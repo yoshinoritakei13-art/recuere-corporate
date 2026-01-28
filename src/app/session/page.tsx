@@ -116,10 +116,21 @@ export default function SessionPage() {
                 </div>
               </div>
 
-              {/* 画像（1枚） */}
+              {/* 画像（PC版風に複数配置） */}
               <FadeIn delay={0.1} className="mb-8">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                  <Image src="/images/Firefly_c6aa9de6-66d4-4fa3-9824-32e22229655f.jpeg" alt="セッション風景" fill className="object-cover" />
+                <div className="relative h-[180px]">
+                  {/* メイン画像 */}
+                  <div className="absolute left-0 top-0 w-[140px] aspect-[4/3] rounded-lg overflow-hidden shadow-sm">
+                    <Image src="/images/Firefly_c6aa9de6-66d4-4fa3-9824-32e22229655f.jpeg" alt="セッション風景" fill className="object-cover" />
+                  </div>
+                  {/* サブ画像1 */}
+                  <div className="absolute right-4 top-4 w-[120px] aspect-[4/5] rounded-lg overflow-hidden shadow-sm">
+                    <Image src="/images/AdobeStock_1581418014.jpeg" alt="リラックスしたセッション" fill className="object-cover" />
+                  </div>
+                  {/* サブ画像2 */}
+                  <div className="absolute left-[30%] bottom-0 w-[130px] aspect-[4/3] rounded-lg overflow-hidden shadow-sm">
+                    <Image src="/images/AdobeStock_1718433882.jpeg" alt="心の安らぎ" fill className="object-cover" />
+                  </div>
                 </div>
               </FadeIn>
 
@@ -173,7 +184,7 @@ export default function SessionPage() {
               {/* 画像2：左 */}
               <FadeIn delay={0.2} className="absolute top-[200px] left-[5%] w-[200px]">
                 <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
-                  <Image src="/images/AdobeStock_1581418014_Preview.jpeg" alt="リラックスしたセッション" fill className="object-cover" />
+                  <Image src="/images/AdobeStock_1581418014.jpeg" alt="リラックスしたセッション" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white" />
                 </div>
               </FadeIn>
@@ -181,7 +192,7 @@ export default function SessionPage() {
               {/* 画像3：右下 */}
               <FadeIn delay={0.4} className="absolute bottom-[30px] right-[5%] w-[280px]">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image src="/images/AdobeStock_1718433882_Preview.jpeg" alt="心の安らぎ" fill className="object-cover" />
+                  <Image src="/images/AdobeStock_1718433882.jpeg" alt="心の安らぎ" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/50 to-white" />
                 </div>
               </FadeIn>
@@ -210,7 +221,7 @@ export default function SessionPage() {
             {/* 料金セクション */}
             <div id="awakening-price" className="mt-4 md:mt-8">
               <FadeIn>
-                <div className="bg-gray-50 md:bg-white/50 md:backdrop-blur-md border border-gray-100 md:border-white/60 rounded-2xl p-5 md:p-8 max-w-5xl mx-auto">
+                <div className="bg-white/50 md:bg-white/50 md:backdrop-blur-md border border-gray-100 md:border-white/60 rounded-2xl p-5 md:p-8 max-w-5xl mx-auto">
                   <div className="relative mb-6 text-center">
                     <p className="text-[#002d5a]/10 text-4xl md:text-5xl font-extralight tracking-wider">
                       Price
@@ -248,35 +259,72 @@ export default function SessionPage() {
                     ))}
                   </div>
 
-                  {/* 下部の追加情報 */}
-                  <div className="mt-6 pt-6 border-t border-gray-200/50 space-y-4">
-                    {/* ボイジャータロット */}
-                    <div className="flex items-center justify-center gap-4 md:gap-10">
-                      {/* 左: タロット */}
-                      <FadeIn delay={0.2}>
-                        <div className="w-[40px] h-[50px] md:w-[90px] md:h-[115px] overflow-hidden">
-                          <Image src="/images/t1.png" alt="ボイジャータロット" width={90} height={115} className="object-cover w-full h-full" />
-                        </div>
-                      </FadeIn>
-                      {/* 中央: テキスト */}
-                      <div>
-                        <p className="text-gray-600 text-sm md:text-lg">+ ボイジャータロットリーディング</p>
-                        <p className="text-gray-400 text-xs md:text-sm text-center">（組み合わせ可能）</p>
-                      </div>
-                      {/* 右: りのさん */}
-                      <FadeIn delay={0.4}>
-                        <div className="w-[50px] h-[62px] md:w-[100px] md:h-[125px] overflow-hidden">
-                          <Image src="/images/rinosan3.jpg" alt="たなか里乃" width={100} height={125} className="object-cover object-top w-full h-full" />
-                        </div>
-                      </FadeIn>
-                    </div>
-                    <div className="text-center space-y-1">
+                  {/* 注意事項 */}
+                  <div className="mt-6 pt-6 border-t border-gray-200/50">
+                    <div className="text-center space-y-1 mb-6">
                       <p className="text-gray-500 text-xs">
                         ※ 延長料金 10分毎 ¥2,200プラスさせていただきます。
                       </p>
                       <p className="text-gray-500 text-xs">
                         ※ 対面の場合、交通費、ご自分の飲食代のご負担をお願いします。
                       </p>
+                    </div>
+
+                    {/* ボイジャータロット - カード形式 */}
+                    <div className="pt-6 border-t border-gray-200/50">
+                      <div className="bg-white/70 backdrop-blur-sm rounded-xl p-5 md:p-8">
+                        {/* SP版 */}
+                        <div className="md:hidden relative min-h-[180px] overflow-visible">
+                          {/* 左上: タロット画像 */}
+                          <div className="absolute -left-8 -top-2 w-[80px] aspect-[3/4] rounded-lg overflow-hidden z-10">
+                            <Image src="/images/t1.png" alt="ボイジャータロット" width={80} height={107} className="object-cover w-full h-full" />
+                          </div>
+
+                          {/* 中央: テキスト */}
+                          <div className="text-center pt-2 px-[75px]">
+                            <p className="text-gray-700 text-sm font-medium mb-1">
+                              + ボイジャータロットリーディング
+                            </p>
+                            <p className="text-gray-400 text-xs mb-2">（組み合わせ可能）</p>
+                            <p className="text-gray-500 text-xs leading-relaxed">
+                              ご希望の方は、「タロットを中心」としたセッションも承っています。予約時にお申し出ください。
+                            </p>
+                          </div>
+
+                          {/* 右下: りのさん */}
+                          <div className="absolute -right-8 -bottom-2 w-[80px] aspect-[3/4] rounded-lg overflow-hidden">
+                            <Image src="/images/rinosan3.jpg" alt="たなか里乃" width={80} height={107} className="object-cover object-top w-full h-full" />
+                          </div>
+                        </div>
+
+                        {/* PC版 */}
+                        <div className="hidden md:flex items-center gap-8">
+                          {/* 左: タロット画像 */}
+                          <FadeIn delay={0.2}>
+                            <div className="w-[180px] aspect-[3/4] rounded-lg overflow-hidden shrink-0">
+                              <Image src="/images/t1.png" alt="ボイジャータロット" width={180} height={240} className="object-cover w-full h-full" />
+                            </div>
+                          </FadeIn>
+
+                          {/* 中央: テキスト */}
+                          <div className="flex-1">
+                            <p className="text-gray-700 text-lg font-medium mb-1">
+                              + ボイジャータロットリーディング
+                            </p>
+                            <p className="text-gray-400 text-sm mb-3">（組み合わせ可能）</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">
+                              ご希望の方は、「タロットを中心」としたセッションも承っています。予約時にお申し出ください。
+                            </p>
+                          </div>
+
+                          {/* 右: りのさん */}
+                          <FadeIn delay={0.3}>
+                            <div className="w-[180px] aspect-[3/4] rounded-lg overflow-hidden shrink-0">
+                              <Image src="/images/rinosan3.jpg" alt="たなか里乃" width={180} height={240} className="object-cover object-top w-full h-full" />
+                            </div>
+                          </FadeIn>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -307,22 +355,35 @@ export default function SessionPage() {
               {/* 画像（SP: 2番目、PC: 左） */}
               <FadeIn direction="left">
                 <div className="relative group">
-                  <div className="relative aspect-[4/3] md:aspect-[4/5] rounded-2xl overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
-                    <Image
-                      src="/images/AdobeStock_1517811434_Preview.jpeg"
-                      alt="パーソナルコーチングセッションイメージ"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent" />
+                  {/* SP版: メイン左、サブ右下にがっつり重ねる */}
+                  <div className="md:hidden relative h-[150px]">
+                    <div className="absolute left-0 top-0 w-[180px] aspect-[4/3] rounded-lg overflow-hidden shadow-md z-0">
+                      <Image src="/images/AdobeStock_1517811434.jpeg" alt="パーソナルコーチング" fill className="object-cover" />
+                    </div>
+                    <div className="absolute right-8 bottom-[-10px] w-[100px] aspect-square rounded-lg overflow-hidden shadow-lg z-10">
+                      <Image src="/images/AdobeStock_1524162172.jpeg" alt="穏やかなセッション空間" fill className="object-cover" />
+                    </div>
                   </div>
-                  <div className="absolute -bottom-8 -right-8 w-1/2 aspect-square rounded-xl overflow-hidden shadow-lg hidden md:block transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2">
-                    <Image
-                      src="/images/AdobeStock_1524162172_Preview.jpeg"
-                      alt="穏やかなセッション空間"
-                      fill
-                      className="object-cover"
-                    />
+                  {/* PC版: 2枚重ねレイアウト */}
+                  <div className="hidden md:block relative h-[400px]">
+                    {/* メイン画像（左上） */}
+                    <div className="absolute left-[60px] top-[60px] w-[320px] aspect-[4/3] rounded-lg overflow-hidden">
+                      <Image
+                        src="/images/AdobeStock_1517811434.jpeg"
+                        alt="パーソナルコーチングセッションイメージ"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    {/* サブ画像（右下に重ねる） */}
+                    <div className="absolute right-[-60px] bottom-0 w-[200px] aspect-[4/3] rounded-lg overflow-hidden">
+                      <Image
+                        src="/images/AdobeStock_1524162172.jpeg"
+                        alt="穏やかなセッション空間"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </FadeIn>
@@ -381,14 +442,14 @@ export default function SessionPage() {
                 </h2>
               </div>
 
-              {/* 画像 */}
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6">
-                <Image
-                  src="/images/AdobeStock_1686407697_Preview.jpeg"
-                  alt="ヒプノセラピーイメージ"
-                  fill
-                  className="object-cover"
-                />
+              {/* 画像（サブ左、メイン右にがっつり重ねる） */}
+              <div className="relative h-[170px] mb-6">
+                <div className="absolute left-4 top-8 w-[120px] aspect-square rounded-lg overflow-hidden shadow-lg z-10">
+                  <Image src="/images/AdobeStock_1581418014.jpeg" alt="安らぎ" fill className="object-cover" />
+                </div>
+                <div className="absolute right-0 top-0 w-[250px] aspect-[4/3] rounded-lg overflow-hidden shadow-md z-0">
+                  <Image src="/images/AdobeStock_1686407697.jpeg" alt="ヒプノセラピー" fill className="object-cover" />
+                </div>
               </div>
 
               {/* テキスト */}
@@ -455,11 +516,17 @@ export default function SessionPage() {
                       ヒプノセラピー
                     </FadeIn>
                   </div>
-                  <p className="text-gray-500 leading-relaxed mb-8 text-[0.9rem]">
+                  <p className="text-gray-500 leading-relaxed mb-6 text-[0.9rem]">
                     催眠状態で潜在意識にアクセスし、
                     心の深い部分にある課題に働きかける心理療法です。
                     安心できる空間で、あなたの内なる世界を探求します。
                   </p>
+
+                  <div className="mb-8 flex justify-end">
+                    <ArrowLink href="/hypnotherapy">
+                      詳しく見る
+                    </ArrowLink>
+                  </div>
 
                   <p className="text-gray-600 text-sm mb-4">扱えるテーマ</p>
                   <div className="flex flex-wrap gap-2 mb-8">
@@ -470,23 +537,18 @@ export default function SessionPage() {
                     ))}
                   </div>
 
-                  <p className="text-gray-500 text-xs mb-4">
+                  <p className="text-gray-500 text-xs">
                     ※ 医療行為ではありません
                   </p>
-                  <div className="flex justify-end">
-                    <ArrowLink href="/hypnotherapy">
-                      詳しく見る
-                    </ArrowLink>
-                  </div>
                 </div>
               </FadeIn>
 
               {/* 右：画像+料金 */}
               <FadeIn delay={0.2} direction="right">
                 <div className="space-y-8">
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                  <div className="relative aspect-[4/3] max-w-[400px] rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/AdobeStock_1686407697_Preview.jpeg"
+                      src="/images/AdobeStock_1686407697.jpeg"
                       alt="ヒプノセラピーイメージ"
                       fill
                       className="object-cover"
@@ -580,9 +642,16 @@ export default function SessionPage() {
 
               {/* SP版：画像が先 / PC版：画像右 */}
               <FadeIn delay={0.2} direction="right" className="order-1 md:order-2">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
+                {/* SP版: 1枚中央配置 */}
+                <div className="md:hidden flex justify-center">
+                  <div className="relative w-[260px] aspect-[4/3] rounded-lg overflow-hidden shadow-md">
+                    <Image src="/images/AdobeStock_770224949.jpeg" alt="ブランディング" fill className="object-cover" />
+                  </div>
+                </div>
+                {/* PC版 */}
+                <div className="hidden md:block relative aspect-[4/3] rounded-2xl overflow-hidden group">
                   <Image
-                    src="/images/AdobeStock_770224949_Preview.jpeg"
+                    src="/images/AdobeStock_770224949.jpeg"
                     alt="ブランディングセッションイメージ"
                     fill
                     className="object-cover"
@@ -603,7 +672,7 @@ export default function SessionPage() {
                 まずはお気軽にご相談ください
               </h2>
               <p className="text-[#666] text-[0.95rem] leading-[2] mb-10 font-light">
-                ご不明な点やご質問がございましたら、<br className="md:hidden" />お気軽にお問い合わせください。
+                ご不明な点やご質問がございましたら、お気軽にお問い合わせください。
               </p>
               <ArrowLink href="/contact">
                 Contact Us

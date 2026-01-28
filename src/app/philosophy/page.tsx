@@ -31,7 +31,7 @@ export default function PhilosophyPage() {
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: 'url(/images/AdobeStock_1597965362_Preview.jpeg)',
+              backgroundImage: 'url(/images/AdobeStock_1597965362.jpeg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               opacity: 0.12,
@@ -87,7 +87,7 @@ export default function PhilosophyPage() {
         >
           <div className="max-w-[1100px] mx-auto">
             <FadeIn>
-              <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">Mission / Vision / Value（MVV）</p>
+              <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">Mission / Vision / Value</p>
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-8 md:mb-12">
@@ -103,7 +103,7 @@ export default function PhilosophyPage() {
                   <div
                     className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer"
                     style={{
-                      backgroundImage: 'url(/images/AdobeStock_1816208131_Preview.jpeg)',
+                      backgroundImage: 'url(/images/AdobeStock_1816208131.jpeg)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                     }}
@@ -116,7 +116,7 @@ export default function PhilosophyPage() {
                       </h3>
                       <p className="text-[0.8rem] text-white/60 mb-4">輝き</p>
                       <p className="text-[0.85rem] leading-[1.9] text-white/80 font-normal text-left">
-                        recuere®は、一人ひとりの本質的な輝きを引き出し、意思決定と行動を通して、現実を前に進めるための伴走を行います。
+                        recuereは、一人ひとりの本質的な輝きを引き出し、意思決定と行動を通して、現実を前に進めるための伴走を行います。
                       </p>
                     </div>
                   </div>
@@ -129,7 +129,7 @@ export default function PhilosophyPage() {
                   <div
                     className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer"
                     style={{
-                      backgroundImage: 'url(/images/AdobeStock_770224949_Preview.jpeg)',
+                      backgroundImage: 'url(/images/AdobeStock_770224949.jpeg)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                     }}
@@ -155,7 +155,7 @@ export default function PhilosophyPage() {
                   <div
                     className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer"
                     style={{
-                      backgroundImage: 'url(/images/AdobeStock_1718433882_Preview.jpeg)',
+                      backgroundImage: 'url(/images/AdobeStock_1718433882.jpeg)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                     }}
@@ -168,7 +168,7 @@ export default function PhilosophyPage() {
                       </h3>
                       <p className="text-[0.8rem] text-white/60 mb-4">信頼と最愛</p>
                       <p className="text-[0.85rem] leading-[1.9] text-white/80 font-normal text-left">
-                        recuere®が最も大切にしている価値は、関わる人との「信頼」と、その人生・選択・存在そのものを尊重する「最愛の姿勢」です。
+                        recuereが最も大切にしている価値は、関わる人との「信頼」と、その人生・選択・存在そのものを尊重する「最愛の姿勢」です。
                       </p>
                     </div>
                   </div>
@@ -201,53 +201,71 @@ export default function PhilosophyPage() {
             {/* 大きなタイトル */}
             <FadeIn delay={0.2}>
               <h3 className="text-[clamp(2rem,5vw,3.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-6 leading-[1.3]">
-                recuere®（リキュウレ®）について
+                <span style={{ fontFamily: "'Sweet Apricot', cursive" }}>recuere®</span><span className="text-[0.6em]">（リキュウレ®）について</span>
               </h3>
             </FadeIn>
 
-            {/* 数式風の表現 */}
+            {/* 数式風の表現 - PC版 */}
             <FadeIn delay={0.3}>
-              <div className="flex items-center gap-4 mb-10 flex-wrap">
-                <span className="text-[1.2rem] md:text-[1.4rem] font-light text-[#002d5a]">cue</span>
+              <div className="hidden md:flex items-center gap-4 mb-10 flex-wrap">
+                <span className="text-[1.4rem] font-light text-[#002d5a]">cue</span>
                 <span className="text-[0.75rem] text-[#888]">気づきのきっかけ</span>
                 <span className="text-[1.3rem] text-[#ccc]">+</span>
-                <span className="text-[1.2rem] md:text-[1.4rem] font-light text-[#002d5a]">re</span>
+                <span className="text-[1.4rem] font-light text-[#002d5a]">re</span>
                 <span className="text-[0.75rem] text-[#888]">再び・繰り返し</span>
                 <span className="text-[1.3rem] text-[#ccc]">=</span>
-                <span className="text-[1.4rem] md:text-[1.8rem] font-extralight text-[#333] tracking-wide">recuere</span>
+                <span className="text-[1.8rem] font-extralight text-[#333] tracking-wide">recuere</span>
+              </div>
+            </FadeIn>
+
+            {/* 数式風の表現 - SP版 */}
+            <FadeIn delay={0.3}>
+              <div className="md:hidden mb-10 space-y-4 text-center">
+                <div className="flex items-center justify-center gap-3">
+                  <span className="text-[1.3rem] font-light text-[#002d5a]">cue</span>
+                  <span className="text-[0.8rem] text-[#888]">＝ 気づきのきっかけ</span>
+                </div>
+                <div className="flex items-center justify-center gap-3">
+                  <span className="text-[1.3rem] font-light text-[#002d5a]">re</span>
+                  <span className="text-[0.8rem] text-[#888]">＝ 再び・繰り返し</span>
+                </div>
+                <div className="flex items-center justify-center gap-3 pt-4">
+                  <span className="text-[1.3rem] font-light text-[#002d5a]">cue + re</span>
+                  <span className="text-[0.8rem] text-[#888]">＝</span>
+                  <span className="text-[1.8rem] font-light text-[#002d5a]" style={{ fontFamily: "'Sweet Apricot', cursive" }}>recuere</span>
+                </div>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.4}>
-              <p className="text-[1rem] leading-[2.2] text-[#555] max-w-[650px] font-light">
+              <p className="text-[0.95rem] md:text-[1rem] leading-[2.2] text-[#555] max-w-[650px] font-light">
                 <strong className="font-medium">recuere®（リキュウレ®）</strong>は、心理学用語 cue（無意識に反応を引き起こす「気づきのきっかけ」）と、re（再び・繰り返し）を組み合わせた言葉です。
               </p>
             </FadeIn>
 
             <FadeIn delay={0.5}>
-              <p className="text-[0.95rem] leading-[2.2] text-[#777] mt-8 max-w-[650px] font-light">
+              <p className="text-[0.9rem] md:text-[0.95rem] leading-[2.2] text-[#777] mt-8 max-w-[650px] font-light">
                 人は、一度の気づきだけで変われるほど単純ではありません。だからこそ、立ち止まり、気づき直す瞬間が、人生や仕事の中で何度も必要だと、私たちは考えています。
               </p>
             </FadeIn>
 
             <FadeIn delay={0.6}>
-              <p className="text-[0.95rem] leading-[2.2] text-[#777] mt-6 max-w-[650px] font-light">
+              <p className="text-[0.9rem] md:text-[0.95rem] leading-[2.2] text-[#777] mt-6 max-w-[650px] font-light">
                 recuere®は、その節目ごとに、何度でも「気づきのきっかけ（cue）」を差し出し、自分らしい選択へとつながる時間を支える存在でありたい。
               </p>
             </FadeIn>
 
             <FadeIn delay={0.7}>
-              <p className="text-[0.95rem] leading-[2.2] text-[#666] mt-6 max-w-[650px] font-light">
+              <p className="text-[0.9rem] md:text-[0.95rem] leading-[2.2] text-[#666] mt-6 max-w-[650px] font-light">
                 気づきが一過性で終わらず、人が自分らしく、輝き続けるための伴走者であり続けたいと考えています。
               </p>
             </FadeIn>
           </div>
         </section>
 
-        {/* Contact CTA Section - スティッキーで迫り出す */}
+        {/* Contact CTA Section */}
         <section
-          className="md:sticky md:top-0 pt-[80px] md:pt-[140px] pb-[100px] md:pb-[200px] px-6 md:px-8 bg-white z-30 md:min-h-screen md:rounded-t-[60px]"
-          style={{ boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.1)' }}
+          className="relative pt-[80px] md:pt-[100px] pb-[60px] md:pb-[80px] px-6 md:px-8 bg-white z-40"
         >
           <div className="relative z-10 max-w-[800px] mx-auto text-center">
             <FadeIn>
@@ -260,9 +278,7 @@ export default function PhilosophyPage() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-[#666] leading-[2.2] mb-14 font-light text-[0.95rem]">
-                企業の課題整理から、個人の内面の整理まで。
-                <br />
-                目的に合わせて、最適な関わり方をご提案します。
+                企業の課題整理から、個人の内面の整理まで。<br className="hidden md:block" />目的に合わせて、最適な関わり方をご提案します。
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>

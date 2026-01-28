@@ -17,11 +17,10 @@ import { useMouseGlow } from '@/hooks/useMouseGlow';
 export default function ServicesPage() {
   const cardsRef = useRef<HTMLDivElement>(null);
 
-  // マウス追従グローエフェクト（3Dチルト付き）
+  // マウス追従グローエフェクト（3Dチルトなし）
   useMouseGlow(cardsRef, {
     selector: '.service-card',
-    enable3DTilt: true,
-    maxTilt: 8
+    enable3DTilt: false
   });
   return (
     <main className="bg-white">
@@ -29,21 +28,22 @@ export default function ServicesPage() {
       <div style={{ background: 'linear-gradient(180deg, #001a33 0%, #002d5a 30%, #004582 100%)' }}>
         {/* Hero Section - Session風の左寄せレイアウト */}
         <section className="relative min-h-[80vh] flex items-center pt-20 pb-32 px-8 overflow-hidden">
-          {/* 背景画像 */}
+          {/* 背景画像（ヒーローセクションのみ） */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0"
             style={{
-              backgroundImage: 'url(/images/business-hero.jpg)',
+              backgroundImage: 'url(/images/heroimage.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center top',
             }}
           />
-          {/* 画像を徐々に消すグラデーション */}
+          {/* グラデーションオーバーレイ */}
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
-              background: 'linear-gradient(180deg, rgba(0,20,40,0.4) 0%, rgba(0,26,51,0.5) 30%, rgba(0,45,90,0.75) 60%, #002d5a 100%)',
+              background: 'linear-gradient(180deg, rgba(0,26,51,0.3) 0%, rgba(0,45,90,0.5) 40%, rgba(0,45,90,0.8) 70%, #002d5a 100%)',
             }}
           />
-
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             <div className="md:ml-[10%]">
               <FadeIn>
@@ -90,14 +90,14 @@ export default function ServicesPage() {
           <div ref={cardsRef} className="grid lg:grid-cols-2 gap-6 mb-20">
             {/* Card 1 - 経営コンサルティング／意思決定支援 */}
             <FadeIn delay={0.1}>
-              <article className="service-card group rounded-lg cursor-pointer h-full">
-                <div className="card-content p-6 md:p-10 lg:p-12 h-full">
-                  <p className="tracking-[0.5em] text-[0.65rem] text-white/40 mb-4 uppercase font-medium">01</p>
+              <article className="bg-white/10 backdrop-blur-sm rounded-lg h-full border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <div className="p-6 md:p-10 lg:p-12 h-full">
+                  <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">01</p>
                   <h3 className="text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[-0.02em] font-extralight mb-2 text-white">
                     経営コンサルティング／意思決定支援
                   </h3>
-                  <p className="text-white/40 text-[0.8rem] mb-4">（企業・組織向け）</p>
-                  <p className="text-white/60 leading-[2] mb-8 text-[0.95rem] font-light">
+                  <p className="text-white/60 text-[0.8rem] mb-4">（企業・組織向け）</p>
+                  <p className="text-white/80 leading-[2] mb-8 text-[0.95rem] font-light">
                     経営者・幹部の意思決定に伴走し、組織・事業・人の流れを整理しながら、中長期視点で現実を動かしていきます。
                   </p>
                 </div>
@@ -106,13 +106,13 @@ export default function ServicesPage() {
 
             {/* Card 2 - 業界特化型経営支援（歯科・医療） */}
             <FadeIn delay={0.3}>
-              <article className="service-card group rounded-lg cursor-pointer h-full">
-                <div className="card-content p-6 md:p-10 lg:p-12 h-full">
-                  <p className="tracking-[0.5em] text-[0.65rem] text-white/40 mb-4 uppercase font-medium">02</p>
+              <article className="bg-white/10 backdrop-blur-sm rounded-lg h-full border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <div className="p-6 md:p-10 lg:p-12 h-full">
+                  <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">02</p>
                   <h3 className="text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[-0.02em] font-extralight mb-4 text-white">
                     業界特化型経営支援（歯科・医療）
                   </h3>
-                  <p className="text-white/60 leading-[2] mb-8 text-[0.95rem] font-light">
+                  <p className="text-white/80 leading-[2] mb-8 text-[0.95rem] font-light">
                     歯科・医療業界で培った実践を活かし、院長の意思決定に寄り添いながら、医院経営・組織運営・人材の課題を整理し、医院のステージを一段引き上げる支援を行います。
                   </p>
                 </div>
@@ -121,13 +121,13 @@ export default function ServicesPage() {
 
             {/* Card 3 - 人材育成・研修／伴走支援 */}
             <FadeIn delay={0.5}>
-              <article className="service-card group rounded-lg cursor-pointer h-full">
-                <div className="card-content p-6 md:p-10 lg:p-12 h-full">
-                  <p className="tracking-[0.5em] text-[0.65rem] text-white/40 mb-4 uppercase font-medium">03</p>
+              <article className="bg-white/10 backdrop-blur-sm rounded-lg h-full border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <div className="p-6 md:p-10 lg:p-12 h-full">
+                  <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">03</p>
                   <h3 className="text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[-0.02em] font-extralight mb-4 text-white">
                     人材育成・研修／伴走支援
                   </h3>
-                  <p className="text-white/60 leading-[2] mb-8 text-[0.95rem] font-light">
+                  <p className="text-white/80 leading-[2] mb-8 text-[0.95rem] font-light">
                     組織の方針と個々の役割をつなぎ、人が育ち、チームが機能するための実践的な研修と伴走支援を行います。
                   </p>
                 </div>
@@ -136,19 +136,19 @@ export default function ServicesPage() {
 
             {/* Card 4 - 経営者向け意思決定コーチング */}
             <FadeIn delay={0.7}>
-              <article className="service-card group rounded-lg cursor-pointer h-full">
-                <div className="card-content p-6 md:p-10 lg:p-12 h-full">
-                  <p className="tracking-[0.5em] text-[0.65rem] text-white/40 mb-4 uppercase font-medium">04</p>
+              <article className="bg-white/10 backdrop-blur-sm rounded-lg h-full border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <div className="p-6 md:p-10 lg:p-12 h-full">
+                  <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">04</p>
                   <h3 className="text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[-0.02em] font-extralight mb-4 text-white">
                     経営者向け意思決定コーチング
                   </h3>
-                  <p className="text-white/40 text-[0.85rem] mb-4 italic">
+                  <p className="text-white/60 text-[0.85rem] mb-4 italic">
                     判断力が、組織の未来をつくる
                   </p>
-                  <p className="text-white/60 leading-[2] mb-4 text-[0.95rem] font-light">
+                  <p className="text-white/80 leading-[2] mb-4 text-[0.95rem] font-light">
                     経営者自身の思考・判断のクセを整理し、本質的な意思決定ができる状態をつくる伴走型コーチングです。
                   </p>
-                  <p className="text-white/50 leading-[2] text-[0.9rem] font-light">
+                  <p className="text-white/60 leading-[2] text-[0.9rem] font-light">
                     判断が変わることで、組織の流れや成果が自然と変わっていきます。
                   </p>
                 </div>
@@ -215,9 +215,7 @@ export default function ServicesPage() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-white/70 leading-[2.0] mb-12">
-              企業の課題整理から、個人の内面の整理まで。
-              <br />
-              目的に合わせて、最適な関わり方をご提案します。
+              企業の課題整理から、個人の内面の整理まで。<br className="hidden md:block" />目的に合わせて、最適な関わり方をご提案します。
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>

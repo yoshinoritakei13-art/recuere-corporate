@@ -13,13 +13,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white">
+    <footer className="bg-white relative z-50">
       {/* 上部: ロゴ + ナビゲーション */}
       <div className="max-w-[1200px] mx-auto px-8 py-16">
         <div className="flex flex-col md:flex-row justify-between gap-12 relative">
           {/* 左側: ロゴ + 説明 */}
           <div>
-            <p className="text-xl font-normal tracking-[0.08em] text-[#333] mb-4">
+            <p className="text-xl font-normal tracking-[0.08em] text-[#333] mb-4" style={{ fontFamily: "'Sweet Apricot', cursive" }}>
               recuere®
             </p>
             <p className="text-[0.85rem] leading-[1.8] text-[#666] mb-6">
@@ -82,12 +82,29 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* 下部: コピーライト */}
+      {/* 下部: 法的リンク + コピーライト */}
       <div className="border-t border-[#eee]">
         <div className="max-w-[1200px] mx-auto px-8 py-6">
-          <p className="text-[0.7rem] text-[#999]">
-            &copy; {currentYear} recuere Inc. All Rights Reserved.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <div className="flex gap-4 text-[0.8rem] text-[#555]">
+              <Link
+                href="/legal"
+                className="hover:text-[#555] transition-colors duration-300"
+              >
+                特定商取引法に基づく表記
+              </Link>
+              <span className="text-[#ddd]">|</span>
+              <Link
+                href="/privacy"
+                className="hover:text-[#555] transition-colors duration-300"
+              >
+                プライバシーポリシー
+              </Link>
+            </div>
+            <p className="text-[0.7rem] text-[#999]">
+              &copy; {currentYear} recuere All Rights Reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

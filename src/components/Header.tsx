@@ -9,8 +9,9 @@ import Image from 'next/image';
    ======================================== */
 
 const MENU_ITEMS = [
+  { href: '/', label: 'Top' },
   { href: '/company', label: 'Company' },
-  { href: '/philosophy', label: 'Philosophy' },
+  { href: '/philosophy', label: 'Mission' },
   { href: '/services', label: 'Services' },
   { href: '/session', label: 'Session' },
   { href: '/hypnotherapy', label: 'Hypnotherapy' },
@@ -46,12 +47,12 @@ function Logo() {
 /** デスクトップナビゲーション */
 function DesktopNav() {
   return (
-    <nav className="flex gap-8 items-center max-md:hidden">
+    <nav className="flex gap-5 items-center max-md:hidden">
       {MENU_ITEMS.map((item) => (
         <Link
           key={item.href}
           href={item.href}
-          className="text-[0.8rem] tracking-[0.1em] font-normal text-foreground/70 transition-colors duration-300 hover:text-primary uppercase"
+          className="text-[0.75rem] tracking-[0.05em] font-normal text-foreground/70 transition-colors duration-300 hover:text-primary uppercase"
         >
           {item.label}
         </Link>
@@ -79,20 +80,27 @@ function HamburgerButton({
       aria-expanded={isOpen}
     >
       {isOpen && (
-        <span className="text-[0.75rem] tracking-[0.15em] text-[#333]/60 uppercase">
+        <span className="text-[0.65rem] tracking-[0.15em] text-[#333]/60 uppercase">
           Close
         </span>
       )}
-      <div className="flex flex-col justify-center items-center w-8 h-8 gap-1.5">
-        <span
-          className={`${lineBaseClass} ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`}
-        />
-        <span
-          className={`${lineBaseClass} ${isOpen ? 'opacity-0' : ''}`}
-        />
-        <span
-          className={`${lineBaseClass} ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}
-        />
+      <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center w-8 h-8 gap-1.5">
+          <span
+            className={`${lineBaseClass} ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`}
+          />
+          <span
+            className={`${lineBaseClass} ${isOpen ? 'opacity-0' : ''}`}
+          />
+          <span
+            className={`${lineBaseClass} ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}
+          />
+        </div>
+        {!isOpen && (
+          <span className="text-[0.55rem] tracking-[0.1em] text-[#333]/60 uppercase -mt-1">
+            Menu
+          </span>
+        )}
       </div>
     </button>
   );
@@ -108,11 +116,41 @@ function MobileMenuOverlay({
 }) {
   return (
     <div
-      className={`fixed inset-0 z-[99] bg-[#1a1a2e] md:hidden transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[99] md:hidden transition-opacity duration-300 ${
         isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
       }`}
     >
-      <div className="flex flex-col justify-center h-full px-8">
+      {/* ベースのダーク背景 */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, #1a1a2e 0%, #0f0f1a 50%, #050510 100%)',
+        }}
+      />
+      {/* 背景画像（hero-bg.jpg） */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: 'url(/images/heroimage.jpg)',
+          filter: 'saturate(0.4)',
+        }}
+      />
+      {/* 白オーバーレイで明るく */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'rgba(255,255,255,0.25)',
+        }}
+      />
+      {/* 中央の光 */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.5) 30%, rgba(255,255,255,0.2) 50%, transparent 70%)',
+          filter: 'blur(50px)',
+        }}
+      />
+      <div className="relative flex flex-col justify-center h-full px-8">
         {/* ナビゲーションリンク */}
         <nav>
           <ul className="grid gap-y-3">
@@ -128,7 +166,8 @@ function MobileMenuOverlay({
               >
                 <Link
                   href={item.href}
-                  className="block text-[1.8rem] font-light text-white tracking-[0.02em] py-2 hover:text-white/80 transition-colors"
+                  className="block text-[1.8rem] font-light tracking-[0.02em] py-2 hover:opacity-80 transition-opacity"
+                  style={{ color: '#1a1a2e' }}
                   onClick={onClose}
                 >
                   {item.label}
@@ -147,11 +186,8 @@ function MobileMenuOverlay({
             transitionDelay: `${ANIMATION_BASE_DELAY + MENU_ITEMS.length * ANIMATION_ITEM_DELAY}ms`,
           }}
         >
-          <p className="text-[0.75rem] text-white/40 tracking-[0.05em]">
-            recuere Inc.
-          </p>
-          <p className="text-[0.75rem] text-white/40 tracking-[0.05em]">
-            Tokyo, JAPAN
+          <p className="text-[0.75rem] text-[#1a1a2e]/50 tracking-[0.05em]">
+            recuere
           </p>
         </div>
       </div>

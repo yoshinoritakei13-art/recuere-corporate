@@ -86,8 +86,8 @@ function PhilosophyMobile() {
       </FadeIn>
 
       <FadeIn delay={0.15}>
-        <h2 className="font-sans text-[1.5rem] tracking-[0.02em] font-bold leading-[1.6] text-[#333] mb-3">
-          気づきから、<br />豊かさへ。
+        <h2 className="font-sans text-[1.5rem] tracking-[0.02em] !font-bold leading-[1.6] text-[#333] mb-3" style={{ fontWeight: 700 }}>
+          気づきから、豊かさへ。
         </h2>
       </FadeIn>
 
@@ -119,20 +119,16 @@ function PhilosophyMobile() {
 /** Services Section - 浮遊画像（デスクトップのみ） */
 function ServicesFloatingImages() {
   return (
-    <div className="absolute inset-0 z-[10] pointer-events-none hidden lg:block">
-      {/* 左エリア - ビル写真 */}
-      <FadeIn delay={0.6} direction="up" duration={1.2}>
-        <div className="absolute top-[40%] left-[2%] animate-poyopoyo-slow">
-          <BlobImage imageSrc="/images/S__69246981.jpg" size={280} direction="left" disableScrollEffect />
-        </div>
-      </FadeIn>
+    <div className="absolute inset-0 z-[2] pointer-events-none hidden lg:block">
+      {/* 左エリア - ビル写真（vwでレスポンシブ対応） */}
+      <div className="absolute top-[50%] -translate-y-1/2 left-[2%] animate-poyopoyo-slow" style={{ width: 'clamp(160px, 18vw, 380px)', height: 'clamp(160px, 18vw, 380px)' }}>
+        <BlobImage imageSrc="/images/S__69246981.jpg" size="100%" direction="left" disableScrollEffect />
+      </div>
 
-      {/* 右エリア */}
-      <FadeIn delay={0.9} direction="up" duration={1.2}>
-        <div className="absolute bottom-[10%] right-[3%] animate-poyopoyo-slow" style={{ animationDelay: '1s' }}>
-          <BlobImage imageSrc="/images/s7.jpg" size={280} direction="right" imagePosition="top" disableScrollEffect />
-        </div>
-      </FadeIn>
+      {/* 右エリア（vwでレスポンシブ対応） */}
+      <div className="absolute top-[50%] -translate-y-1/2 right-[2%] animate-poyopoyo-slow" style={{ width: 'clamp(160px, 18vw, 380px)', height: 'clamp(160px, 18vw, 380px)', animationDelay: '1s' }}>
+        <BlobImage imageSrc="/images/s7.jpg" size="100%" direction="right" imagePosition="top" disableScrollEffect imageScale={0.6} />
+      </div>
     </div>
   );
 }
@@ -224,16 +220,16 @@ export default function HomePage() {
            ======================================== */}
         <section
           data-snap-section
-          className="relative min-h-screen flex flex-col justify-center pt-[80px] pb-[40px] px-8 max-md:pt-[60px] max-md:pb-[20px] overflow-hidden"
+          className="relative md:min-h-screen flex flex-col justify-center pt-[80px] pb-[40px] px-8 max-md:pt-[60px] max-md:pb-[20px] overflow-hidden"
         >
           {/* 白グラデーションオーバーレイ */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background: `linear-gradient(180deg,
-                rgba(255,255,255,0.5) 0%,
-                rgba(255,255,255,0.6) 20%,
-                rgba(255,255,255,0.75) 40%,
+                rgba(255,255,255,0.45) 0%,
+                rgba(255,255,255,0.55) 20%,
+                rgba(255,255,255,0.7) 40%,
                 rgba(255,255,255,0.85) 60%,
                 rgba(255,255,255,0.95) 80%,
                 rgba(255,255,255,1) 100%
@@ -267,12 +263,61 @@ export default function HomePage() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <h2 className="font-serif text-[clamp(1.6rem,3vw,2.4rem)] tracking-[0.02em] font-medium leading-[1.5] mb-10">
-                <span className="services-gradient-text">目的に応じた、二つのアプローチ</span>
+              <h2 className="font-serif text-[clamp(1.8rem,3vw,2.4rem)] tracking-[0.02em] font-medium leading-[1.5] mb-10">
+                <span className="services-gradient-text">目的に応じた、<br className="md:hidden" />二つのアプローチ</span>
               </h2>
             </FadeIn>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* SP版: カード内に写真配置（くわしく見るの横） */}
+            <div className="lg:hidden space-y-6">
+              <FadeIn delay={0.2} direction="up" duration={1}>
+                <article className="bg-white/95 backdrop-blur-sm p-6 border border-[#eee] shadow-sm">
+                  <div
+                    className="h-[2px] w-12 mb-4"
+                    style={{ background: 'linear-gradient(to right, var(--color-primary), var(--color-tertiary))' }}
+                  />
+                  <h3 className="text-[1.3rem] tracking-[0.01em] font-normal mb-3 text-[#333]">企業向けサービス</h3>
+                  <p className="text-[#888] leading-[1.8] mb-4 text-[0.85rem]">経営の意思決定を、再現性ある仕組みへ。</p>
+                  <ul className="text-[#555] text-[0.85rem] leading-[2] mb-6 space-y-1">
+                    <li>経営コンサルティング</li>
+                    <li>医療法人・歯科医院向けコンサルティング</li>
+                    <li>プロジェクト遂行支援</li>
+                    <li>人材育成研修</li>
+                  </ul>
+                  <div className="flex items-start justify-between">
+                    <ArrowLink href="/services#business">くわしく見る</ArrowLink>
+                    <div className="animate-poyopoyo-slow -mt-16">
+                      <BlobImage imageSrc="/images/S__69246981.jpg" size={180} direction="left" disableScrollEffect />
+                    </div>
+                  </div>
+                </article>
+              </FadeIn>
+              <FadeIn delay={0.4} direction="up" duration={1}>
+                <article className="bg-white/95 backdrop-blur-sm p-6 border border-[#eee] shadow-sm">
+                  <div
+                    className="h-[2px] w-12 mb-4"
+                    style={{ background: 'linear-gradient(to right, var(--color-secondary), var(--color-accent))' }}
+                  />
+                  <h3 className="text-[1.3rem] tracking-[0.01em] font-normal mb-3 text-[#333]">個人向けサービス</h3>
+                  <p className="text-[#888] leading-[1.8] mb-4 text-[0.85rem]">本当の願いに気づき、行動が自然に続く状態へ。</p>
+                  <ul className="text-[#555] text-[0.85rem] leading-[2] mb-6 space-y-1">
+                    <li>Personal Awakening Session</li>
+                    <li>Hypnotherapy（催眠療法）</li>
+                    <li>Branding Awakening Session</li>
+                    <li>Personal Coaching</li>
+                  </ul>
+                  <div className="flex items-start justify-between">
+                    <ArrowLink href="/session">くわしく見る</ArrowLink>
+                    <div className="animate-poyopoyo-slow -mt-16" style={{ animationDelay: '1s' }}>
+                      <BlobImage imageSrc="/images/s7.jpg" size={180} direction="right" imagePosition="top" disableScrollEffect imageScale={0.6} />
+                    </div>
+                  </div>
+                </article>
+              </FadeIn>
+            </div>
+
+            {/* PC版: 2カラムグリッド */}
+            <div className="hidden lg:grid lg:grid-cols-2 gap-6">
               <ServiceCard
                 title="企業向けサービス"
                 description="経営の意思決定を、再現性ある仕組みへ。"
@@ -337,18 +382,27 @@ export default function HomePage() {
               </p>
             </FadeIn>
 
-            {/* モバイル版 */}
-            <div className="md:hidden flex flex-col items-center">
-              <FadeIn delay={0.2} direction="up" duration={0.8}>
-                <BlobImage
-                  imageSrc="/images/rinosan2.jpg"
-                  size={200}
-                  direction="left"
-                  imagePosition="top"
-                />
-              </FadeIn>
-              <FadeIn delay={0.4} duration={0.8}>
-                <FounderProfileCard isMobile />
+            {/* モバイル版 - 写真をカード内上部中央に */}
+            <div className="md:hidden">
+              <FadeIn delay={0.2} duration={0.8}>
+                <div className="bg-white/90 backdrop-blur-sm p-6 text-center">
+                  <div className="flex justify-center mb-4">
+                    <BlobImage
+                      imageSrc="/images/rinosan2_2.png"
+                      size={160}
+                      direction="left"
+                      imagePosition="top"
+                      disableScrollEffect
+                    />
+                  </div>
+                  <h3 className="text-[1.5rem] tracking-[0.02em] font-light text-[#333] mb-2">
+                    たなか里乃
+                  </h3>
+                  <p className="text-[#666] tracking-[0.1em] text-[0.75rem] mb-6">
+                    経営コンサルタント・心理カウンセラー・ヒプノセラピスト
+                  </p>
+                  <ArrowLink href="/company#founder">プロフィールはこちらから</ArrowLink>
+                </div>
               </FadeIn>
             </div>
 
@@ -368,8 +422,8 @@ export default function HomePage() {
                   {/* りのさん写真（左上・メイン） */}
                   <FadeIn delay={0.3} direction="up" duration={1}>
                     <BlobImage
-                      imageSrc="/images/rinosan2.jpg"
-                      size={260}
+                      imageSrc="/images/rinosan2_2.png"
+                      size={220}
                       direction="left"
                       imagePosition="top"
                     />
@@ -379,10 +433,11 @@ export default function HomePage() {
                   <FadeIn delay={0.4} direction="up" duration={1}>
                     <div className="mt-32 animate-poyopoyo-slow">
                       <BlobImage
-                        imageSrc="/images/s1.jpg"
+                        imageSrc="/images/s7.jpg"
                         size={150}
                         direction="right"
                         imagePosition="top"
+                        imageScale={0.6}
                       />
                     </div>
                   </FadeIn>
@@ -406,7 +461,7 @@ export default function HomePage() {
         {/* ========================================
            Contact Section（スナップなし→Footerへ）
            ======================================== */}
-        <section className="relative py-[120px] px-8 max-md:py-[80px]">
+        <section className="relative py-[120px] px-8 max-md:py-[80px] bg-white">
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -433,9 +488,7 @@ export default function HomePage() {
 
             <FadeIn delay={0.2}>
               <p className="text-[#444] leading-[2.0] mb-12">
-                企業の課題整理から、個人の内面の整理まで。
-                <br />
-                目的に合わせて、最適な関わり方をご提案します。
+                企業の課題整理から、個人の内面の整理まで。<br className="hidden md:block" />目的に合わせて、最適な関わり方をご提案します。
               </p>
             </FadeIn>
 

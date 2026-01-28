@@ -4,12 +4,13 @@ import { useEffect, useRef, useState, useId } from 'react';
 
 interface BlobImageProps {
   imageSrc: string;
-  size?: number;
+  size?: number | string; // 数値(px)または文字列('100%'など)
   className?: string;
   speed?: number; // スクロール追従の速度
   direction?: 'right' | 'left'; // 入ってくる方向
   imagePosition?: 'center' | 'top' | 'bottom'; // 画像の表示位置
   disableScrollEffect?: boolean; // スクロール追従を無効にする
+  imageScale?: number; // 画像のスケール（0.5〜1.0で引きに、デフォルト1.0）
 }
 
 export default function BlobImage({
@@ -20,6 +21,7 @@ export default function BlobImage({
   direction = 'right',
   imagePosition = 'center',
   disableScrollEffect = false,
+  imageScale = 1.0,
 }: BlobImageProps) {
   const uniqueId = useId();
   const clipId = `blobClip-${uniqueId.replace(/:/g, '')}`;
@@ -145,11 +147,11 @@ export default function BlobImage({
         <g className={`blob-image-wrapper ${isVisible ? 'visible' : ''}`}>
           <image
             href={imageSrc}
-            x="-50"
-            y={imagePosition === 'top' ? '-50' : imagePosition === 'bottom' ? '-50' : '-50'}
-            width="300"
-            height="300"
-            preserveAspectRatio="xMidYMid meet"
+            x={-50 - (300 * (imageScale - 1) / 2)}
+            y={-50 - (300 * (imageScale - 1) / 2)}
+            width={300 * imageScale}
+            height={300 * imageScale}
+            preserveAspectRatio="xMidYMid slice"
             clipPath={`url(#${clipId})`}
             className="blob-image"
           />

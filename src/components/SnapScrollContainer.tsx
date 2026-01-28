@@ -11,6 +11,7 @@ const SCROLL_COOLDOWN = 600;
 const TOUCH_THRESHOLD = 100;
 const SCROLL_COMPLETE_DELAY = 300;
 const WHEEL_THRESHOLD = 30; // ホイールの最小deltaY
+const MOBILE_BREAKPOINT = 768; // SP版のブレークポイント
 
 /* ========================================
    Types
@@ -136,6 +137,11 @@ export default function SnapScrollContainer({ children }: SnapScrollContainerPro
      ---------------------------------------- */
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
+      // SP版では通常スクロール
+      if (window.innerWidth < MOBILE_BREAKPOINT) {
+        return;
+      }
+
       const sections = sectionsRef.current;
       if (sections.length === 0) return;
 
@@ -192,6 +198,11 @@ export default function SnapScrollContainer({ children }: SnapScrollContainerPro
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
+      // SP版では通常スクロール
+      if (window.innerWidth < MOBILE_BREAKPOINT) {
+        return;
+      }
+
       const sections = sectionsRef.current;
       if (sections.length === 0 || isScrolling.current) return;
 

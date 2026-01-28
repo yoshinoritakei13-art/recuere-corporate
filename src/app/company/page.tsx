@@ -16,7 +16,7 @@ import { useMouseGlow } from '@/hooks/useMouseGlow';
 // 経歴データ
 const career = [
   '元大手外資系メーカーに35年勤務',
-  '2022年9月　recuere 開業',
+  '2022年9月　recuere　開業',
 ];
 
 // 資格・所属団体データ
@@ -24,12 +24,18 @@ const qualifications = [
   '日本能力開発推進協会　メンタル心理カウンセラー資格取得',
   '日本能力開発推進協会　上級心理カウンセラー資格取得',
   '自己肯定感アカデミー/torie　アドラー流メンタルコーチ資格取得',
-  '日本ヒプノセラピーアカデミー ヒプノセラピープロフェッショナル資格取得（米国催眠療法協会認定会員/インストラクター/臨床会員 ABHタスクリーダー）',
-  'ボイジャー　国際認定トレーナー',
-  'ボイジャー　国際認定インストラクター',
-  'グロービス経営大学院　経営学修士（MBA）取得',
-  'SJCD（Society of Japan Clinical Dentistry）会員',
+  '自己肯定感アカデミー/torie　アドラー流ライフデザイン診断士資格取得',
+  '米国催眠療法協会　認定員',
+  '日本臨床歯科学会（SJCD）会員',
+  '医療機器販売管理者および賃貸管理者講習　【高度管理医療機器等】修了',
+  'グロービスマネジメントスクール：ベンチャーマネジメントコース修了（主要＋関連科目修了）（現グロービス経営大学院）',
+  'ジェームス・ワンレス公認ボイジャータロット 国際認定講座　基礎・アドバンスクラス受講修了',
+  '日本ヒプノセラピーアカデミー 認定 基礎講座インストラクター、認定 前世療法講座修了、認定 年齢退行療法講座、心身緩和療法講座',
+  'ACU (Academy of Universe Code)　コンシャスネスアストロロジー LEVEL 1、2 修了',
 ];
+
+// 肩書き
+const title = 'コンサルタント、上級心理カウンセラー、ヒプノセラピスト';
 
 export default function CompanyPage() {
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -69,7 +75,7 @@ export default function CompanyPage() {
         </section>
 
         {/* Company Info Section - 白背景 / スティッキー */}
-        <section className="sticky top-0 py-[80px] px-8 max-md:py-[60px] z-10 bg-white" ref={cardsRef}>
+        <section className="sticky top-0 py-[60px] px-8 md:py-[80px] z-10 bg-white" ref={cardsRef}>
           <div className="max-w-[900px] mx-auto">
             <FadeIn>
               <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-12 uppercase font-medium">Overview</p>
@@ -129,18 +135,34 @@ export default function CompanyPage() {
           </div>
         </section>
 
-        {/* Founderへのアンカー用 */}
-        <div id="founder" className="relative top-[400px] md:top-[850px]" />
+        {/* スペーサー（Overviewを最後まで見せるため） */}
+        <div className="h-[900px] md:h-[500px]" />
+        <div id="founder" className="relative top-[500px] md:top-[850px]" />
 
-        {/* Founder Section - ネイビー背景 / PC版のみスティッキー */}
-        {/* PC版: top-[70vh]で会社情報が十分読めてからせり上がる / SP版: sticky無効 */}
+        {/* Founder Section - スティッキーで競り上がり */}
         <section
-          className="max-md:relative md:sticky md:top-[70vh] pt-[60px] pb-[180px] px-6 md:pt-[120px] md:pb-[1000px] md:px-8 bg-[#002d5a] rounded-t-[40px] md:rounded-t-[60px] z-20"
+          className="sticky top-[60vh] md:top-[70vh] pt-[60px] pb-[550px] px-6 md:pt-[120px] md:pb-[1000px] md:px-8 rounded-t-[40px] md:rounded-t-[60px] z-20 overflow-hidden"
           style={{
             boxShadow: '0 -20px 60px rgba(0, 45, 90, 0.3)',
           }}
         >
-          <div className="max-w-[900px] mx-auto">
+          {/* 背景画像 */}
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: 'url(/images/business-hero.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+          {/* ネイビーオーバーレイ（上は薄く、下は濃く） */}
+          <div
+            className="absolute inset-0 z-[1]"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(0, 45, 90, 0.4) 0%, rgba(0, 45, 90, 0.65) 50%, rgba(0, 45, 90, 0.75) 100%)',
+            }}
+          />
+          <div className="max-w-[900px] mx-auto relative z-[2]">
             {/* SP版: 画像（円形）→タイトル→テキスト */}
             <div className="md:hidden">
               <FadeIn>
@@ -166,8 +188,8 @@ export default function CompanyPage() {
 
               <FadeIn delay={0.2}>
                 <div className="text-center mb-8">
-                  <p className="text-white/50 tracking-[0.2em] text-[0.6rem] mb-2 uppercase">
-                    Management Consultant & Counselor
+                  <p className="text-white/50 tracking-[0.1em] text-[0.6rem] mb-2">
+                    コンサルタント、上級心理カウンセラー、ヒプノセラピスト
                   </p>
                   <h3 className="text-[2rem] tracking-[-0.02em] font-extralight text-white leading-[1.2]">
                     たなか里乃
@@ -245,7 +267,7 @@ export default function CompanyPage() {
                         <img
                           src="/images/rinosan2.jpg"
                           alt="代表 たなか里乃"
-                          className="w-full aspect-[3/4] object-cover"
+                          className="w-full aspect-[3/4] object-cover object-top"
                           loading="lazy"
                         />
                       </div>
@@ -255,8 +277,8 @@ export default function CompanyPage() {
                   {/* テキスト */}
                   <div className="flex-1">
                     <FadeIn delay={0.5} direction="up" duration={0.7}>
-                      <p className="text-white/50 tracking-[0.25em] text-[0.65rem] mb-4 uppercase">
-                        Management Consultant & Counselor
+                      <p className="text-white/50 tracking-[0.1em] text-[0.65rem] mb-4">
+                        コンサルタント、上級心理カウンセラー、ヒプノセラピスト
                       </p>
                     </FadeIn>
                     <FadeIn delay={0.6} direction="up" duration={0.7}>
@@ -314,8 +336,8 @@ export default function CompanyPage() {
           </div>
         </section>
 
-        {/* Contact CTA Section - 白背景 / PC版のみスティッキー */}
-        <section className="max-md:relative md:sticky md:top-[85vh] pt-[140px] pb-[200px] px-8 max-md:pt-[100px] max-md:pb-[150px] bg-white z-30 md:min-h-screen" style={{ boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.1)' }}>
+        {/* Contact CTA Section - スティッキーで競り上がり */}
+        <section className="sticky top-[50vh] md:top-[85vh] pt-[60px] pb-[60px] px-8 md:pt-[140px] md:pb-[80px] bg-white z-30" style={{ boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.1)' }}>
           <div className="relative z-10 max-w-[800px] mx-auto text-center">
             <FadeIn>
               <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-10 uppercase font-medium">Contact</p>
@@ -327,9 +349,7 @@ export default function CompanyPage() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-[#666] leading-[2.2] mb-14 font-light text-[0.95rem]">
-                企業の課題整理から、個人の内面の整理まで。
-                <br />
-                目的に合わせて、最適な関わり方をご提案します。
+                企業の課題整理から、個人の内面の整理まで。<br className="hidden md:block" />目的に合わせて、最適な関わり方をご提案します。
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
