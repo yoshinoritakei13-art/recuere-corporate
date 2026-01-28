@@ -52,11 +52,11 @@ export default function ContactCTA({
     ? sticky
       ? 'sticky top-[50vh] md:top-[85vh] pt-[60px] pb-[60px] px-8 md:pt-[140px] md:pb-[80px] bg-white z-30'
       : 'relative pt-[80px] md:pt-[100px] pb-[60px] md:pb-[80px] px-6 md:px-8 bg-white z-40'
-    : 'relative py-section-y px-8 max-md:py-section-y-sp overflow-hidden';
+    : 'relative py-[80px] md:py-[120px] px-8 overflow-hidden';
 
-  const labelColor = isLight ? 'text-navy' : 'text-white/50';
-  const titleColor = isLight ? 'text-text' : 'text-white';
-  const descColor = isLight ? 'text-text-muted' : 'text-white/70';
+  const labelColor = isLight ? 'text-[var(--color-navy)]' : 'text-white/50';
+  const titleColor = isLight ? 'text-[var(--color-text)]' : 'text-white';
+  const descColor = isLight ? 'text-[var(--color-text-muted)]' : 'text-white/70';
 
   return (
     <section
@@ -64,7 +64,12 @@ export default function ContactCTA({
       style={sticky ? { boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.1)' } : undefined}
     >
       {/* 青背景グラデーション（darkのみ） */}
-      {!isLight && <div className="absolute inset-0 bg-gradient-cta" />}
+      {!isLight && (
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(135deg, #002d5a 0%, #004582 50%, #1a5a8a 100%)' }}
+        />
+      )}
 
       <div className="relative z-10 max-w-[800px] mx-auto text-center">
         <FadeIn>

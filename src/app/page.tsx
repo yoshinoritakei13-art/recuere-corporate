@@ -459,9 +459,12 @@ export default function HomePage() {
         </section>
 
         {/* ========================================
-           Contact Section（スナップなし→Footerへ）
+           Contact Section
            ======================================== */}
-        <section className="relative py-[120px] px-8 max-md:py-[80px] bg-white">
+        <section
+          data-snap-section
+          className="relative py-[120px] px-8 max-md:py-[80px] bg-white"
+        >
           <div
             className="absolute inset-0 pointer-events-none"
             style={{

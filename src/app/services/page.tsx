@@ -25,14 +25,20 @@ export default function ServicesPage() {
   return (
     <main className="bg-white">
       {/* 全体を包む紺色背景のコンテナ */}
-      <div className="bg-gradient-navy">
+      <div style={{ background: 'linear-gradient(180deg, #001a33 0%, #002d5a 30%, #004582 100%)' }}>
         {/* Hero Section - Session風の左寄せレイアウト */}
         <section className="relative min-h-[80vh] flex items-center pt-20 pb-32 px-8 overflow-hidden">
           {/* 背景画像（ヒーローセクションのみ） */}
-          <div className="absolute inset-0 bg-hero-services bg-cover bg-[center_top]" />
+          <div
+            className="absolute inset-0 bg-cover bg-[center_top]"
+            style={{ backgroundImage: 'url(/images/heroimage.jpg)' }}
+          />
           {/* グラデーションオーバーレイ */}
-          <div className="absolute inset-0 bg-hero-overlay-navy" />
-          <div className="relative z-10 max-w-7xl mx-auto w-full">
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(180deg, rgba(0,26,51,0.3) 0%, rgba(0,45,90,0.5) 40%, rgba(0,45,90,0.8) 70%, #002d5a 100%)' }}
+          />
+          <div className="relative z-10 max-w-[1100px] mx-auto w-full">
             <div className="md:ml-[10%]">
               <FadeIn>
                 <p className="tracking-[0.5em] text-[0.65rem] text-white/60 mb-6 uppercase font-medium">Services</p>
@@ -55,7 +61,7 @@ export default function ServicesPage() {
 
         {/* Business Services - Main（境界線なしで自然に繋がる） */}
         <section className="relative pt-[60px] pb-[140px] px-8 max-md:pt-[40px] max-md:pb-[100px]" id="business">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <div className="md:ml-[10%] mb-16">
             <FadeIn>
               <p className="tracking-[0.5em] text-[0.65rem] text-white/60 mb-6 uppercase font-medium">Our Services</p>
@@ -147,7 +153,7 @@ export default function ServicesPage() {
           {/* 費用について - 白地カード */}
           <FadeIn delay={0.5}>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-12 p-8 bg-white rounded-lg">
-              <p className="text-body-lg tracking-wide-xs font-light text-text">
+              <p className="text-body-lg tracking-wide-xs font-light text-[var(--color-text)]">
                 企業向けコンサルティングはすべてオリジナル提案。課題・期間・体制により個別にお見積り。
               </p>
               <ArrowLink href="/contact">
@@ -161,14 +167,14 @@ export default function ServicesPage() {
 
       {/* Personal Session - 白背景 */}
       <section className="py-[60px] px-8 max-md:py-[40px] bg-white">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-8 bg-white rounded-lg">
             <div>
               <FadeIn>
-                <p className="tracking-wide-2xl text-label-xs mb-2 uppercase text-text">For Personal</p>
+                <p className="tracking-wide-2xl text-label-xs mb-2 uppercase text-[var(--color-text)]">For Personal</p>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h2 className="text-heading-sm font-light text-text">
+                <h2 className="text-heading-sm font-light text-[var(--color-text)]">
                   個人向けセッションをお探しの方へ
                 </h2>
               </FadeIn>

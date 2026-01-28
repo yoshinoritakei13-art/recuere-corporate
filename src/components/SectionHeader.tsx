@@ -42,9 +42,9 @@ export default function SectionHeader({
   const isCenter = align === 'center';
 
   // カラー定義
-  const labelColor = isLight ? 'text-navy' : 'text-white/60';
-  const titleColor = isLight ? 'text-text' : 'text-white';
-  const descColor = isLight ? 'text-text-muted' : 'text-white/70';
+  const labelColor = isLight ? 'text-[var(--color-navy)]' : 'text-white/60';
+  const titleColor = isLight ? 'text-[var(--color-text)]' : 'text-white';
+  const descColor = isLight ? 'text-[var(--color-text-muted)]' : 'text-white/70';
 
   return (
     <div className={`${isCenter ? 'text-center' : ''} ${className}`}>

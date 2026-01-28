@@ -81,13 +81,13 @@ export default function SessionPage() {
 
           <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
             <FadeIn className="md:ml-[10%]">
-              <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">Session</p>
-              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#333] mb-6">
+              <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-6 uppercase font-medium">Session</p>
+              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[var(--color-text)] mb-6">
                 心と向き合い、<br />
                 本来の自分を<br />
                 取り戻す
               </h1>
-              <p className="text-[#666] leading-[2] max-w-md font-light">
+              <p className="text-[var(--color-text-muted)] leading-[2] max-w-md font-light">
                 思考や感情に気づき、<br />
                 自分の意思と次の一歩を明確にするセッション
               </p>
@@ -103,16 +103,16 @@ export default function SessionPage() {
               {/* タイトル */}
               <div className="mb-8">
                 <div className="relative">
-                  <div className="text-[#002d5a]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
+                  <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
                     Awakening
                   </div>
-                  <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
+                  <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                     Awakening Session
                   </p>
-                  <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
+                  <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                     アウェイキング<br />セッション
                   </h2>
-                  <p className="text-[0.85rem] text-[#666] mt-2 relative z-10">（気づきのセッション）</p>
+                  <p className="text-[0.85rem] text-[var(--color-text-muted)] mt-2 relative z-10">（気づきのセッション）</p>
                 </div>
               </div>
 
@@ -158,16 +158,16 @@ export default function SessionPage() {
               {/* 左上：タイトル */}
               <div className="absolute -top-12 left-[10%] z-10">
                 <div className="relative">
-                  <FadeIn direction="clipReveal" delay={0} className="text-[#002d5a]/10 text-7xl lg:text-8xl font-extralight tracking-wider absolute -top-6 -left-2">
+                  <FadeIn direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-7xl lg:text-8xl font-extralight tracking-wider absolute -top-6 -left-2">
                     Awakening
                   </FadeIn>
-                  <FadeIn direction="clipReveal" delay={0.4} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-8">
+                  <FadeIn direction="clipReveal" delay={0.4} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-8">
                     Awakening Session
                   </FadeIn>
-                  <FadeIn direction="clipReveal" delay={0.8} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
+                  <FadeIn direction="clipReveal" delay={0.8} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                     アウェイキングセッション
                   </FadeIn>
-                  <FadeIn delay={1.0} className="text-[0.9rem] text-[#666] mt-2 relative z-10">
+                  <FadeIn delay={1.0} className="text-[0.9rem] text-[var(--color-text-muted)] mt-2 relative z-10">
                     （気づきのセッション）
                   </FadeIn>
                 </div>
@@ -223,10 +223,10 @@ export default function SessionPage() {
               <FadeIn>
                 <div className="bg-white/50 md:bg-white/50 md:backdrop-blur-md border border-gray-100 md:border-white/60 rounded-2xl p-5 md:p-8 max-w-5xl mx-auto">
                   <div className="relative mb-6 text-center">
-                    <p className="text-[#002d5a]/10 text-4xl md:text-5xl font-extralight tracking-wider">
+                    <p className="text-[var(--color-navy)]/10 text-4xl md:text-5xl font-extralight tracking-wider">
                       Price
                     </p>
-                    <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] uppercase font-medium relative z-10 -mt-5">料金表</p>
+                    <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] uppercase font-medium relative z-10 -mt-5">料金表</p>
                   </div>
                   {/* SP: 縦並び / PC: 3カラム横並び */}
                   <div className="grid grid-cols-1 md:grid-cols-3 md:divide-x divide-gray-200 md:divide-gray-300 gap-6 md:gap-0">
@@ -339,13 +339,13 @@ export default function SessionPage() {
             {/* SP版：タイトルを先に */}
             <div className="md:hidden mb-8">
               <div className="relative mb-6">
-                <div className="text-[#002d5a]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
+                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
                   Coaching
                 </div>
-                <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
+                <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                   Personal Coaching
                 </p>
-                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
+                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                   パーソナルコーチング<br />セッション
                 </h2>
               </div>
@@ -393,13 +393,13 @@ export default function SessionPage() {
                 <div className="md:pl-8">
                   {/* PC版のみタイトル表示 */}
                   <div className="relative mb-6 hidden md:block">
-                    <FadeIn direction="clipReveal" delay={0} className="text-[#002d5a]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
+                    <FadeIn direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
                       Coaching
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.3} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
+                    <FadeIn direction="clipReveal" delay={0.3} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                       Personal Coaching
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.6} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
+                    <FadeIn direction="clipReveal" delay={0.6} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                       パーソナルコーチングセッション
                     </FadeIn>
                   </div>
@@ -431,13 +431,13 @@ export default function SessionPage() {
             <div className="md:hidden">
               {/* タイトル */}
               <div className="relative mb-6">
-                <div className="text-[#002d5a]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
+                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
                   Hypno
                 </div>
-                <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
+                <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                   Hypnotherapy
                 </p>
-                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
+                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                   ヒプノセラピー
                 </h2>
               </div>
@@ -506,13 +506,13 @@ export default function SessionPage() {
               <FadeIn direction="left">
                 <div>
                   <div className="relative mb-6">
-                    <FadeIn direction="clipReveal" delay={0} className="text-[#002d5a]/10 text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
+                    <FadeIn direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
                       Hypno
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
+                    <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                       Hypnotherapy
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
+                    <FadeIn direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                       ヒプノセラピー
                     </FadeIn>
                   </div>
@@ -587,13 +587,13 @@ export default function SessionPage() {
             {/* SP版：タイトルを先に */}
             <div className="md:hidden mb-8">
               <div className="relative mb-6">
-                <div className="text-[#002d5a]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
+                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
                   Brand
                 </div>
-                <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
+                <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                   Branding
                 </p>
-                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
+                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                   ブランディング<br />構築セッション
                 </h2>
               </div>
@@ -605,13 +605,13 @@ export default function SessionPage() {
                 <div>
                   {/* PC版のみタイトル表示 */}
                   <div className="relative mb-6 hidden md:block">
-                    <FadeIn direction="clipReveal" delay={0} className="text-[#002d5a]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
+                    <FadeIn direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
                       Brand
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-3 uppercase font-medium relative z-10 pt-6">
+                    <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                       Branding
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.4} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] relative z-10">
+                    <FadeIn direction="clipReveal" delay={0.4} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                       ブランディング構築セッション
                     </FadeIn>
                   </div>
@@ -667,11 +667,11 @@ export default function SessionPage() {
         <section className="py-24 bg-white">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <FadeIn direction="scaleUp">
-              <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-8 uppercase font-medium">Contact</p>
-              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-6">
+              <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-8 uppercase font-medium">Contact</p>
+              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] mb-6">
                 まずはお気軽にご相談ください
               </h2>
-              <p className="text-[#666] text-[0.95rem] leading-[2] mb-10 font-light">
+              <p className="text-[var(--color-text-muted)] text-[0.95rem] leading-[2] mb-10 font-light">
                 ご不明な点やご質問がございましたら、お気軽にお問い合わせください。
               </p>
               <ArrowLink href="/contact">

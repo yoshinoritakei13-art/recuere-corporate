@@ -48,10 +48,26 @@
   --color-background: #EAF2F7;
   --color-foreground: #2C3E50;
 
+  /* Navy Palette - コーポレートカラー */
+  --color-navy: #002d5a;
+  --color-navy-dark: #001a33;
+  --color-navy-light: #1a5a8a;
+
+  /* Text Colors */
+  --color-text: #333;
+  --color-text-light: #555;
+  --color-text-muted: #666;
+  --color-text-faint: #888;
+  --color-text-pale: #999;
+
+  /* UI Colors */
+  --color-card-bg: #fafafa;
+  --color-border: #e5e5e5;
+  --color-border-light: #eee;
+
   /* Derived Colors */
   --color-primary-light: #2267A3;
   --color-text-secondary: #4A5568;
-  --color-text-muted: #718096;
 
   /* Background */
   --color-bg: #EAF2F7;
@@ -250,6 +266,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :focus-visible {
+  outline: none;
+}
+
+/* フォームなど入力要素のフォーカス */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible:not(nav button):not(header button) {
   outline: 2px solid var(--color-primary-light);
   outline-offset: 2px;
 }

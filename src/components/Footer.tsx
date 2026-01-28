@@ -1,83 +1,81 @@
+'use client';
+
 import Link from 'next/link';
 
 /**
  * Footer Component
  *
- * サイトフッター
- * - 左: ロゴ + 説明
- * - 右: ナビゲーションリンク（縦並び）
- * - 下部: 会社情報 + コピーライト
+ * 白背景のフッター
+ * - 左上: ロゴ
+ * - 左: MENUラベル + ナビリンク（縦並び）
+ * - 右上: ページトップへ戻るボタン
+ * - 下部: 法的リンク + コピーライト
  */
+
+const MENU_ITEMS = [
+  { href: '/', label: 'Top' },
+  { href: '/company', label: 'Company' },
+  { href: '/philosophy', label: 'Mission' },
+  { href: '/services', label: 'Services' },
+  { href: '/session', label: 'Session' },
+  { href: '/hypnotherapy', label: 'Hypnotherapy' },
+  { href: '/contact', label: 'Contact' },
+] as const;
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  return (
-    <footer className="bg-white relative z-50">
-      {/* 上部: ロゴ + ナビゲーション */}
-      <div className="max-w-[1200px] mx-auto px-8 py-16">
-        <div className="flex flex-col md:flex-row justify-between gap-12 relative">
-          {/* 左側: ロゴ + 説明 */}
-          <div>
-            <p className="text-xl font-normal tracking-[0.08em] text-[#333] mb-4" style={{ fontFamily: "'Sweet Apricot', cursive" }}>
-              recuere®
-            </p>
-            <p className="text-[0.85rem] leading-[1.8] text-[#666] mb-6">
-              気づきから、豊かさへ。<br />
-              人と組織の可能性を解き放つ
-            </p>
-          </div>
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-          {/* 中央: ナビゲーション（2列で縦並び） */}
-          <nav className="flex gap-12 md:absolute md:left-1/2 md:-translate-x-1/2">
-            {/* 左列 */}
-            <div className="flex flex-col gap-3">
+  return (
+    <footer className="relative z-50 bg-white">
+      {/* メインコンテンツ */}
+      <div className="max-w-[1200px] mx-auto px-8 pt-16 pb-12">
+        {/* 上部: ロゴ + トップへ戻るボタン */}
+        <div className="flex justify-between items-start mb-12">
+          <p
+            className="text-xl font-normal tracking-[0.08em] text-[#333]"
+            style={{ fontFamily: "'Sweet Apricot', cursive" }}
+          >
+            recuere®
+          </p>
+
+          {/* ページトップへ戻るボタン */}
+          <button
+            onClick={scrollToTop}
+            className="w-12 h-12 rounded-full border border-[#ddd] flex items-center justify-center text-[#999] hover:text-[#333] hover:border-[#999] transition-all duration-300"
+            aria-label="ページトップへ戻る"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 15l-6-6-6 6" />
+            </svg>
+          </button>
+        </div>
+
+        {/* メニュー */}
+        <div className="mb-16">
+          <p className="text-[0.7rem] tracking-[0.2em] text-[#999] uppercase mb-6">Menu</p>
+          <nav className="flex flex-col gap-3">
+            {MENU_ITEMS.map((item) => (
               <Link
-                href="/"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
+                key={item.href}
+                href={item.href}
+                className="text-[0.9rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
               >
-                Top
+                {item.label}
               </Link>
-              <Link
-                href="/company"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
-              >
-                Company
-              </Link>
-              <Link
-                href="/philosophy"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
-              >
-                Philosophy
-              </Link>
-              <Link
-                href="/services"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
-              >
-                Services
-              </Link>
-            </div>
-            {/* 右列 */}
-            <div className="flex flex-col gap-3">
-              <Link
-                href="/session"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
-              >
-                Session
-              </Link>
-              <Link
-                href="/hypnotherapy"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
-              >
-                Hypnotherapy
-              </Link>
-              <Link
-                href="/contact"
-                className="text-[0.85rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
-              >
-                Contact
-              </Link>
-            </div>
+            ))}
           </nav>
         </div>
       </div>
@@ -85,15 +83,14 @@ export default function Footer() {
       {/* 下部: 法的リンク + コピーライト */}
       <div className="border-t border-[#eee]">
         <div className="max-w-[1200px] mx-auto px-8 py-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-            <div className="flex gap-4 text-[0.8rem] text-[#555]">
+          <div className="flex flex-col gap-4">
+            <div className="flex gap-6 text-[0.75rem] text-[#888]">
               <Link
                 href="/legal"
                 className="hover:text-[#555] transition-colors duration-300"
               >
                 特定商取引法に基づく表記
               </Link>
-              <span className="text-[#ddd]">|</span>
               <Link
                 href="/privacy"
                 className="hover:text-[#555] transition-colors duration-300"
@@ -102,7 +99,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-[0.7rem] text-[#999]">
-              &copy; {currentYear} recuere All Rights Reserved.
+              &copy; {currentYear} recuere All rights reserved.
             </p>
           </div>
         </div>

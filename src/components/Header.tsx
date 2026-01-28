@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 /* ========================================
    Constants
@@ -46,17 +47,24 @@ function Logo() {
 
 /** デスクトップナビゲーション */
 function DesktopNav() {
+  const pathname = usePathname();
+
   return (
     <nav className="flex gap-5 items-center max-md:hidden">
-      {MENU_ITEMS.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className="text-[0.75rem] tracking-[0.05em] font-normal text-foreground/70 transition-colors duration-300 hover:text-primary uppercase"
-        >
-          {item.label}
-        </Link>
-      ))}
+      {MENU_ITEMS.map((item) => {
+        const isActive = pathname === item.href;
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`text-[0.75rem] tracking-[0.05em] font-normal transition-colors duration-300 hover:text-primary uppercase relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-foreground/70 after:transition-transform after:duration-300 after:origin-center ${
+              isActive ? 'text-foreground/90 after:scale-x-100' : 'text-foreground/70 after:scale-x-0'
+            }`}
+          >
+            {item.label}
+          </Link>
+        );
+      })}
     </nav>
   );
 }
