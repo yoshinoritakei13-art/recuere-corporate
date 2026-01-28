@@ -25,7 +25,7 @@ export default function ServicesPage() {
   return (
     <main className="bg-white">
       {/* 全体を包む紺色背景のコンテナ */}
-      <div style={{ background: 'linear-gradient(180deg, #001a33 0%, #002d5a 30%, #004582 100%)' }}>
+      <div className="bg-gradient-navy">
         {/* Hero Section - Session風の左寄せレイアウト */}
         <section className="relative min-h-[80vh] flex items-center pt-20 pb-32 px-8 overflow-hidden">
           {/* 背景画像（ヒーローセクションのみ） */}
@@ -159,7 +159,7 @@ export default function ServicesPage() {
           {/* 費用について - 白地カード */}
           <FadeIn delay={0.5}>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-12 p-8 bg-white rounded-lg">
-              <p className="text-[1rem] tracking-[0.02em] font-light" style={{ color: '#333' }}>
+              <p className="text-body-lg tracking-wide-xs font-light text-text">
                 企業向けコンサルティングはすべてオリジナル提案。課題・期間・体制により個別にお見積り。
               </p>
               <ArrowLink href="/contact">
@@ -177,10 +177,10 @@ export default function ServicesPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-8 bg-white rounded-lg">
             <div>
               <FadeIn>
-                <p className="tracking-[0.3em] text-[0.65rem] mb-2 uppercase" style={{ color: '#333' }}>For Personal</p>
+                <p className="tracking-wide-2xl text-label-xs mb-2 uppercase text-text">For Personal</p>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h2 className="text-[1.1rem] tracking-[0.02em] font-light" style={{ color: '#333' }}>
+                <h2 className="text-heading-sm font-light text-text">
                   個人向けセッションをお探しの方へ
                 </h2>
               </FadeIn>
@@ -197,12 +197,7 @@ export default function ServicesPage() {
       {/* Contact CTA - 青系 */}
       <section className="relative py-[140px] px-8 max-md:py-[100px] overflow-hidden">
         {/* 背景 */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, #002d5a 0%, #004582 50%, #1a5a8a 100%)',
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-cta" />
 
         <div className="relative z-10 max-w-[800px] mx-auto text-center">
           <FadeIn>
