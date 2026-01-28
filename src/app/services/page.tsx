@@ -1,9 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { useRef } from 'react';
 import FadeIn from '@/components/FadeIn';
 import ArrowLink from '@/components/ArrowLink';
+import ContactCTA from '@/components/ContactCTA';
 import { useMouseGlow } from '@/hooks/useMouseGlow';
 
 /**
@@ -195,31 +195,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Contact CTA - 青系 */}
-      <section className="relative py-[140px] px-8 max-md:py-[100px] overflow-hidden">
-        {/* 背景 */}
-        <div className="absolute inset-0 bg-gradient-cta" />
-
-        <div className="relative z-10 max-w-[800px] mx-auto text-center">
-          <FadeIn>
-            <p className="tracking-[0.3em] text-[0.7rem] text-white/50 mb-6 uppercase">Contact</p>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <h2 className="text-[clamp(1.4rem,3vw,2rem)] tracking-[-0.02em] font-extralight leading-[1.6] text-white mb-8">
-              まずは、お気軽にご相談ください
-            </h2>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <p className="text-white/70 leading-[2.0] mb-12">
-              企業の課題整理から、個人の内面の整理まで。<br className="hidden md:block" />目的に合わせて、最適な関わり方をご提案します。
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.3}>
-            <ArrowLink href="/contact" variant="light">
-              Contact Us
-            </ArrowLink>
-          </FadeIn>
-        </div>
-      </section>
+      <ContactCTA variant="dark" />
     </main>
   );
 }

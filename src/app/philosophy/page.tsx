@@ -1,11 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import FadeIn from '@/components/FadeIn';
 import FloatingParticles from '@/components/FloatingParticles';
 import TiltCard from '@/components/TiltCard';
 import AnimatedGradient from '@/components/AnimatedGradient';
-import ArrowLink from '@/components/ArrowLink';
+import ContactCTA from '@/components/ContactCTA';
 
 /**
  * Philosophy Page - recuere コーポレートサイト
@@ -264,30 +263,7 @@ export default function PhilosophyPage() {
         </section>
 
         {/* Contact CTA Section */}
-        <section
-          className="relative pt-[80px] md:pt-[100px] pb-[60px] md:pb-[80px] px-6 md:px-8 bg-white z-40"
-        >
-          <div className="relative z-10 max-w-[800px] mx-auto text-center">
-            <FadeIn>
-              <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-10 uppercase font-medium">Contact</p>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] font-extralight leading-[1.4] text-[#333] mb-10">
-                まずは、お気軽に<br className="md:hidden" />ご相談ください
-              </h2>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <p className="text-[#666] leading-[2.2] mb-14 font-light text-[0.95rem]">
-                企業の課題整理から、個人の内面の整理まで。<br className="hidden md:block" />目的に合わせて、最適な関わり方をご提案します。
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <ArrowLink href="/contact">
-                Contact Us
-              </ArrowLink>
-            </FadeIn>
-          </div>
-        </section>
+        <ContactCTA variant="light" className="z-40" />
       </div>
     </>
   );
