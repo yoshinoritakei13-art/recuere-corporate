@@ -147,7 +147,6 @@ export default function HeroAnimation() {
             <p className="text-[9px] tracking-[0.1em] font-medium italic" style={{ color: '#004582' }}>Sustainable Growth</p>
           </div>
 
-          
           {/* Center Text Sequence */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-30 flex flex-col items-center w-full">
             {/* 英語ロゴ (RECUERE) */}
@@ -191,7 +190,7 @@ export default function HeroAnimation() {
 
         {/* Scroll Indicator - ヒーロー内・中央下部・縦向き */}
         <div
-          className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-20 transition-all duration-1000 ${
+          className={`absolute bottom-[100px] max-md:bottom-[80px] left-1/2 -translate-x-1/2 z-20 transition-all duration-1000 ${
             isContentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >

@@ -69,14 +69,14 @@ export default function ServicesPage() {
 
         {/* Business Services - Main（境界線なしで自然に繋がる） */}
         <section className="relative pt-[60px] pb-[140px] px-8 max-md:pt-[40px] max-md:pb-[100px]" id="business">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[850px] mx-auto">
           <div className="md:ml-[10%] mb-16">
             <FadeIn>
               <p className="tracking-[0.5em] text-[0.65rem] text-white/60 mb-6 uppercase font-medium">Our Services</p>
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-white mb-6">
-                4つの専門的な視点を通じて、<br className="md:hidden" />
+                4つの専門的な視点を通じて、<br />
                 経営の意思決定と実行を支援します。
               </h2>
             </FadeIn>
@@ -96,11 +96,13 @@ export default function ServicesPage() {
                 <div className="p-6 md:p-10 lg:p-12 h-full">
                   <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">01</p>
                   <h3 className="text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[-0.02em] font-extralight mb-2 text-white">
-                    経営コンサルティング<br className="md:hidden" />／意思決定支援
+                    経営コンサルティング<br />／意思決定支援
                   </h3>
                   <p className="text-white/60 text-[0.8rem] mb-4">（企業・組織向け）</p>
                   <p className="text-white/80 leading-[2] mb-8 text-[0.95rem] font-light">
-                    経営者・幹部の意思決定に伴走し、組織・事業・人の流れを整理しながら、中長期視点で現実を動かしていきます。
+                    経営者・幹部の意思決定に伴走し、<br />
+                    組織・事業・人の流れを整理しながら、<br />
+                    中長期視点で現実を動かしていきます。
                   </p>
                 </div>
               </article>
@@ -112,10 +114,13 @@ export default function ServicesPage() {
                 <div className="p-6 md:p-10 lg:p-12 h-full">
                   <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">02</p>
                   <h3 className="text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[-0.02em] font-extralight mb-4 text-white">
-                    業界特化型経営支援（歯科・医療）
+                    業界特化型経営支援<br />（歯科・医療）
                   </h3>
                   <p className="text-white/80 leading-[2] mb-8 text-[0.95rem] font-light">
-                    歯科・医療業界で培った実践を活かし、院長の意思決定に寄り添いながら、医院経営・組織運営・人材の課題を整理し、医院のステージを一段引き上げる支援を行います。
+                    歯科・医療業界で培った実践を活かし、<br />
+                    院長の意思決定に寄り添いながら、<br />
+                    医院経営・組織運営・人材の課題を整理し、<br />
+                    医院のステージを一段引き上げます。
                   </p>
                 </div>
               </article>
@@ -127,10 +132,12 @@ export default function ServicesPage() {
                 <div className="p-6 md:p-10 lg:p-12 h-full">
                   <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">03</p>
                   <h3 className="text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[-0.02em] font-extralight mb-4 text-white">
-                    人材育成・研修／伴走支援
+                    人材育成・研修<br />／伴走支援
                   </h3>
                   <p className="text-white/80 leading-[2] mb-8 text-[0.95rem] font-light">
-                    組織の方針と個々の役割をつなぎ、人が育ち、チームが機能するための実践的な研修と伴走支援を行います。
+                    組織の方針と個々の役割をつなぎ、<br />
+                    人が育ち、チームが機能するための<br />
+                    実践的な研修と伴走支援を行います。
                   </p>
                 </div>
               </article>
@@ -142,16 +149,19 @@ export default function ServicesPage() {
                 <div className="p-6 md:p-10 lg:p-12 h-full">
                   <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">04</p>
                   <h3 className="text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[-0.02em] font-extralight mb-4 text-white">
-                    経営者向け意思決定コーチング
+                    経営者向け<br />意思決定コーチング
                   </h3>
-                  <p className="text-white/60 text-[0.85rem] mb-4 italic">
+                  <p className="text-white/60 text-[0.95rem] mb-4 italic">
                     判断力が、組織の未来をつくる
                   </p>
                   <p className="text-white/80 leading-[2] mb-4 text-[0.95rem] font-light">
-                    経営者自身の思考・判断のクセを整理し、本質的な意思決定ができる状態をつくる伴走型コーチングです。
+                    経営者自身の思考・判断のクセを整理し、<br />
+                    本質的な意思決定ができる状態をつくる<br />
+                    伴走型コーチングです。
                   </p>
-                  <p className="text-white/60 leading-[2] text-[0.9rem] font-light">
-                    判断が変わることで、組織の流れや成果が自然と変わっていきます。
+                  <p className="text-white/80 leading-[2] text-[0.95rem] font-light">
+                    判断が変わることで、<br />
+                    組織の流れや成果が自然と変わります。
                   </p>
                 </div>
               </article>
@@ -181,13 +191,16 @@ export default function ServicesPage() {
                 </div>
               </div>
               {/* テキストとリンク */}
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div className="flex flex-col gap-4">
                 <p className="text-body-lg tracking-wide-xs font-light text-[var(--color-text)]">
-                  企業向けコンサルティングはすべてオリジナル提案。課題・期間・体制により個別にお見積り。
+                  企業向けコンサルティングはすべてオリジナル提案。<br />
+                  課題・期間・体制により個別にお見積り。
                 </p>
-                <ArrowLink href="/contact">
-                  ご相談はこちら
-                </ArrowLink>
+                <div className="flex justify-end">
+                  <ArrowLink href="/contact">
+                    ご相談はこちら
+                  </ArrowLink>
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -197,11 +210,11 @@ export default function ServicesPage() {
 
       {/* Personal Session - 白背景 */}
       <section className="py-[60px] px-8 max-md:py-[40px] bg-white">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[850px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-8 bg-white rounded-lg">
             <div>
               <FadeIn>
-                <p className="tracking-wide-2xl text-label-xs mb-2 uppercase text-[var(--color-text)]">For Personal</p>
+                <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-2 uppercase">For Personal</p>
               </FadeIn>
               <FadeIn delay={0.1}>
                 <h2 className="text-heading-sm font-light text-[var(--color-text)]">

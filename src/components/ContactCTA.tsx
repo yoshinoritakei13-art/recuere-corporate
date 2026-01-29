@@ -73,7 +73,7 @@ export default function ContactCTA({
 
       <div className="relative z-10 max-w-[800px] mx-auto text-center">
         <FadeIn>
-          <p className={`tracking-wide-4xl text-label-xs ${labelColor} mb-10 uppercase font-medium`}>
+          <p className={`tracking-[0.3em] text-[0.7rem] ${labelColor} mb-10 uppercase`}>
             Contact
           </p>
         </FadeIn>

@@ -49,7 +49,7 @@ export default function SectionHeader({
   return (
     <div className={`${isCenter ? 'text-center' : ''} ${className}`}>
       <FadeIn delay={labelDelay}>
-        <p className={`tracking-wide-4xl text-label-xs ${labelColor} mb-6 uppercase font-medium`}>
+        <p className={`tracking-[0.3em] text-[0.7rem] ${labelColor} mb-6 uppercase`}>
           {label}
         </p>
       </FadeIn>

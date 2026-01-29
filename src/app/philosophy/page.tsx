@@ -39,7 +39,7 @@ export default function PhilosophyPage() {
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             <div className="md:ml-[10%]">
               <FadeIn>
-                <p className="tracking-wide-4xl text-label-xs text-[var(--color-navy)] mb-6 uppercase font-medium">Philosophy</p>
+                <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-6 uppercase">Philosophy</p>
               </FadeIn>
 
               {/* メインキャッチコピー */}
@@ -71,7 +71,7 @@ export default function PhilosophyPage() {
         <section className="relative z-10 bg-white py-[60px] md:py-[100px] px-6 md:px-8">
           <div className="max-w-[1100px] mx-auto">
             <FadeIn>
-              <p className="tracking-wide-4xl text-label-xs text-[var(--color-navy)] mb-6 uppercase font-medium">Mission / Vision / Value</p>
+              <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-6 uppercase">Mission / Vision / Value</p>
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] mb-8 md:mb-12">
@@ -153,7 +153,7 @@ export default function PhilosophyPage() {
 
           <div className="relative z-10 max-w-[800px] mx-auto">
             <FadeIn>
-              <p className="tracking-wide-4xl text-label-xs text-[var(--color-navy)] mb-8 uppercase font-medium">Brand Story</p>
+              <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-8 uppercase">Brand Story</p>
             </FadeIn>
 
             {/* 大きなタイトル */}

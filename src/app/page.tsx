@@ -211,7 +211,7 @@ export default function HomePage() {
         {/* ========================================
            Hero Section
            ======================================== */}
-        <div data-snap-section>
+        <div data-snap-section className="-mt-[72px] max-md:-mt-[60px]">
           <HeroAnimation />
         </div>
 

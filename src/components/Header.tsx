@@ -242,7 +242,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="relative w-full z-[100] px-12 py-6 flex justify-between items-center bg-white border-b border-black/[0.03] max-md:px-6 max-md:py-4">
+      <header className="sticky top-0 w-full z-[100] px-12 py-6 flex justify-between items-center bg-white/95 backdrop-blur-sm border-b border-black/[0.03] max-md:px-6 max-md:py-4">
         <Logo />
         <DesktopNav />
         <HamburgerButton isOpen={isMenuOpen} onClick={toggleMenu} />
