@@ -7,8 +7,8 @@ import FloatingParticles from '@/components/FloatingParticles';
 import ArrowLink from '@/components/ArrowLink';
 import FadeIn from '@/components/FadeIn';
 
-const PastelLiquidGradient = dynamic(
-  () => import('@/components/PastelLiquidGradient'),
+const LiquidGradient = dynamic(
+  () => import('@/components/LiquidGradientUnified'),
   { ssr: false }
 );
 
@@ -144,7 +144,7 @@ export default function HypnotherapyPage() {
       {/* パステルグラデーション背景 */}
       {mounted && (
         <div className="fixed inset-0 -z-10">
-          <PastelLiquidGradient opacity={0.8} />
+          <LiquidGradient preset="pastel" opacity={0.8} />
         </div>
       )}
 

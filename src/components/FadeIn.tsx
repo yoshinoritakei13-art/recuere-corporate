@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState, ReactNode } from 'react';
+import { ReactNode } from 'react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 type AnimationType = 'up' | 'down' | 'left' | 'right' | 'none' | 'scaleUp' | 'clipReveal';
 
@@ -19,29 +20,11 @@ export default function FadeIn({
   duration = 0.8,
   className = '',
 }: FadeInProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
-      }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>({
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px',
+    triggerOnce: true,
+  });
 
   // clipReveal: 1文字ずつアニメーション
   if (direction === 'clipReveal') {

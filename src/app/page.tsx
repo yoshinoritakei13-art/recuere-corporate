@@ -9,8 +9,8 @@ import CircleAnimation from '@/components/CircleAnimation';
 import BlobImage from '@/components/BlobImage';
 import SnapScrollContainer from '@/components/SnapScrollContainer';
 
-const PastelLiquidGradient = dynamic(
-  () => import('@/components/PastelLiquidGradient'),
+const LiquidGradient = dynamic(
+  () => import('@/components/LiquidGradientUnified'),
   { ssr: false }
 );
 
@@ -360,7 +360,7 @@ export default function HomePage() {
           id="founder"
           className="relative min-h-screen flex flex-col justify-center py-[80px] px-8 max-md:py-[60px] overflow-hidden"
         >
-          <PastelLiquidGradient opacity={0.85} />
+          <LiquidGradient preset="pastel" opacity={0.85} />
 
           {/* 上部フェードオーバーレイ */}
           <div
