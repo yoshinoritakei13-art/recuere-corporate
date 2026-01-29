@@ -233,7 +233,7 @@ export default function SessionPage() {
                     {selfRealizationPricing.map((item, index) => (
                       <div key={index} className="px-0 md:px-6 py-4 md:py-4 flex flex-col border-b md:border-b-0 border-gray-200 last:border-b-0">
                         <div className="flex-1">
-                          <p className="text-lg md:text-xl font-medium mb-1 text-center text-gray-700">
+                          <p className="text-lg md:text-xl font-medium mb-1 text-center text-gray-700 whitespace-nowrap">
                             {item.duration}
                           </p>
                           <p className="text-sm mb-3 text-center text-gray-500">
@@ -282,12 +282,11 @@ export default function SessionPage() {
 
                           {/* 中央: テキスト */}
                           <div className="text-center pt-2 px-[75px]">
-                            <p className="text-gray-700 text-sm font-medium mb-1">
-                              + ボイジャータロットリーディング
+                            <p className="text-gray-700 text-sm font-medium mb-3">
+                              + タロットリーディング
                             </p>
-                            <p className="text-gray-400 text-xs mb-2">（組み合わせ可能）</p>
                             <p className="text-gray-500 text-xs leading-relaxed">
-                              ご希望の方は、「タロットを中心」としたセッションも承っています。予約時にお申し出ください。
+                              ご希望の方は、「タロットを中心」としたセッションも承っています。<br />予約時にお申し出ください。
                             </p>
                           </div>
 
@@ -308,12 +307,11 @@ export default function SessionPage() {
 
                           {/* 中央: テキスト */}
                           <div className="flex-1">
-                            <p className="text-gray-700 text-lg font-medium mb-1">
-                              + ボイジャータロットリーディング
+                            <p className="text-gray-700 text-lg font-medium mb-3">
+                              + タロットリーディング
                             </p>
-                            <p className="text-gray-400 text-sm mb-3">（組み合わせ可能）</p>
                             <p className="text-gray-500 text-sm leading-relaxed">
-                              ご希望の方は、「タロットを中心」としたセッションも承っています。予約時にお申し出ください。
+                              ご希望の方は、「タロットを中心」としたセッションも承っています。<br />予約時にお申し出ください。
                             </p>
                           </div>
 
@@ -442,14 +440,9 @@ export default function SessionPage() {
                 </h2>
               </div>
 
-              {/* 画像（サブ左、メイン右にがっつり重ねる） */}
-              <div className="relative h-[170px] mb-6">
-                <div className="absolute left-4 top-8 w-[120px] aspect-square rounded-lg overflow-hidden shadow-lg z-10">
-                  <Image src="/images/AdobeStock_1581418014.jpeg" alt="安らぎ" fill className="object-cover" />
-                </div>
-                <div className="absolute right-0 top-0 w-[250px] aspect-[4/3] rounded-lg overflow-hidden shadow-md z-0">
-                  <Image src="/images/AdobeStock_1686407697.jpeg" alt="ヒプノセラピー" fill className="object-cover" />
-                </div>
+              {/* 画像（1枚） */}
+              <div className="relative w-[200px] aspect-[4/3] mb-6 rounded-lg overflow-hidden mx-auto">
+                <Image src="/images/AdobeStock_1686407697.jpeg" alt="ヒプノセラピー" fill className="object-cover" />
               </div>
 
               {/* テキスト */}

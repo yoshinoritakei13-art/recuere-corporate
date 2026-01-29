@@ -10,13 +10,13 @@ import { usePathname } from 'next/navigation';
    ======================================== */
 
 const MENU_ITEMS = [
-  { href: '/', label: 'Top' },
-  { href: '/company', label: 'Company' },
-  { href: '/philosophy', label: 'Mission' },
-  { href: '/services', label: 'Services' },
-  { href: '/session', label: 'Session' },
-  { href: '/hypnotherapy', label: 'Hypnotherapy' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'Top', labelJa: 'トップ' },
+  { href: '/company', label: 'Company', labelJa: '会社概要' },
+  { href: '/philosophy', label: 'Mission', labelJa: '理念' },
+  { href: '/services', label: 'Consulting', labelJa: 'コンサルティング' },
+  { href: '/session', label: 'Personal Session', labelJa: '個人セッション' },
+  { href: '/hypnotherapy', label: 'Hypnotherapy', labelJa: 'ヒプノセラピー' },
+  { href: '/contact', label: 'Contact', labelJa: 'お問い合わせ' },
 ] as const;
 
 const ANIMATION_BASE_DELAY = 230;
@@ -174,11 +174,12 @@ function MobileMenuOverlay({
               >
                 <Link
                   href={item.href}
-                  className="block text-[1.8rem] font-light tracking-[0.02em] py-2 hover:opacity-80 transition-opacity"
+                  className="flex items-baseline gap-3 py-2 hover:opacity-80 transition-opacity"
                   style={{ color: '#1a1a2e' }}
                   onClick={onClose}
                 >
-                  {item.label}
+                  <span className="text-[1.8rem] font-light tracking-[0.02em]">{item.label}</span>
+                  <span className="text-[0.85rem] text-gray-500">{item.labelJa}</span>
                 </Link>
               </li>
             ))}
@@ -241,7 +242,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[100] px-12 py-6 flex justify-between items-center bg-white/85 backdrop-blur-xl border-b border-black/[0.03] max-md:px-6 max-md:py-4">
+      <header className="relative w-full z-[100] px-12 py-6 flex justify-between items-center bg-white border-b border-black/[0.03] max-md:px-6 max-md:py-4">
         <Logo />
         <DesktopNav />
         <HamburgerButton isOpen={isMenuOpen} onClick={toggleMenu} />

@@ -13,13 +13,13 @@ import Link from 'next/link';
  */
 
 const MENU_ITEMS = [
-  { href: '/', label: 'Top' },
-  { href: '/company', label: 'Company' },
-  { href: '/philosophy', label: 'Mission' },
-  { href: '/services', label: 'Services' },
-  { href: '/session', label: 'Session' },
-  { href: '/hypnotherapy', label: 'Hypnotherapy' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'Top', labelJa: 'トップ' },
+  { href: '/company', label: 'Company', labelJa: '会社概要' },
+  { href: '/philosophy', label: 'Mission', labelJa: '理念' },
+  { href: '/services', label: 'Consulting', labelJa: 'コンサルティング' },
+  { href: '/session', label: 'Personal Session', labelJa: '個人セッション' },
+  { href: '/hypnotherapy', label: 'Hypnotherapy', labelJa: 'ヒプノセラピー' },
+  { href: '/contact', label: 'Contact', labelJa: 'お問い合わせ' },
 ] as const;
 
 export default function Footer() {
@@ -71,9 +71,10 @@ export default function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[0.9rem] text-[#555] transition-colors duration-300 hover:text-[#333]"
+                className="flex items-baseline gap-2 text-[#555] transition-colors duration-300 hover:text-[#333]"
               >
-                {item.label}
+                <span className="text-[0.9rem]">{item.label}</span>
+                <span className="text-[0.75rem] text-[#999]">{item.labelJa}</span>
               </Link>
             ))}
           </nav>

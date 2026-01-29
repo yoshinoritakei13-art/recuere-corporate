@@ -286,7 +286,7 @@ export default function HypnotherapyPage() {
                   </p>
                 </div>
                 <h2 className="text-[clamp(1.4rem,3vw,2rem)] tracking-[-0.02em] font-extralight text-[#333] mt-4">
-                  ヒプノセラピーで用いる<br className="md:hidden" />主なアプローチ
+                  ヒプノセラピーで用いる<br />主なアプローチ
                 </h2>
                 <p className="text-gray-500 text-sm mt-4">
                   セッションでは、お悩みやご希望に応じて最適な療法を選択します。

@@ -1,10 +1,18 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import FadeIn from '@/components/FadeIn';
 import ArrowLink from '@/components/ArrowLink';
 import ContactCTA from '@/components/ContactCTA';
 import { useMouseGlow } from '@/hooks/useMouseGlow';
+
+const CAROUSEL_IMAGES = [
+  '/images/c1.webp',
+  '/images/c3.webp',
+  '/images/c4.webp',
+  '/images/c6.webp',
+];
 
 /**
  * Services Page
@@ -88,7 +96,7 @@ export default function ServicesPage() {
                 <div className="p-6 md:p-10 lg:p-12 h-full">
                   <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">01</p>
                   <h3 className="text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[-0.02em] font-extralight mb-2 text-white">
-                    経営コンサルティング／意思決定支援
+                    経営コンサルティング<br className="md:hidden" />／意思決定支援
                   </h3>
                   <p className="text-white/60 text-[0.8rem] mb-4">（企業・組織向け）</p>
                   <p className="text-white/80 leading-[2] mb-8 text-[0.95rem] font-light">
@@ -150,15 +158,37 @@ export default function ServicesPage() {
             </FadeIn>
           </div>
 
-          {/* 費用について - 白地カード */}
+          {/* 費用について - 白地カード（カルーセル内蔵） */}
           <FadeIn delay={0.5}>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-12 p-8 bg-white rounded-lg">
-              <p className="text-body-lg tracking-wide-xs font-light text-[var(--color-text)]">
-                企業向けコンサルティングはすべてオリジナル提案。課題・期間・体制により個別にお見積り。
-              </p>
-              <ArrowLink href="/contact">
-                ご相談はこちら
-              </ArrowLink>
+            <div className="mt-12 p-6 md:p-8 bg-white rounded-lg">
+              {/* 自動スクロールカルーセル */}
+              <div className="overflow-hidden mb-6">
+                <div className="flex gap-3 animate-scroll-x">
+                  {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, index) => (
+                    <div
+                      key={index}
+                      className="flex-shrink-0 w-[150px] md:w-[200px] h-[100px] md:h-[130px] rounded-md overflow-hidden"
+                    >
+                      <Image
+                        src={src}
+                        alt={`コンサルティング実績 ${(index % 6) + 1}`}
+                        width={160}
+                        height={100}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* テキストとリンク */}
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <p className="text-body-lg tracking-wide-xs font-light text-[var(--color-text)]">
+                  企業向けコンサルティングはすべてオリジナル提案。課題・期間・体制により個別にお見積り。
+                </p>
+                <ArrowLink href="/contact">
+                  ご相談はこちら
+                </ArrowLink>
+              </div>
             </div>
           </FadeIn>
         </div>

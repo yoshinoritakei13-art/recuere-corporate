@@ -67,8 +67,8 @@ export default function PhilosophyPage() {
           </div>
         </section>
 
-        {/* Vision & Mission - カード形式 / スティッキー */}
-        <section className="md:sticky md:top-0 z-10 bg-white py-[60px] md:py-[100px] md:pb-[350px] px-6 md:px-8 shadow-section-top-light">
+        {/* Vision & Mission - カード形式 */}
+        <section className="relative z-10 bg-white py-[60px] md:py-[100px] px-6 md:px-8">
           <div className="max-w-[1100px] mx-auto">
             <FadeIn>
               <p className="tracking-wide-4xl text-label-xs text-[var(--color-navy)] mb-6 uppercase font-medium">Mission / Vision / Value</p>
@@ -141,8 +141,8 @@ export default function PhilosophyPage() {
           </div>
         </section>
 
-        {/* Brand Story Section - スティッキーで迫り出す / 白背景 */}
-        <section className="md:sticky md:top-0 pt-[80px] md:pt-[140px] pb-[60px] md:pb-[450px] px-6 md:px-8 md:rounded-t-section-lg z-20 bg-white overflow-hidden shadow-section-top-medium">
+        {/* Brand Story Section */}
+        <section className="relative pt-[80px] md:pt-[140px] pb-[60px] md:pb-[100px] px-6 md:px-8 z-20 bg-white overflow-hidden">
           {/* 装飾: 大きな薄いテキスト */}
           <div className="absolute top-[80px] right-[-50px] text-[200px] md:text-[300px] font-extralight text-[var(--color-background)] leading-none select-none pointer-events-none">
             Re

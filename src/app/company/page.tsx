@@ -73,8 +73,8 @@ export default function CompanyPage() {
           <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-gradient-to-r from-transparent via-[var(--color-navy)] to-transparent opacity-20" />
         </section>
 
-        {/* Company Info Section - 白背景 / スティッキー */}
-        <section className="sticky top-0 py-[60px] px-8 md:py-[80px] z-10 bg-white" ref={cardsRef}>
+        {/* Company Info Section - 白背景 */}
+        <section className="relative py-[60px] px-8 md:py-[80px] z-10 bg-white" ref={cardsRef}>
           <div className="max-w-[900px] mx-auto">
             <FadeIn>
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-12 uppercase font-medium">Overview</p>
@@ -135,21 +135,17 @@ export default function CompanyPage() {
         </section>
 
         {/* スペーサー（Overviewを最後まで見せるため） */}
-        <div className="h-[900px] md:h-[500px]" />
-        <div id="founder" className="relative top-[500px] md:top-[850px]" />
+        <div id="founder" />
 
-        {/* Founder Section - スティッキーで競り上がり */}
+        {/* Founder Section */}
         <section
-          className="sticky top-[60vh] md:top-[70vh] pt-[60px] pb-[550px] px-6 md:pt-[120px] md:pb-[1000px] md:px-8 rounded-t-[40px] md:rounded-t-[60px] z-20 overflow-hidden"
-          style={{
-            boxShadow: '0 -20px 60px rgba(0, 45, 90, 0.3)',
-          }}
+          className="relative pt-[60px] pb-[100px] px-6 md:pt-[120px] md:pb-[140px] md:px-8 z-20 overflow-hidden"
         >
           {/* 背景画像 */}
           <div
             className="absolute inset-0 z-0"
             style={{
-              backgroundImage: 'url(/images/business-hero.jpg)',
+              backgroundImage: 'url(/images/heroimage.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
@@ -187,8 +183,8 @@ export default function CompanyPage() {
 
               <FadeIn delay={0.2}>
                 <div className="text-center mb-8">
-                  <p className="text-white/50 tracking-[0.1em] text-[0.6rem] mb-2">
-                    コンサルタント、上級心理カウンセラー、ヒプノセラピスト
+                  <p className="text-white/50 tracking-[0.1em] text-[0.6rem] mb-2 leading-[1.8]">
+                    コンサルタント<br />上級心理カウンセラー<br />ヒプノセラピスト
                   </p>
                   <h3 className="text-[2rem] tracking-[-0.02em] font-extralight text-white leading-[1.2]">
                     たなか里乃
@@ -335,8 +331,8 @@ export default function CompanyPage() {
           </div>
         </section>
 
-        {/* Contact CTA Section - スティッキーで競り上がり */}
-        <section className="sticky top-[50vh] md:top-[85vh] pt-[60px] pb-[60px] px-8 md:pt-[140px] md:pb-[80px] bg-white z-30" style={{ boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.1)' }}>
+        {/* Contact CTA Section */}
+        <section className="relative pt-[60px] pb-[60px] px-8 md:pt-[100px] md:pb-[80px] bg-white z-30">
           <div className="relative z-10 max-w-[800px] mx-auto text-center">
             <FadeIn>
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-10 uppercase font-medium">Contact</p>

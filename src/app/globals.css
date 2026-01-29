@@ -655,6 +655,24 @@ html.snap-scroll {
   text-orientation: mixed;
 }
 
+/* 横スクロールアニメーション */
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 20s linear infinite;
+}
+
+.animate-scroll-x:hover {
+  animation-play-state: paused;
+}
+
 /* ========================================
    16. Accessibility
    ======================================== */
