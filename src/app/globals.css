@@ -680,7 +680,7 @@ html.snap-scroll {
 }
 
 .animate-scroll-x {
-  animation: scroll-x 20s linear infinite;
+  animation: scroll-x 12s linear infinite;
 }
 
 .animate-scroll-x:hover {
