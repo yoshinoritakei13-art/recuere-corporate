@@ -57,7 +57,7 @@ export default function AboutPage() {
               {/* 右: 写真 */}
               <figure className="max-md:order-first">
                 <Image
-                  src="/images/rinosan.png"
+                  src="/images/rinosan.webp"
                   alt="代表 たなか里乃のプロフィール写真"
                   width={400}
                   height={500}

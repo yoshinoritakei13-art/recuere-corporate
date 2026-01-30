@@ -143,12 +143,12 @@ export default function HypnotherapyPage() {
       <div className="relative z-10">
 
         {/* ===== ヒーロー ===== */}
-        <section className="min-h-[80vh] flex items-center pt-20 pb-32 relative overflow-hidden">
+        <section className="min-h-[50vh] flex items-center pt-24 pb-12 relative overflow-hidden">
           {/* 背景画像 */}
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: 'url(/images/AdobeStock_1686407697.jpeg)',
+              backgroundImage: 'url(/images/AdobeStock_1686407697.webp)',
             }}
           />
           {/* オーバーレイ */}
@@ -196,36 +196,37 @@ export default function HypnotherapyPage() {
         </section>
 
         {/* ===== ヒプノセラピーとは ===== */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-20 md:py-28 bg-white">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <FadeIn blur direction="up" duration={1}>
-              <div className="relative inline-block mb-8">
+              <div className="relative inline-block mb-4">
                 <div className="text-[#7FA6BF]/10 text-4xl md:text-6xl font-extralight tracking-wider">
                   About
                 </div>
-                <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] mb-3 uppercase font-medium relative z-10 -mt-3">
+                <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] uppercase font-medium relative z-10 -mt-3">
                   What is Hypnotherapy
                 </p>
               </div>
             </FadeIn>
             <FadeIn blur delay={0.15} direction="up" duration={1}>
-              <h2 className="text-[clamp(1.4rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-8">
+              <h2 className="text-[clamp(1.4rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-12">
                 ヒプノセラピーとは
               </h2>
             </FadeIn>
 
             <FadeIn blur delay={0.3} direction="up" duration={1}>
-              <p className="text-gray-500 text-[0.95rem] leading-[2.2] mb-6 max-w-[300px] mx-auto md:max-w-none">
-                ヒプノセラピーは、催眠状態（深くリラックスした状態）で、潜在意識（普段は意識に上りにくい思考や感情）に静かに意識を向けていく心理療法です。
+              <p className="text-gray-500 text-[0.95rem] leading-[2.8] max-w-[300px] mx-auto md:max-w-none">
+                ヒプノセラピーは、催眠状態（深くリラックスした状態）で、<br />
+                潜在意識（普段は意識に上りにくい思考や感情）に<br />
+                静かに意識を向けていく心理療法です。
+                <br /><br />
+                安心できる空間の中で、心の深い部分にあるテーマに気づき、<br />
+                自分自身への理解を深めていくセッションです。
               </p>
             </FadeIn>
-            <FadeIn blur delay={0.45} direction="up" duration={1}>
-              <p className="text-gray-500 text-[0.95rem] leading-[2.2] mb-6 max-w-[300px] mx-auto md:max-w-none">
-                安心できる空間の中で、心の深い部分にあるテーマに気づき、自分自身への理解を深めていくセッションです。
-              </p>
-            </FadeIn>
+
             <FadeIn blur delay={0.6} direction="up" duration={1}>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-sm mt-10">
                 ※事前面談・セラピー・事後面談を含め、3時間程度のセッションとなります。
               </p>
             </FadeIn>

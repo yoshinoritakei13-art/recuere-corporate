@@ -170,7 +170,7 @@ export default function CompanyPage() {
                     style={{ boxShadow: '0 15px 30px rgba(0, 0, 0, 0.3)' }}
                   >
                     <Image
-                      src="/images/rinosan2.jpg"
+                      src="/images/rinosan2.webp"
                       alt="代表 たなか里乃"
                       width={180}
                       height={180}
@@ -259,7 +259,7 @@ export default function CompanyPage() {
                         style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)' }}
                       >
                         <Image
-                          src="/images/rinosan2.jpg"
+                          src="/images/rinosan2.webp"
                           alt="代表 たなか里乃"
                           width={280}
                           height={373}

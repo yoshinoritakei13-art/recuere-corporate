@@ -19,7 +19,13 @@ export default function ScrollRestoration() {
 
   // パスが変わるたびにトップへスクロール
   useEffect(() => {
+    // 即座にスクロール
     window.scrollTo(0, 0);
+    // レンダリング完了後にも再度スクロール
+    const timeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
+    return () => clearTimeout(timeout);
   }, [pathname]);
 
   return null;

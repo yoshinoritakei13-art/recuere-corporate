@@ -118,15 +118,15 @@ export default function SessionPage() {
                 <div className="relative h-[180px]">
                   {/* メイン画像 */}
                   <div className="absolute left-0 top-0 w-[140px] aspect-[4/3] rounded-lg overflow-hidden shadow-sm">
-                    <Image src="/images/Firefly_c6aa9de6-66d4-4fa3-9824-32e22229655f.jpeg" alt="セッション風景" fill className="object-cover" />
+                    <Image src="/images/Firefly_c6aa9de6-66d4-4fa3-9824-32e22229655f.webp" alt="セッション風景" fill className="object-cover" />
                   </div>
                   {/* サブ画像1 */}
                   <div className="absolute right-4 top-4 w-[120px] aspect-[4/5] rounded-lg overflow-hidden shadow-sm">
-                    <Image src="/images/AdobeStock_1581418014.jpeg" alt="リラックスしたセッション" fill className="object-cover" />
+                    <Image src="/images/AdobeStock_1581418014.webp" alt="リラックスしたセッション" fill className="object-cover" />
                   </div>
                   {/* サブ画像2 */}
                   <div className="absolute left-[30%] bottom-0 w-[130px] aspect-[4/3] rounded-lg overflow-hidden shadow-sm">
-                    <Image src="/images/AdobeStock_1718433882.jpeg" alt="心の安らぎ" fill className="object-cover" />
+                    <Image src="/images/AdobeStock_1718433882.webp" alt="心の安らぎ" fill className="object-cover" />
                   </div>
                 </div>
               </FadeIn>
@@ -173,7 +173,7 @@ export default function SessionPage() {
               {/* 画像1：右上 */}
               <FadeIn blur delay={0.1} className="absolute top-[80px] right-[25%] w-[180px]">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image src="/images/Firefly_c6aa9de6-66d4-4fa3-9824-32e22229655f.jpeg" alt="セッション風景" fill className="object-cover" />
+                  <Image src="/images/Firefly_c6aa9de6-66d4-4fa3-9824-32e22229655f.webp" alt="セッション風景" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white" />
                 </div>
               </FadeIn>
@@ -181,7 +181,7 @@ export default function SessionPage() {
               {/* 画像2：左 */}
               <FadeIn blur delay={0.2} className="absolute top-[200px] left-[5%] w-[200px]">
                 <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
-                  <Image src="/images/AdobeStock_1581418014.jpeg" alt="リラックスしたセッション" fill className="object-cover" />
+                  <Image src="/images/AdobeStock_1581418014.webp" alt="リラックスしたセッション" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white" />
                 </div>
               </FadeIn>
@@ -189,7 +189,7 @@ export default function SessionPage() {
               {/* 画像3：右下 */}
               <FadeIn blur delay={0.4} className="absolute bottom-[30px] right-[5%] w-[280px]">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image src="/images/AdobeStock_1718433882.jpeg" alt="心の安らぎ" fill className="object-cover" />
+                  <Image src="/images/AdobeStock_1718433882.webp" alt="心の安らぎ" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/50 to-white" />
                 </div>
               </FadeIn>
@@ -274,7 +274,7 @@ export default function SessionPage() {
                         <div className="md:hidden relative min-h-[180px] overflow-visible">
                           {/* 左上: タロット画像 */}
                           <div className="absolute -left-8 -top-2 w-[80px] aspect-[3/4] rounded-lg overflow-hidden z-10">
-                            <Image src="/images/t1.png" alt="ボイジャータロット" width={80} height={107} className="object-cover w-full h-full" />
+                            <Image src="/images/t1.webp" alt="ボイジャータロット" width={80} height={107} className="object-cover w-full h-full" />
                           </div>
 
                           {/* 中央: テキスト */}
@@ -289,7 +289,7 @@ export default function SessionPage() {
 
                           {/* 右下: りのさん */}
                           <div className="absolute -right-8 -bottom-2 w-[80px] aspect-[3/4] rounded-lg overflow-hidden">
-                            <Image src="/images/rinosan3.jpg" alt="たなか里乃" width={80} height={107} className="object-cover object-top w-full h-full" />
+                            <Image src="/images/rinosan3.webp" alt="たなか里乃" width={80} height={107} className="object-cover object-top w-full h-full" />
                           </div>
                         </div>
 
@@ -298,7 +298,7 @@ export default function SessionPage() {
                           {/* 左: タロット画像 */}
                           <FadeIn blur delay={0.2}>
                             <div className="w-[180px] aspect-[3/4] rounded-lg overflow-hidden shrink-0">
-                              <Image src="/images/t1.png" alt="ボイジャータロット" width={180} height={240} className="object-cover w-full h-full" />
+                              <Image src="/images/t1.webp" alt="ボイジャータロット" width={180} height={240} className="object-cover w-full h-full" />
                             </div>
                           </FadeIn>
 
@@ -315,7 +315,7 @@ export default function SessionPage() {
                           {/* 右: りのさん */}
                           <FadeIn blur delay={0.3}>
                             <div className="w-[180px] aspect-[3/4] rounded-lg overflow-hidden shrink-0">
-                              <Image src="/images/rinosan3.jpg" alt="たなか里乃" width={180} height={240} className="object-cover object-top w-full h-full" />
+                              <Image src="/images/rinosan3.webp" alt="たなか里乃" width={180} height={240} className="object-cover object-top w-full h-full" />
                             </div>
                           </FadeIn>
                         </div>
@@ -353,10 +353,10 @@ export default function SessionPage() {
                   {/* SP版: メイン左、サブ右下にがっつり重ねる */}
                   <div className="md:hidden relative h-[150px]">
                     <div className="absolute left-0 top-0 w-[180px] aspect-[4/3] rounded-lg overflow-hidden shadow-md z-0">
-                      <Image src="/images/AdobeStock_1517811434.jpeg" alt="パーソナルコーチング" fill className="object-cover" />
+                      <Image src="/images/AdobeStock_1517811434.webp" alt="パーソナルコーチング" fill className="object-cover" />
                     </div>
                     <div className="absolute right-8 bottom-[-10px] w-[100px] aspect-square rounded-lg overflow-hidden shadow-lg z-10">
-                      <Image src="/images/AdobeStock_1524162172.jpeg" alt="穏やかなセッション空間" fill className="object-cover" />
+                      <Image src="/images/AdobeStock_1524162172.webp" alt="穏やかなセッション空間" fill className="object-cover" />
                     </div>
                   </div>
                   {/* PC版: 2枚重ねレイアウト */}
@@ -364,7 +364,7 @@ export default function SessionPage() {
                     {/* メイン画像（左上） */}
                     <div className="absolute left-[60px] top-[60px] w-[320px] aspect-[4/3] rounded-lg overflow-hidden">
                       <Image
-                        src="/images/AdobeStock_1517811434.jpeg"
+                        src="/images/AdobeStock_1517811434.webp"
                         alt="パーソナルコーチングセッションイメージ"
                         fill
                         className="object-cover"
@@ -373,7 +373,7 @@ export default function SessionPage() {
                     {/* サブ画像（右下に重ねる） */}
                     <div className="absolute right-[-60px] bottom-0 w-[200px] aspect-[4/3] rounded-lg overflow-hidden">
                       <Image
-                        src="/images/AdobeStock_1524162172.jpeg"
+                        src="/images/AdobeStock_1524162172.webp"
                         alt="穏やかなセッション空間"
                         fill
                         className="object-cover"
@@ -439,7 +439,7 @@ export default function SessionPage() {
 
               {/* 画像（1枚） */}
               <div className="relative w-[200px] aspect-[4/3] mb-6 rounded-lg overflow-hidden mx-auto">
-                <Image src="/images/AdobeStock_1686407697.jpeg" alt="ヒプノセラピー" fill className="object-cover" />
+                <Image src="/images/AdobeStock_1686407697.webp" alt="ヒプノセラピー" fill className="object-cover" />
               </div>
 
               {/* テキスト */}
@@ -536,7 +536,7 @@ export default function SessionPage() {
                 <div className="space-y-8">
                   <div className="relative aspect-[4/3] max-w-[400px] rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/AdobeStock_1686407697.jpeg"
+                      src="/images/AdobeStock_1686407697.webp"
                       alt="ヒプノセラピーイメージ"
                       fill
                       className="object-cover"
@@ -633,13 +633,13 @@ export default function SessionPage() {
                 {/* SP版: 1枚中央配置 */}
                 <div className="md:hidden flex justify-center">
                   <div className="relative w-[260px] aspect-[4/3] rounded-lg overflow-hidden shadow-md">
-                    <Image src="/images/AdobeStock_770224949.jpeg" alt="ブランディング" fill className="object-cover" />
+                    <Image src="/images/AdobeStock_770224949.webp" alt="ブランディング" fill className="object-cover" />
                   </div>
                 </div>
                 {/* PC版 */}
                 <div className="hidden md:block relative aspect-[4/3] rounded-2xl overflow-hidden group">
                   <Image
-                    src="/images/AdobeStock_770224949.jpeg"
+                    src="/images/AdobeStock_770224949.webp"
                     alt="ブランディングセッションイメージ"
                     fill
                     className="object-cover"

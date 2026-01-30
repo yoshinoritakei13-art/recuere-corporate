@@ -35,7 +35,7 @@ function Logo() {
       style={{ fontFamily: "'Sweet Apricot', cursive" }}
     >
       <Image
-        src="/images/recuereicon.png"
+        src="/images/recuereicon.webp"
         alt="recuere"
         width={24}
         height={24}

@@ -6,10 +6,10 @@ import { useEffect, useRef, useCallback, ReactNode } from 'react';
    Constants
    ======================================== */
 
-const SCROLL_DURATION = 800;
-const SCROLL_COOLDOWN = 600;
+const SCROLL_DURATION = 500; // より短く
+const SCROLL_COOLDOWN = 400; // クールダウンも短く
 const TOUCH_THRESHOLD = 100;
-const SCROLL_COMPLETE_DELAY = 300;
+const SCROLL_COMPLETE_DELAY = 200;
 const WHEEL_THRESHOLD = 30; // ホイールの最小deltaY
 const MOBILE_BREAKPOINT = 768; // SP版のブレークポイント
 
@@ -25,8 +25,9 @@ interface SnapScrollContainerProps {
    Easing Functions
    ======================================== */
 
-function easeOutQuart(t: number): number {
-  return 1 - Math.pow(1 - t, 4);
+// より軽くてスムーズな easeOutCubic
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
 }
 
 /* ========================================
@@ -102,7 +103,7 @@ export default function SnapScrollContainer({ children }: SnapScrollContainerPro
 
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / SCROLL_DURATION, 1);
-      const easedProgress = easeOutQuart(progress);
+      const easedProgress = easeOutCubic(progress);
 
       window.scrollTo(0, startPosition + distance * easedProgress);
 

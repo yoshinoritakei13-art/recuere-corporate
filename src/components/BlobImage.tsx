@@ -32,19 +32,22 @@ export default function BlobImage({
     : { x: initialX, y: -80, scale: 0.85 };
   const [offset, setOffset] = useState(initialState);
   const targetOffset = useRef(initialState);
-  const animationFrame = useRef<number>(undefined);
+  const currentOffset = useRef(initialState);
+  const animationFrame = useRef<number | null>(null);
+  const isAnimating = useRef(false);
   const [isVisible, setIsVisible] = useState(false);
+  const isInView = useRef(false);
 
-  // フェードイン検知
+  // フェードイン検知 + ビューポート内かどうかの追跡
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        isInView.current = entry.isIntersecting;
+        if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: '100px' }
     );
 
     if (ref.current) {
@@ -52,58 +55,79 @@ export default function BlobImage({
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [isVisible]);
 
+  // 滑らかな補間アニメーション（ビューポート内のみ実行）
   useEffect(() => {
-    // スクロールエフェクト無効時はアニメーションなし
     if (disableScrollEffect) return;
 
-    // 滑らかな補間アニメーション
     const animate = () => {
-      setOffset(prev => ({
-        x: prev.x + (targetOffset.current.x - prev.x) * 0.04, // ゆっくり追従
-        y: prev.y + (targetOffset.current.y - prev.y) * 0.04,
-        scale: prev.scale + (targetOffset.current.scale - prev.scale) * 0.04,
-      }));
+      // ビューポート外なら停止
+      if (!isInView.current) {
+        isAnimating.current = false;
+        animationFrame.current = null;
+        return;
+      }
+
+      const dx = targetOffset.current.x - currentOffset.current.x;
+      const dy = targetOffset.current.y - currentOffset.current.y;
+      const ds = targetOffset.current.scale - currentOffset.current.scale;
+
+      // 差分が小さければアニメーション停止
+      if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1 && Math.abs(ds) < 0.001) {
+        isAnimating.current = false;
+        animationFrame.current = null;
+        return;
+      }
+
+      currentOffset.current = {
+        x: currentOffset.current.x + dx * 0.06,
+        y: currentOffset.current.y + dy * 0.06,
+        scale: currentOffset.current.scale + ds * 0.06,
+      };
+
+      setOffset({ ...currentOffset.current });
       animationFrame.current = requestAnimationFrame(animate);
     };
-    animationFrame.current = requestAnimationFrame(animate);
 
-    return () => {
-      if (animationFrame.current) {
-        cancelAnimationFrame(animationFrame.current);
+    const startAnimation = () => {
+      if (!isAnimating.current && isInView.current) {
+        isAnimating.current = true;
+        animationFrame.current = requestAnimationFrame(animate);
       }
     };
-  }, [disableScrollEffect]);
 
-  useEffect(() => {
-    // スクロールエフェクト無効時は何もしない
-    if (disableScrollEffect) return;
-
+    // スクロール時にアニメーション開始
     const handleScroll = () => {
-      if (ref.current) {
-        const rect = ref.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const elementCenter = rect.top + rect.height / 2;
-        const distanceFromCenter = elementCenter - windowHeight / 2;
-        // 斜め上からふわふわ移動（方向に応じて左右反転）+ スケール変化
-        const progress = Math.max(0, distanceFromCenter * speed);
-        const xDirection = direction === 'right' ? 1 : -1;
-        // 画面中央に近づくほど大きくなる（0.85 → 1.0）
-        const scaleProgress = Math.min(1, Math.max(0, 1 - Math.abs(distanceFromCenter) / windowHeight));
-        targetOffset.current = {
-          x: progress * xDirection,
-          y: -progress * 0.5 + Math.sin(distanceFromCenter * 0.008) * 10, // 斜め + ふわふわ
-          scale: 0.85 + scaleProgress * 0.15,
-        };
-      }
+      if (!ref.current || !isInView.current) return;
+
+      const rect = ref.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const elementCenter = rect.top + rect.height / 2;
+      const distanceFromCenter = elementCenter - windowHeight / 2;
+      const progress = Math.max(0, distanceFromCenter * speed);
+      const xDirection = direction === 'right' ? 1 : -1;
+      const scaleProgress = Math.min(1, Math.max(0, 1 - Math.abs(distanceFromCenter) / windowHeight));
+
+      targetOffset.current = {
+        x: progress * xDirection,
+        y: -progress * 0.5 + Math.sin(distanceFromCenter * 0.008) * 10,
+        scale: 0.85 + scaleProgress * 0.15,
+      };
+
+      startAnimation();
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [speed, disableScrollEffect]);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (animationFrame.current) {
+        cancelAnimationFrame(animationFrame.current);
+      }
+    };
+  }, [speed, direction, disableScrollEffect]);
 
   return (
     <div
@@ -163,6 +187,9 @@ export default function BlobImage({
           display: flex;
           justify-content: center;
           align-items: center;
+          will-change: transform;
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         .blob-svg {

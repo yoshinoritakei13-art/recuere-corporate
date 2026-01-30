@@ -124,12 +124,12 @@ function ServicesFloatingImages() {
     <div className="absolute inset-0 z-[2] pointer-events-none hidden lg:block">
       {/* 左エリア - ビル写真（vwでレスポンシブ対応） */}
       <div className="absolute top-[50%] -translate-y-1/2 left-[2%] animate-poyopoyo-slow" style={{ width: 'clamp(160px, 18vw, 380px)', height: 'clamp(160px, 18vw, 380px)' }}>
-        <BlobImage imageSrc="/images/S__69246981.jpg" size="100%" direction="left" disableScrollEffect />
+        <BlobImage imageSrc="/images/S__69246981.webp" size="100%" direction="left" disableScrollEffect />
       </div>
 
       {/* 右エリア（vwでレスポンシブ対応） */}
       <div className="absolute top-[50%] -translate-y-1/2 right-[2%] animate-poyopoyo-slow" style={{ width: 'clamp(160px, 18vw, 380px)', height: 'clamp(160px, 18vw, 380px)', animationDelay: '1s' }}>
-        <BlobImage imageSrc="/images/s7.jpg" size="100%" direction="right" imagePosition="top" disableScrollEffect imageScale={0.6} />
+        <BlobImage imageSrc="/images/s7.webp" size="100%" direction="right" imagePosition="top" disableScrollEffect imageScale={0.6} />
       </div>
     </div>
   );
@@ -292,7 +292,7 @@ export default function HomePage() {
                   <div className="flex items-start justify-between">
                     <ArrowLink href="/services#business">くわしく見る</ArrowLink>
                     <div className="animate-poyopoyo-slow -mt-16">
-                      <BlobImage imageSrc="/images/S__69246981.jpg" size={180} direction="left" disableScrollEffect />
+                      <BlobImage imageSrc="/images/S__69246981.webp" size={180} direction="left" disableScrollEffect />
                     </div>
                   </div>
                 </article>
@@ -317,7 +317,7 @@ export default function HomePage() {
                   <div className="flex items-start justify-between">
                     <ArrowLink href="/session">くわしく見る</ArrowLink>
                     <div className="animate-poyopoyo-slow -mt-16" style={{ animationDelay: '1s' }}>
-                      <BlobImage imageSrc="/images/s7.jpg" size={180} direction="right" imagePosition="top" disableScrollEffect imageScale={0.6} />
+                      <BlobImage imageSrc="/images/s7.webp" size={180} direction="right" imagePosition="top" disableScrollEffect imageScale={0.6} />
                     </div>
                   </div>
                 </article>
@@ -396,7 +396,7 @@ export default function HomePage() {
                 <div className="bg-white/90 backdrop-blur-sm p-6 text-center">
                   <div className="flex justify-center mb-4">
                     <BlobImage
-                      imageSrc="/images/rinosan2_2.png"
+                      imageSrc="/images/rinosan2_2.webp"
                       size={160}
                       direction="left"
                       imagePosition="top"
@@ -430,7 +430,7 @@ export default function HomePage() {
                   {/* りのさん写真（左上・メイン） */}
                   <FadeIn delay={0.3} direction="up" duration={1}>
                     <BlobImage
-                      imageSrc="/images/rinosan2_2.png"
+                      imageSrc="/images/rinosan2_2.webp"
                       size={220}
                       direction="left"
                       imagePosition="top"
@@ -441,7 +441,7 @@ export default function HomePage() {
                   <FadeIn delay={0.4} direction="up" duration={1}>
                     <div className="mt-32 animate-poyopoyo-slow">
                       <BlobImage
-                        imageSrc="/images/s7.jpg"
+                        imageSrc="/images/s7.webp"
                         size={150}
                         direction="right"
                         imagePosition="top"
@@ -455,7 +455,7 @@ export default function HomePage() {
                 <FadeIn delay={0.5} direction="up" duration={1}>
                   <div className="-mt-8 ml-8 animate-poyopoyo-slow" style={{ animationDelay: '1.5s' }}>
                     <BlobImage
-                      imageSrc="/images/S__69246981.jpg"
+                      imageSrc="/images/S__69246981.webp"
                       size={140}
                       direction="left"
                     />

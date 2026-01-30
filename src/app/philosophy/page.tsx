@@ -27,7 +27,7 @@ export default function PhilosophyPage() {
           <FloatingParticles count={25} color="var(--color-navy)" />
 
           {/* 背景画像 */}
-          <div className="absolute inset-0 pointer-events-none bg-[url('/images/AdobeStock_1597965362.jpeg')] bg-cover bg-center opacity-[0.12]" />
+          <div className="absolute inset-0 pointer-events-none bg-[url('/images/AdobeStock_1597965362.webp')] bg-cover bg-center opacity-[0.12]" />
 
           {/* 下部グラデーション（白に溶ける） */}
           <div
@@ -85,7 +85,7 @@ export default function PhilosophyPage() {
               {/* Mission | Brilliant */}
               <FadeIn delay={0.1}>
                 <TiltCard className="w-full">
-                  <div className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer bg-[url('/images/AdobeStock_1816208131.jpeg')] bg-cover bg-center">
+                  <div className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer bg-[url('/images/AdobeStock_1816208131.webp')] bg-cover bg-center">
                     <div className="absolute inset-0 bg-[#0a1628]/60 group-hover:bg-[#0a1628]/50 transition-all duration-500" />
                     <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-6">
                       <p className="tracking-[0.4em] text-[0.6rem] text-white/50 mb-2 uppercase font-medium">Mission</p>
@@ -104,7 +104,7 @@ export default function PhilosophyPage() {
               {/* Vision | Abundance */}
               <FadeIn delay={0.2}>
                 <TiltCard className="w-full">
-                  <div className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer bg-[url('/images/AdobeStock_770224949.jpeg')] bg-cover bg-center">
+                  <div className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer bg-[url('/images/AdobeStock_770224949.webp')] bg-cover bg-center">
                     <div className="absolute inset-0 bg-[#0a1628]/60 group-hover:bg-[#0a1628]/50 transition-all duration-500" />
                     <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-6">
                       <p className="tracking-[0.4em] text-[0.6rem] text-white/50 mb-2 uppercase font-medium">Vision</p>
@@ -123,7 +123,7 @@ export default function PhilosophyPage() {
               {/* Value | Trust & Treasure */}
               <FadeIn delay={0.3}>
                 <TiltCard className="w-full">
-                  <div className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer bg-[url('/images/AdobeStock_1718433882.jpeg')] bg-cover bg-center">
+                  <div className="relative h-[320px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer bg-[url('/images/AdobeStock_1718433882.webp')] bg-cover bg-center">
                     <div className="absolute inset-0 bg-[#0a1628]/60 group-hover:bg-[#0a1628]/50 transition-all duration-500" />
                     <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-6">
                       <p className="tracking-[0.4em] text-[0.6rem] text-white/50 mb-2 uppercase font-medium">Value</p>

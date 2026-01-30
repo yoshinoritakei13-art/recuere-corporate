@@ -649,6 +649,10 @@ html.snap-scroll {
   scroll-snap-align: start;
   min-height: 100vh;
   position: relative;
+  /* GPUアクセラレーション */
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 /* ========================================
