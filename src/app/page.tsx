@@ -78,7 +78,7 @@ function PhilosophyDesktop() {
 /** Philosophy Section - モバイル版 */
 function PhilosophyMobile() {
   return (
-    <div className="relative z-10 lg:hidden text-left">
+    <div className="relative z-10 lg:hidden text-left px-2">
       <FadeIn>
         <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-4 uppercase">
           Philosophy
@@ -93,22 +93,29 @@ function PhilosophyMobile() {
 
       <FadeIn delay={0.3}>
         <p className="text-[0.85rem] tracking-[0.1em] text-[#666] mb-10">
-          ひとつの気づきが、道をひらき、現実を動かす
+          ひとつの気づきが、<br />
+          道をひらき、現実を動かす
         </p>
       </FadeIn>
 
       <div className="text-[0.9rem] leading-[2.2] text-[#333] space-y-6">
         <FadeIn delay={0.45} duration={0.8}>
           <p>
-            人は、教えられて変わるのではなく、
-            自分で気づいたときに、自然と動き出します。
+            人は、教えられて変わるのではなく、<br />
+            自分で気づいたときに、<br />
+            自然と動き出します。
           </p>
         </FadeIn>
         <FadeIn delay={0.6} duration={0.8}>
           <p>
-            一人ひとりが本来の自分に気づき、
-            その力を、無理なく発揮できる状態をつくること。
-            それが、個人と組織の豊かさを、静かに、そして確かに育てていくと考えています。
+            一人ひとりが本来の自分に気づき、<br />
+            その力を、無理なく<br />
+            発揮できる状態をつくること。
+          </p>
+          <p className="mt-4">
+            それが、個人と組織の豊かさを、<br />
+            静かに、そして確かに<br />
+            育てていくと考えています。
           </p>
         </FadeIn>
       </div>
@@ -491,7 +498,7 @@ export default function HomePage() {
 
             <FadeIn delay={0.2}>
               <p className="text-[#444] leading-[2.0] mb-12">
-                企業の課題整理から、個人の内面の整理まで。<br className="hidden md:block" />目的に合わせて、最適な関わり方をご提案します。
+                企業の課題整理から、<br className="md:hidden" />個人の内面の整理まで。<br />目的に合わせて、<br className="md:hidden" />最適な関わり方をご提案します。
               </p>
             </FadeIn>
 

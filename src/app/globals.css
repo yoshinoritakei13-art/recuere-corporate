@@ -136,6 +136,20 @@ body {
    3. Typography
    ======================================== */
 
+/* 日本語テキストの自然な改行設定 */
+p, li, span, div {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* SP版（375px想定）での読みやすい改行 */
+@media (max-width: 767px) {
+  .text-natural {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   line-height: var(--line-height-tight);
