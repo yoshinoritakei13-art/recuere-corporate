@@ -5,7 +5,6 @@ import FloatingParticles from '@/components/FloatingParticles';
 import TiltCard from '@/components/TiltCard';
 import AnimatedGradient from '@/components/AnimatedGradient';
 import ContactCTA from '@/components/ContactCTA';
-import ParallaxSection from '@/components/ParallaxSection';
 
 /**
  * Philosophy Page - recuere コーポレートサイト
@@ -30,12 +29,13 @@ export default function PhilosophyPage() {
           {/* 背景画像 */}
           <div className="absolute inset-0 pointer-events-none bg-[url('/images/AdobeStock_1597965362.jpeg')] bg-cover bg-center opacity-[0.12]" />
 
-          {/* 装飾サークル - パララックス効果 */}
-          <ParallaxSection speed={0.1} className="absolute right-[10%] top-[20%] w-[300px] h-[300px] rounded-full border border-[var(--color-navy)]/10 opacity-50 max-md:hidden" fadeIn={false} blur={false} />
-          <ParallaxSection speed={0.2} className="absolute right-[15%] top-[25%] w-[200px] h-[200px] rounded-full border border-[var(--color-navy)]/10 opacity-40 max-md:hidden" fadeIn={false} blur={false} />
-
           {/* 下部グラデーション（白に溶ける） */}
-          <div className="absolute bottom-0 left-0 right-0 h-[200px] pointer-events-none bg-hero-overlay-white" />
+          <div
+            className="absolute bottom-0 left-0 right-0 h-[300px] pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,1) 100%)',
+            }}
+          />
 
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             <div className="md:ml-[10%]">
