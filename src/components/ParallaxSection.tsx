@@ -3,7 +3,7 @@
 import { ReactNode, useRef, useEffect, useState, useCallback } from 'react';
 
 interface ParallaxSectionProps {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   speed?: number;
   fadeIn?: boolean;
