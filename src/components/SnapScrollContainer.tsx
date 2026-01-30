@@ -47,6 +47,8 @@ export default function SnapScrollContainer({ children }: SnapScrollContainerPro
   useEffect(() => {
     if (!containerRef.current) return;
 
+    // ScrollRestoration コンポーネントで共通処理済み
+
     const sectionElements = containerRef.current.querySelectorAll<HTMLElement>(
       '[data-snap-section]'
     );

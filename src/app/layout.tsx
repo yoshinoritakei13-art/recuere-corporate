@@ -3,6 +3,7 @@ import { Noto_Sans_JP, Noto_Serif_JP, Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ScrollRestoration from '@/components/ScrollRestoration';
 
 const notoSansJP = Noto_Sans_JP({
   variable: '--font-noto-sans-jp',
@@ -60,6 +61,7 @@ export default function RootLayout({
         className={`${notoSansJP.variable} ${notoSerifJP.variable} ${inter.variable}`}
         suppressHydrationWarning
       >
+        <ScrollRestoration />
         <Header />
         <main>{children}</main>
         <Footer />

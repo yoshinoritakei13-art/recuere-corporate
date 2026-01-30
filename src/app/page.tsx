@@ -75,49 +75,44 @@ function PhilosophyDesktop() {
   );
 }
 
-/** Philosophy Section - モバイル版 */
+/** Philosophy Section - モバイル版（方法C: max-width で自然な折り返し） */
 function PhilosophyMobile() {
   return (
-    <div className="relative z-10 lg:hidden text-left px-2">
-      <FadeIn>
-        <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-4 uppercase">
-          Philosophy
-        </p>
-      </FadeIn>
-
-      <FadeIn delay={0.15}>
-        <h2 className="font-sans text-[1.5rem] tracking-[0.02em] !font-bold leading-[1.6] text-[#333] mb-3" style={{ fontWeight: 700 }}>
-          気づきから、豊かさへ。
-        </h2>
-      </FadeIn>
-
-      <FadeIn delay={0.3}>
-        <p className="text-[0.85rem] tracking-[0.1em] text-[#666] mb-10">
-          ひとつの気づきが、<br />
-          道をひらき、現実を動かす
-        </p>
-      </FadeIn>
-
-      <div className="text-[0.9rem] leading-[2.2] text-[#333] space-y-6">
-        <FadeIn delay={0.45} duration={0.8}>
-          <p>
-            人は、教えられて変わるのではなく、<br />
-            自分で気づいたときに、<br />
-            自然と動き出します。
+    <div className="relative z-10 lg:hidden text-left px-6">
+      {/* 本文エリアの最大幅を制限して読みやすく */}
+      <div className="max-w-[320px]">
+        <FadeIn>
+          <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-4 uppercase">
+            Philosophy
           </p>
         </FadeIn>
-        <FadeIn delay={0.6} duration={0.8}>
-          <p>
-            一人ひとりが本来の自分に気づき、<br />
-            その力を、無理なく<br />
-            発揮できる状態をつくること。
-          </p>
-          <p className="mt-4">
-            それが、個人と組織の豊かさを、<br />
-            静かに、そして確かに<br />
-            育てていくと考えています。
+
+        {/* 見出し: 方法A（意図的な改行）*/}
+        <FadeIn delay={0.15}>
+          <h2 className="font-sans text-[1.5rem] tracking-[0.02em] !font-bold leading-[1.6] text-[#333] mb-3" style={{ fontWeight: 700 }}>
+            気づきから、豊かさへ。
+          </h2>
+        </FadeIn>
+
+        <FadeIn delay={0.3}>
+          <p className="text-[0.85rem] tracking-[0.1em] text-[#666] mb-10 leading-[1.8]">
+            ひとつの気づきが、<br />道をひらき、現実を動かす
           </p>
         </FadeIn>
+
+        {/* 本文: 方法C（max-widthで自然に折り返し） */}
+        <div className="text-[0.9rem] leading-[2.2] text-[#333] space-y-6">
+          <FadeIn delay={0.45} duration={0.8}>
+            <p>
+              人は、教えられて変わるのではなく、自分で気づいたときに、自然と動き出します。
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.6} duration={0.8}>
+            <p>
+              一人ひとりが本来の自分に気づき、その力を、無理なく発揮できる状態をつくること。それが、個人と組織の豊かさを、静かに、そして確かに育てていくと考えています。
+            </p>
+          </FadeIn>
+        </div>
       </div>
     </div>
   );
@@ -283,11 +278,14 @@ export default function HomePage() {
                     className="h-[2px] w-12 mb-4"
                     style={{ background: 'linear-gradient(to right, var(--color-primary), var(--color-tertiary))' }}
                   />
-                  <h3 className="text-[1.3rem] tracking-[0.01em] font-normal mb-3 text-[#333]">企業向けサービス</h3>
-                  <p className="text-[#888] leading-[1.8] mb-4 text-[0.85rem]">経営の意思決定を、再現性ある仕組みへ。</p>
+                  <h3 className="text-[1.2rem] tracking-[0.01em] font-normal mb-3 text-[#333]">企業向けサービス</h3>
+                  {/* 説明文: max-widthで自然な折り返し */}
+                  <p className="text-[#888] leading-[1.8] mb-4 text-[0.85rem] max-w-[260px]">
+                    経営の意思決定を、再現性ある仕組みへ。
+                  </p>
                   <ul className="text-[#555] text-[0.85rem] leading-[2] mb-6 space-y-1">
                     <li>経営コンサルティング</li>
-                    <li>医療法人・歯科医院向けコンサルティング</li>
+                    <li>医療法人・歯科医院向け<br />コンサルティング</li>
                     <li>プロジェクト遂行支援</li>
                     <li>人材育成研修</li>
                   </ul>
@@ -305,8 +303,11 @@ export default function HomePage() {
                     className="h-[2px] w-12 mb-4"
                     style={{ background: 'linear-gradient(to right, var(--color-secondary), var(--color-accent))' }}
                   />
-                  <h3 className="text-[1.3rem] tracking-[0.01em] font-normal mb-3 text-[#333]">個人向けサービス</h3>
-                  <p className="text-[#888] leading-[1.8] mb-4 text-[0.85rem]">本当の願いに気づき、行動が自然に続く状態へ。</p>
+                  <h3 className="text-[1.2rem] tracking-[0.01em] font-normal mb-3 text-[#333]">個人向けサービス</h3>
+                  {/* 説明文: max-widthで自然な折り返し */}
+                  <p className="text-[#888] leading-[1.8] mb-4 text-[0.85rem] max-w-[260px]">
+                    本当の願いに気づき、行動が自然に続く状態へ。
+                  </p>
                   <ul className="text-[#555] text-[0.85rem] leading-[2] mb-6 space-y-1">
                     <li>Personal Awakening Session</li>
                     <li>Hypnotherapy（催眠療法）</li>
@@ -483,28 +484,32 @@ export default function HomePage() {
             }}
           />
 
-          <div className="relative z-10 max-w-[800px] mx-auto text-center">
-            <FadeIn>
-              <p className="tracking-[0.3em] text-[0.7rem] text-[#555] mb-8 uppercase">
-                Contact
-              </p>
-            </FadeIn>
+          {/* PC版: max-w-[800px], SP版: max-w-[320px] で余白を確保 */}
+          <div className="relative z-10 max-w-[800px] md:mx-auto text-center">
+            <div className="max-w-[320px] mx-auto md:max-w-none">
+              <FadeIn>
+                <p className="tracking-[0.3em] text-[0.7rem] text-[#555] mb-8 uppercase">
+                  Contact
+                </p>
+              </FadeIn>
 
-            <FadeIn delay={0.1}>
-              <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] tracking-[-0.02em] font-light leading-[1.6] text-[#333] mb-8">
-                まずは、お気軽にご相談ください
-              </h2>
-            </FadeIn>
+              <FadeIn delay={0.1}>
+                <h2 className="text-[clamp(1.4rem,3vw,2.4rem)] tracking-[-0.02em] font-light leading-[1.6] text-[#333] mb-8">
+                  まずは、お気軽に<br className="md:hidden" />ご相談ください
+                </h2>
+              </FadeIn>
 
-            <FadeIn delay={0.2}>
-              <p className="text-[#444] leading-[2.0] mb-12">
-                企業の課題整理から、<br className="md:hidden" />個人の内面の整理まで。<br />目的に合わせて、<br className="md:hidden" />最適な関わり方をご提案します。
-              </p>
-            </FadeIn>
+              <FadeIn delay={0.2}>
+                {/* 本文: max-widthで自然な折り返し */}
+                <p className="text-[#444] text-[0.9rem] leading-[2.0] mb-12">
+                  企業の課題整理から、個人の内面の整理まで。目的に合わせて、最適な関わり方をご提案します。
+                </p>
+              </FadeIn>
 
-            <FadeIn delay={0.3}>
-              <ArrowLink href="/contact">Contact Us</ArrowLink>
-            </FadeIn>
+              <FadeIn delay={0.3}>
+                <ArrowLink href="/contact">Contact Us</ArrowLink>
+              </FadeIn>
+            </div>
           </div>
         </section>
       </div>
