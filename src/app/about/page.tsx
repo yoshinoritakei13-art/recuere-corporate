@@ -35,12 +35,8 @@ export default function AboutPage() {
                 <h1 className="text-[clamp(1.8rem,3vw,2.4rem)] tracking-[0.06em] font-semibold mb-6">
                   About recuere
                 </h1>
-                <p className="text-[1.05rem] leading-[2.0] text-[#6b7280] mb-8">
-                  経営の論理性と、
-                  <br />
-                  人の内面をひらく心理の知見を融合し、
-                  <br />
-                  組織と個人の「本来の力」を持続的な成長へとつなげます。
+                <p className="text-[1.05rem] leading-[2.0] text-[#6b7280] mb-8 max-w-[300px] md:max-w-none">
+                  経営の論理性と、人の内面をひらく心理の知見を融合し、組織と個人の「本来の力」を持続的な成長へとつなげます。
                 </p>
                 <div className="flex gap-3 flex-wrap">
                   <Link
@@ -178,14 +174,8 @@ export default function AboutPage() {
                   たなか里乃
                 </h3>
 
-                <p className="leading-[2.0] text-[#1f2937] mb-6">
-                  人は、正しさだけでは動けません。
-                  <br />
-                  けれど、感情だけでも未来は続かない。
-                  <br />
-                  経営と心理、両方を知るからこそ、
-                  <br />
-                  現実を変える「一歩」を共に設計できます。
+                <p className="leading-[2.0] text-[#1f2937] mb-6 max-w-[280px] md:max-w-none">
+                  人は、正しさだけでは動けません。けれど、感情だけでも未来は続かない。経営と心理、両方を知るからこそ、現実を変える「一歩」を共に設計できます。
                 </p>
 
                 <ul className="list-disc pl-5 text-[#6b7280] leading-[1.9] mb-6">

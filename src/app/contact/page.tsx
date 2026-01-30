@@ -109,7 +109,7 @@ export default function ContactPage() {
               text="お問い合わせ"
               delay={100}
               charDelay={60}
-              className="font-sans text-[clamp(2rem,4vw,3rem)] tracking-[0.02em] font-normal leading-[1.5] text-[#333] mb-4"
+              className="font-sans text-[clamp(1.5rem,4vw,3rem)] tracking-[0.02em] font-normal leading-[1.5] text-[#333] mb-4"
             />
             <FadeIn blur delay={0.2}>
               <p className="text-[0.95rem] leading-[2.0] text-[#666]">

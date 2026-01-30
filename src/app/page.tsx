@@ -40,7 +40,7 @@ function PhilosophyDesktop() {
       </FadeIn>
 
       <FadeIn delay={0.15}>
-        <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-[0.02em] leading-[1.5] text-[#333] mb-4 !font-bold">
+        <h2 className="text-[clamp(1.5rem,4vw,3rem)] tracking-[0.02em] leading-[1.5] text-[#333] mb-4 !font-bold">
           気づきから、豊かさへ。
         </h2>
       </FadeIn>

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import FloatingParticles from '@/components/FloatingParticles';
 import ArrowLink from '@/components/ArrowLink';
 import FadeIn from '@/components/FadeIn';
+import ParallaxText from '@/components/ParallaxText';
 
 const LiquidGradient = dynamic(
   () => import('@/components/LiquidGradientUnified'),
@@ -71,18 +72,23 @@ export default function SessionPage() {
           />
 
           <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-            <FadeIn blur className="md:ml-[10%]">
-              <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-6 uppercase font-medium">Session</p>
-              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[var(--color-text)] mb-6">
-                心と向き合い、<br />
-                本来の自分を<br />
-                取り戻す
-              </h1>
-              <p className="text-[var(--color-text-muted)] leading-[2] max-w-md font-light">
-                思考や感情に気づき、<br />
-                自分の意思と次の一歩を明確にするセッション
-              </p>
-            </FadeIn>
+            <div className="md:ml-[10%]">
+              <FadeIn blur>
+                <p className="tracking-[0.3em] text-[0.7rem] text-[var(--color-navy)] mb-8 uppercase">Session</p>
+              </FadeIn>
+              <ParallaxText
+                text="心と向き合い、本来の自分を取り戻す"
+                delay={100}
+                charDelay={60}
+                className="font-sans text-[clamp(1.5rem,4vw,3rem)] tracking-[0.02em] font-normal leading-[1.5] text-[var(--color-text)] mb-6"
+              />
+              <FadeIn blur delay={0.2}>
+                <p className="text-[var(--color-text-muted)] leading-[2] max-w-md font-light">
+                  思考や感情に気づき、<br />
+                  自分の意思と次の一歩を明確にするセッション
+                </p>
+              </FadeIn>
+            </div>
           </div>
         </section>
 
@@ -127,18 +133,18 @@ export default function SessionPage() {
 
               {/* テキスト */}
               <FadeIn blur delay={0.2}>
-                <div className="text-gray-600 text-[0.9rem] leading-relaxed space-y-4 mb-8">
+                <div className="text-gray-600 text-[0.9rem] leading-relaxed space-y-4 mb-8 max-w-[300px]">
                   <p>
-                    アウェイキングセッションでは、<br />答えを与えたり、<br />何かを変えたりするための<br />セッションではありません。
+                    アウェイキングセッションでは、答えを与えたり、何かを変えたりするためのセッションではありません。
                   </p>
                   <p>
-                    日常の中で積み重なった<br />思考や感情、言葉にならない違和感を、<br />対話を通して静かに整理していきます。
+                    日常の中で積み重なった思考や感情、言葉にならない違和感を、対話を通して静かに整理していきます。
                   </p>
                   <p>
-                    recuere®のセッションでは、<br />「変える」ことよりも<br />「気づく」ことを大切にしています。
+                    recuere®のセッションでは、「変える」ことよりも「気づく」ことを大切にしています。
                   </p>
                   <p>
-                    自分の内側に何が起きているのかに<br />気づいたとき、<br />次の選択や行動は、<br />自然と自分の中から見えてくるからです。
+                    自分の内側に何が起きているのかに気づいたとき、次の選択や行動は、自然と自分の中から見えてくるからです。
                   </p>
                 </div>
               </FadeIn>
@@ -155,7 +161,7 @@ export default function SessionPage() {
                   <FadeIn blur direction="clipReveal" delay={0.4} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-8">
                     Awakening Session
                   </FadeIn>
-                  <FadeIn blur direction="clipReveal" delay={0.8} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                  <FadeIn blur direction="clipReveal" delay={0.8} className="text-[clamp(1.4rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                     アウェイキングセッション
                   </FadeIn>
                   <FadeIn blur delay={1.0} className="text-[0.9rem] text-[var(--color-text-muted)] mt-2 relative z-10">
@@ -224,7 +230,7 @@ export default function SessionPage() {
                     {selfRealizationPricing.map((item, index) => (
                       <div key={index} className="px-0 md:px-6 py-4 md:py-4 flex flex-col border-b md:border-b-0 border-gray-200 last:border-b-0">
                         <div className="flex-1">
-                          <p className="text-lg md:text-xl font-medium mb-1 text-center text-gray-700 whitespace-nowrap">
+                          <p className="text-[clamp(0.9rem,3vw,1.25rem)] font-medium mb-1 text-center text-gray-700 whitespace-nowrap">
                             {item.duration}
                           </p>
                           <p className="text-sm mb-3 text-center text-gray-500">
@@ -388,19 +394,19 @@ export default function SessionPage() {
                     <FadeIn blur direction="clipReveal" delay={0.3} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                       Personal Coaching
                     </FadeIn>
-                    <FadeIn blur direction="clipReveal" delay={0.6} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                    <FadeIn blur direction="clipReveal" delay={0.6} className="text-[clamp(1.4rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                       パーソナルコーチングセッション
                     </FadeIn>
                   </div>
-                  <div className="text-gray-500 leading-relaxed mb-8 text-[0.9rem] space-y-4">
+                  <div className="text-gray-500 leading-relaxed mb-8 text-[0.9rem] space-y-4 max-w-[300px] md:max-w-none">
                     <p>
-                      気づきを現実の選択や行動に<br className="md:hidden" />つなげていくための継続的なサポートです。
+                      気づきを現実の選択や行動につなげていくための継続的なサポートです。
                     </p>
                     <p>
-                      このコースは定期的にお話しながら<br className="md:hidden" />今の状況や心の状態を整理し、<br className="md:hidden" />次の一歩を一緒にみつけていく<br className="md:hidden" />継続的なサポートです。
+                      このコースは定期的にお話しながら今の状況や心の状態を整理し、次の一歩を一緒にみつけていく継続的なサポートです。
                     </p>
                     <p>
-                      目標や進め方は<br className="md:hidden" />クライアント様一人ひとりに合わせて<br className="md:hidden" />柔軟に組み立てます。
+                      目標や進め方はクライアント様一人ひとりに合わせて柔軟に組み立てます。
                     </p>
                   </div>
 
@@ -437,10 +443,8 @@ export default function SessionPage() {
               </div>
 
               {/* テキスト */}
-              <p className="text-gray-500 leading-relaxed mb-6 text-[0.9rem]">
-                催眠状態で潜在意識にアクセスし、<br />
-                心の深い部分にある課題に<br />働きかける心理療法です。<br />
-                安心できる空間で、<br />あなたの内なる世界を探求します。
+              <p className="text-gray-500 leading-relaxed mb-6 text-[0.9rem] max-w-[300px]">
+                催眠状態で潜在意識にアクセスし、心の深い部分にある課題に働きかける心理療法です。安心できる空間で、あなたの内なる世界を探求します。
               </p>
 
               {/* テーマタグ */}
@@ -496,7 +500,7 @@ export default function SessionPage() {
                     <FadeIn blur direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                       Hypnotherapy
                     </FadeIn>
-                    <FadeIn blur direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                    <FadeIn blur direction="clipReveal" delay={0.5} className="text-[clamp(1.4rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                       ヒプノセラピー
                     </FadeIn>
                   </div>
@@ -595,7 +599,7 @@ export default function SessionPage() {
                     <FadeIn blur direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                       Branding
                     </FadeIn>
-                    <FadeIn blur direction="clipReveal" delay={0.4} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                    <FadeIn blur direction="clipReveal" delay={0.4} className="text-[clamp(1.4rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                       ブランディング構築セッション
                     </FadeIn>
                   </div>
@@ -652,10 +656,10 @@ export default function SessionPage() {
           <div className="max-w-3xl mx-auto px-6 text-center">
             <FadeIn blur direction="scaleUp">
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-8 uppercase font-medium">Contact</p>
-              <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] mb-6">
+              <h2 className="text-[clamp(1.4rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] mb-6">
                 まずはお気軽にご相談ください
               </h2>
-              <p className="text-[var(--color-text-muted)] text-[0.95rem] leading-[2] mb-10 font-light">
+              <p className="text-[var(--color-text-muted)] text-[0.95rem] leading-[2] mb-10 font-light max-w-[300px] mx-auto md:max-w-none">
                 ご不明な点やご質問がございましたら、お気軽にお問い合わせください。
               </p>
               <ArrowLink href="/contact">

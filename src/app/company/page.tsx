@@ -55,7 +55,7 @@ export default function CompanyPage() {
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-8 uppercase font-medium">Company</p>
             </FadeIn>
             <FadeIn blur delay={0.1}>
-              <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[var(--color-text)] mb-6">
+              <h1 className="text-[clamp(1.8rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[var(--color-text)] mb-6">
                 会社情報
               </h1>
             </FadeIn>
@@ -338,8 +338,8 @@ export default function CompanyPage() {
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-10 uppercase font-medium">Contact</p>
             </FadeIn>
             <FadeIn blur delay={0.1}>
-              <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] font-extralight leading-[1.4] text-[var(--color-text)] mb-10">
-                まずは、お気軽に<br className="md:hidden" />ご相談ください
+              <h2 className="text-[clamp(1.5rem,4vw,3rem)] tracking-[-0.02em] font-extralight leading-[1.4] text-[var(--color-text)] mb-10 max-w-[280px] mx-auto md:max-w-none">
+                まずは、お気軽にご相談ください
               </h2>
             </FadeIn>
             <FadeIn blur delay={0.2}>

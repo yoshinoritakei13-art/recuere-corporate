@@ -178,8 +178,8 @@ function MobileMenuOverlay({
                   style={{ color: '#1a1a2e' }}
                   onClick={onClose}
                 >
-                  <span className="text-[1.8rem] font-light tracking-[0.02em]">{item.label}</span>
-                  <span className="text-[0.85rem] text-gray-500">{item.labelJa}</span>
+                  <span className="text-[clamp(1.4rem,5vw,1.8rem)] font-light tracking-[0.02em]">{item.label}</span>
+                  <span className="text-[clamp(0.7rem,2vw,0.85rem)] text-gray-500 whitespace-nowrap">{item.labelJa}</span>
                 </Link>
               </li>
             ))}
