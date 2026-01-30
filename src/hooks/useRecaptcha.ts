@@ -27,6 +27,7 @@ export function useRecaptcha() {
   useEffect(() => {
     // reCAPTCHAが未設定の場合はスキップ
     if (!RECAPTCHA_SITE_KEY) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsReady(true);
       return;
     }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FounderBackground from '@/components/FounderBackground';
@@ -59,11 +60,12 @@ export default function AboutPage() {
 
               {/* 右: 写真 */}
               <figure className="max-md:order-first">
-                <img
+                <Image
                   src="/images/rinosan.png"
                   alt="代表 たなか里乃のプロフィール写真"
+                  width={400}
+                  height={500}
                   className="w-full h-auto rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
-                  loading="lazy"
                 />
               </figure>
             </div>

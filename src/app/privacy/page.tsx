@@ -12,17 +12,17 @@ export default function PrivacyPolicyPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
-          <FadeIn>
+          <FadeIn blur>
             <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">
               Privacy Policy
             </p>
           </FadeIn>
-          <FadeIn delay={0.1}>
+          <FadeIn blur delay={0.1}>
             <h1 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight leading-[1.4] text-[#333] mb-4">
               プライバシーポリシー
             </h1>
           </FadeIn>
-          <FadeIn delay={0.2}>
+          <FadeIn blur delay={0.2}>
             <p className="text-[#666] text-sm">
               （個人情報保護方針）
             </p>
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
       {/* Content Section */}
       <section className="pb-24 px-8">
         <div className="max-w-3xl mx-auto">
-          <FadeIn delay={0.3}>
+          <FadeIn blur delay={0.3}>
             <div className="text-[#444] text-[0.95rem] leading-[2] space-y-12">
               {/* 前文 */}
               <p>

@@ -12,12 +12,12 @@ export default function LegalPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
-          <FadeIn>
+          <FadeIn blur>
             <p className="tracking-[0.5em] text-[0.65rem] text-[#002d5a] mb-6 uppercase font-medium">
               Legal
             </p>
           </FadeIn>
-          <FadeIn delay={0.1}>
+          <FadeIn blur delay={0.1}>
             <h1 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight leading-[1.4] text-[#333]">
               特定商取引法に基づく表記
             </h1>
@@ -28,7 +28,7 @@ export default function LegalPage() {
       {/* Content Section */}
       <section className="pb-24 px-8">
         <div className="max-w-3xl mx-auto">
-          <FadeIn delay={0.2}>
+          <FadeIn blur delay={0.2}>
             <div className="space-y-0">
               {/* テーブル形式 */}
               <div className="divide-y divide-gray-200">

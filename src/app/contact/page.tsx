@@ -102,7 +102,7 @@ export default function ContactPage() {
           />
 
           <div className="relative z-10 max-w-[700px] mx-auto text-left">
-            <FadeIn>
+            <FadeIn blur>
               <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-8 uppercase">Contact</p>
             </FadeIn>
             <ParallaxText
@@ -111,7 +111,7 @@ export default function ContactPage() {
               charDelay={60}
               className="font-sans text-[clamp(2rem,4vw,3rem)] tracking-[0.02em] font-normal leading-[1.5] text-[#333] mb-4"
             />
-            <FadeIn delay={0.2}>
+            <FadeIn blur delay={0.2}>
               <p className="text-[0.95rem] leading-[2.0] text-[#666]">
                 ご相談・ご質問など、お気軽にお問い合わせください。
               </p>
@@ -131,7 +131,7 @@ export default function ContactPage() {
 
           <div className="relative z-10 max-w-[700px] mx-auto">
             {/* すりガラス風フォームカード */}
-            <FadeIn delay={0.1}>
+            <FadeIn blur delay={0.1}>
               <div
                 className="rounded-2xl overflow-hidden"
                 style={{

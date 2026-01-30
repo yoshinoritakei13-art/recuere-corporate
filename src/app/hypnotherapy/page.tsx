@@ -1,8 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
 import FloatingParticles from '@/components/FloatingParticles';
 import ArrowLink from '@/components/ArrowLink';
 import FadeIn from '@/components/FadeIn';
@@ -106,7 +104,7 @@ function TestimonialsScroll({ testimonials }: { testimonials: { text: string; au
             key={i}
             className="bg-white/70 rounded-xl p-5 w-[280px] shrink-0 border border-gray-100"
           >
-            <p className="text-gray-600 text-sm leading-relaxed mb-3">"{t.text}"</p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-3">&ldquo;{t.text}&rdquo;</p>
             <p className="text-gray-500 text-xs text-right">— {t.author}</p>
           </div>
         ))}
@@ -133,20 +131,12 @@ function TestimonialsScroll({ testimonials }: { testimonials: { text: string; au
 }
 
 export default function HypnotherapyPage() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* パステルグラデーション背景 */}
-      {mounted && (
-        <div className="fixed inset-0 -z-10">
-          <LiquidGradient preset="pastel" opacity={0.8} />
-        </div>
-      )}
+      <div className="fixed inset-0 -z-10">
+        <LiquidGradient preset="pastel" opacity={0.8} />
+      </div>
 
       {/* メインコンテンツ */}
       <div className="relative z-10">
@@ -184,7 +174,7 @@ export default function HypnotherapyPage() {
           />
 
           <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-            <FadeIn className="md:ml-[10%]">
+            <FadeIn blur className="md:ml-[10%]">
               <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] mb-6 uppercase font-medium">Hypnotherapy</p>
               <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[#333] mb-6">
                 ヒプノセラピー
@@ -200,7 +190,7 @@ export default function HypnotherapyPage() {
         {/* ===== ヒプノセラピーとは ===== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-3xl mx-auto px-6 text-center">
-            <FadeIn direction="up" duration={1}>
+            <FadeIn blur direction="up" duration={1}>
               <div className="relative inline-block mb-8">
                 <div className="text-[#7FA6BF]/10 text-4xl md:text-6xl font-extralight tracking-wider">
                   About
@@ -210,23 +200,23 @@ export default function HypnotherapyPage() {
                 </p>
               </div>
             </FadeIn>
-            <FadeIn delay={0.15} direction="up" duration={1}>
+            <FadeIn blur delay={0.15} direction="up" duration={1}>
               <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-8">
                 ヒプノセラピーとは
               </h2>
             </FadeIn>
 
-            <FadeIn delay={0.3} direction="up" duration={1}>
+            <FadeIn blur delay={0.3} direction="up" duration={1}>
               <p className="text-gray-500 text-[0.95rem] leading-[2.2] mb-6">
                 ヒプノセラピーは、催眠状態（深くリラックスした状態）で、潜在意識（普段は意識に上りにくい思考や感情）に静かに意識を向けていく心理療法です。
               </p>
             </FadeIn>
-            <FadeIn delay={0.45} direction="up" duration={1}>
+            <FadeIn blur delay={0.45} direction="up" duration={1}>
               <p className="text-gray-500 text-[0.95rem] leading-[2.2] mb-6">
                 安心できる空間の中で、心の深い部分にあるテーマに気づき、自分自身への理解を深めていくセッションです。
               </p>
             </FadeIn>
-            <FadeIn delay={0.6} direction="up" duration={1}>
+            <FadeIn blur delay={0.6} direction="up" duration={1}>
               <p className="text-gray-400 text-sm">
                 ※事前面談・セラピー・事後面談を含め、3時間程度のセッションとなります。
               </p>
@@ -235,9 +225,9 @@ export default function HypnotherapyPage() {
         </section>
 
         {/* ===== 期待できる変化の一例 ===== */}
-        <section className="py-16 md:py-24 bg-[#faf8f5]">
+        <section className="-mt-8 pt-2 pb-16 md:-mt-12 md:pt-6 md:pb-24 bg-[#faf8f5]">
           <div className="max-w-7xl mx-auto px-6">
-            <FadeIn>
+            <FadeIn blur>
               <div className="text-center mb-12">
                 <div className="relative inline-block">
                   <p className="text-[#7FA6BF]/10 text-4xl md:text-5xl font-extralight tracking-wider">
@@ -264,7 +254,7 @@ export default function HypnotherapyPage() {
               ))}
             </div>
 
-            <FadeIn delay={0.6}>
+            <FadeIn blur delay={0.6}>
               <p className="text-gray-400 text-xs text-center mt-8">
                 ※ 効果を保証するものではありません
               </p>
@@ -275,7 +265,7 @@ export default function HypnotherapyPage() {
         {/* ===== 主なアプローチ（詳細） ===== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <FadeIn>
+            <FadeIn blur>
               <div className="text-center mb-12">
                 <div className="relative inline-block">
                   <p className="text-[#7FA6BF]/10 text-4xl md:text-5xl font-extralight tracking-wider">
@@ -335,7 +325,7 @@ export default function HypnotherapyPage() {
               </div>
             </div>
 
-            <FadeIn delay={0.5}>
+            <FadeIn blur delay={0.5}>
               <p className="text-gray-400 text-xs text-center mt-12">
                 ※ ヒプノセラピーは医療行為ではありません。精神疾患の治療を目的としたものではなく、心の探求や自己理解を深めるためのセッションです。
               </p>
@@ -346,7 +336,7 @@ export default function HypnotherapyPage() {
         {/* ===== 料金 ===== */}
         <section className="py-16 md:py-24 bg-[#faf8f5]">
           <div className="max-w-7xl mx-auto px-6">
-            <FadeIn>
+            <FadeIn blur>
               <div className="text-center mb-12">
                 <div className="relative inline-block">
                   <p className="text-[#7FA6BF]/10 text-4xl md:text-5xl font-extralight tracking-wider">
@@ -359,7 +349,7 @@ export default function HypnotherapyPage() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.2}>
+            <FadeIn blur delay={0.2}>
               <div className="max-w-md mx-auto">
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 text-center shadow-sm">
                   <p className="text-gray-600 text-sm mb-2">ヒプノセラピーセッション</p>
@@ -394,7 +384,7 @@ export default function HypnotherapyPage() {
         {/* ===== 体験者の声 ===== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <FadeIn>
+            <FadeIn blur>
               <div className="text-center mb-8">
                 <div className="relative inline-block">
                   <p className="text-[#7FA6BF]/10 text-4xl md:text-5xl font-extralight tracking-wider">
@@ -415,7 +405,7 @@ export default function HypnotherapyPage() {
               {testimonials.map((t, i) => (
                 <FadeIn key={i} delay={0.1 * i}>
                   <div className="bg-white/70 rounded-xl p-5 border border-gray-100">
-                    <p className="text-gray-600 text-sm leading-relaxed mb-3">"{t.text}"</p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-3">&ldquo;{t.text}&rdquo;</p>
                     <p className="text-gray-500 text-xs text-right">— {t.author}</p>
                   </div>
                 </FadeIn>
@@ -423,7 +413,7 @@ export default function HypnotherapyPage() {
             </div>
 
             {/* PC版: カルーセル */}
-            <FadeIn delay={0.2} className="hidden md:block">
+            <FadeIn blur delay={0.2} className="hidden md:block">
               <TestimonialsScroll testimonials={testimonials} />
             </FadeIn>
           </div>
@@ -432,7 +422,7 @@ export default function HypnotherapyPage() {
         {/* ===== CTA ===== */}
         <section className="py-24 bg-[#faf8f5]">
           <div className="max-w-3xl mx-auto px-6 text-center">
-            <FadeIn direction="scaleUp">
+            <FadeIn blur direction="scaleUp">
               <p className="tracking-[0.5em] text-[0.65rem] text-[#7FA6BF] mb-8 uppercase font-medium">Contact</p>
               <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[#333] mb-6">
                 まずはお気軽にご相談ください

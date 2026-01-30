@@ -48,16 +48,16 @@ export default function ServicesPage() {
           />
           <div className="relative z-10 max-w-[1100px] mx-auto w-full">
             <div className="md:ml-[10%]">
-              <FadeIn>
+              <FadeIn blur>
                 <p className="tracking-[0.5em] text-[0.65rem] text-white/60 mb-6 uppercase font-medium">Services</p>
               </FadeIn>
-              <FadeIn delay={0.1}>
+              <FadeIn blur delay={0.1}>
                 <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-white mb-6">
                   経営の意思決定を、<br />
                   再現性ある仕組みへ。
                 </h1>
               </FadeIn>
-              <FadeIn delay={0.2}>
+              <FadeIn blur delay={0.2}>
                 <p className="text-white/70 leading-[2] max-w-md font-light">
                   経営の論理性と心理学の知見を融合し、<br />
                   現状と将来像のギャップを整理します。
@@ -71,16 +71,16 @@ export default function ServicesPage() {
         <section className="relative pt-[60px] pb-[140px] px-8 max-md:pt-[40px] max-md:pb-[100px]" id="business">
         <div className="max-w-[850px] mx-auto">
           <div className="md:ml-[10%] mb-16">
-            <FadeIn>
+            <FadeIn blur>
               <p className="tracking-[0.5em] text-[0.65rem] text-white/60 mb-6 uppercase font-medium">Our Services</p>
             </FadeIn>
-            <FadeIn delay={0.1}>
+            <FadeIn blur delay={0.1}>
               <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-white mb-6">
                 4つの専門的な視点を通じて、<br />
                 経営の意思決定と実行を支援します。
               </h2>
             </FadeIn>
-            <FadeIn delay={0.15}>
+            <FadeIn blur delay={0.15}>
               <p className="text-white/70 leading-[2] max-w-md font-light">
                 現状と将来像のギャップを捉えながら、<br />
                 意思決定から実行までを一体で設計します。
@@ -91,7 +91,7 @@ export default function ServicesPage() {
           {/* Service Cards - 2x2 Grid with mouse glow effect */}
           <div ref={cardsRef} className="grid lg:grid-cols-2 gap-6 mb-20">
             {/* Card 1 - 経営コンサルティング／意思決定支援 */}
-            <FadeIn delay={0.1}>
+            <FadeIn blur delay={0.1}>
               <article className="bg-white/10 backdrop-blur-sm rounded-lg h-full border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <div className="p-6 md:p-10 lg:p-12 h-full">
                   <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">01</p>
@@ -109,7 +109,7 @@ export default function ServicesPage() {
             </FadeIn>
 
             {/* Card 2 - 業界特化型経営支援（歯科・医療） */}
-            <FadeIn delay={0.3}>
+            <FadeIn blur delay={0.3}>
               <article className="bg-white/10 backdrop-blur-sm rounded-lg h-full border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <div className="p-6 md:p-10 lg:p-12 h-full">
                   <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">02</p>
@@ -127,7 +127,7 @@ export default function ServicesPage() {
             </FadeIn>
 
             {/* Card 3 - 人材育成・研修／伴走支援 */}
-            <FadeIn delay={0.5}>
+            <FadeIn blur delay={0.5}>
               <article className="bg-white/10 backdrop-blur-sm rounded-lg h-full border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <div className="p-6 md:p-10 lg:p-12 h-full">
                   <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">03</p>
@@ -144,7 +144,7 @@ export default function ServicesPage() {
             </FadeIn>
 
             {/* Card 4 - 経営者向け意思決定コーチング */}
-            <FadeIn delay={0.7}>
+            <FadeIn blur delay={0.7}>
               <article className="bg-white/10 backdrop-blur-sm rounded-lg h-full border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <div className="p-6 md:p-10 lg:p-12 h-full">
                   <p className="tracking-[0.5em] text-[0.65rem] text-white/50 mb-4 uppercase font-medium">04</p>
@@ -169,7 +169,7 @@ export default function ServicesPage() {
           </div>
 
           {/* 費用について - 白地カード（カルーセル内蔵） */}
-          <FadeIn delay={0.5}>
+          <FadeIn blur delay={0.5}>
             <div className="mt-12 p-6 md:p-8 bg-white rounded-lg">
               {/* 自動スクロールカルーセル */}
               <div className="overflow-hidden mb-6">
@@ -213,16 +213,16 @@ export default function ServicesPage() {
         <div className="max-w-[850px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-8 bg-white rounded-lg">
             <div>
-              <FadeIn>
+              <FadeIn blur>
                 <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-2 uppercase">For Personal</p>
               </FadeIn>
-              <FadeIn delay={0.1}>
+              <FadeIn blur delay={0.1}>
                 <h2 className="text-heading-sm font-light text-[var(--color-text)]">
                   個人向けセッションをお探しの方へ
                 </h2>
               </FadeIn>
             </div>
-            <FadeIn delay={0.2}>
+            <FadeIn blur delay={0.2}>
               <ArrowLink href="/session">
                 セッション詳細を見る
               </ArrowLink>

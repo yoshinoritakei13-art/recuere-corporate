@@ -11,6 +11,7 @@ interface FadeInProps {
   direction?: AnimationType;
   duration?: number;
   className?: string;
+  blur?: boolean; // ブラーからシャープに
 }
 
 export default function FadeIn({
@@ -19,6 +20,7 @@ export default function FadeIn({
   direction = 'up',
   duration = 0.8,
   className = '',
+  blur = false,
 }: FadeInProps) {
   const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.1,
@@ -75,7 +77,8 @@ export default function FadeIn({
       style={{
         opacity: isVisible ? 1 : 0,
         transform: getTransform(),
-        transition: `opacity ${duration}s ease-out ${delay}s, transform ${duration}s ease-out ${delay}s`,
+        filter: blur ? (isVisible ? 'blur(0px)' : 'blur(6px)') : 'none',
+        transition: `opacity ${duration}s ease-out ${delay}s, transform ${duration}s ease-out ${delay}s, filter ${duration}s ease-out ${delay}s`,
       }}
     >
       {children}

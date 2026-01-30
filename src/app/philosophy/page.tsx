@@ -5,6 +5,7 @@ import FloatingParticles from '@/components/FloatingParticles';
 import TiltCard from '@/components/TiltCard';
 import AnimatedGradient from '@/components/AnimatedGradient';
 import ContactCTA from '@/components/ContactCTA';
+import ParallaxSection from '@/components/ParallaxSection';
 
 /**
  * Philosophy Page - recuere コーポレートサイト
@@ -29,21 +30,21 @@ export default function PhilosophyPage() {
           {/* 背景画像 */}
           <div className="absolute inset-0 pointer-events-none bg-[url('/images/AdobeStock_1597965362.jpeg')] bg-cover bg-center opacity-[0.12]" />
 
-          {/* 装飾サークル */}
-          <div className="absolute right-[10%] top-[20%] w-[300px] h-[300px] rounded-full border border-[var(--color-navy)]/10 opacity-50 max-md:hidden" />
-          <div className="absolute right-[15%] top-[25%] w-[200px] h-[200px] rounded-full border border-[var(--color-navy)]/10 opacity-40 max-md:hidden" />
+          {/* 装飾サークル - パララックス効果 */}
+          <ParallaxSection speed={0.1} className="absolute right-[10%] top-[20%] w-[300px] h-[300px] rounded-full border border-[var(--color-navy)]/10 opacity-50 max-md:hidden" fadeIn={false} blur={false} />
+          <ParallaxSection speed={0.2} className="absolute right-[15%] top-[25%] w-[200px] h-[200px] rounded-full border border-[var(--color-navy)]/10 opacity-40 max-md:hidden" fadeIn={false} blur={false} />
 
           {/* 下部グラデーション（白に溶ける） */}
           <div className="absolute bottom-0 left-0 right-0 h-[200px] pointer-events-none bg-hero-overlay-white" />
 
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             <div className="md:ml-[10%]">
-              <FadeIn>
+              <FadeIn blur>
                 <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-6 uppercase">Philosophy</p>
               </FadeIn>
 
               {/* メインキャッチコピー */}
-              <FadeIn delay={0.1}>
+              <FadeIn delay={0.1} blur>
                 <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[var(--color-text)] mb-6">
                   気づきから、<br />
                   豊かさへ。
@@ -56,7 +57,7 @@ export default function PhilosophyPage() {
                 </p>
               </FadeIn>
 
-              <FadeIn delay={0.3}>
+              <FadeIn delay={0.3} blur>
                 <p className="text-[var(--color-text-muted)] leading-[2] max-w-md font-light">
                   一人ひとりが本来の自分に気づき、<br />
                   その力を自然に発揮できる状態をつくること。<br />
@@ -70,7 +71,7 @@ export default function PhilosophyPage() {
         {/* Vision & Mission - カード形式 */}
         <section className="relative z-10 bg-white py-[60px] md:py-[100px] px-6 md:px-8">
           <div className="max-w-[1100px] mx-auto">
-            <FadeIn>
+            <FadeIn blur>
               <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-6 uppercase">Mission / Vision / Value</p>
             </FadeIn>
             <FadeIn delay={0.1}>
@@ -152,14 +153,14 @@ export default function PhilosophyPage() {
           <div className="absolute left-[10%] top-[30%] w-[1px] h-[150px]" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0, 45, 90, 0.2), transparent)' }} />
 
           <div className="relative z-10 max-w-[800px] mx-auto">
-            <FadeIn>
+            <FadeIn blur>
               <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-8 uppercase">Brand Story</p>
             </FadeIn>
 
             {/* 大きなタイトル */}
-            <FadeIn delay={0.2}>
+            <FadeIn delay={0.2} blur>
               <h3 className="text-[clamp(2rem,5vw,3.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] mb-6 leading-[1.3]">
-                <span className="font-['Sweet_Apricot',cursive]">recuere®</span><span className="text-[0.6em]">（リキュウレ®）について</span>
+                recuere®<span className="text-[0.6em]">（リキュウレ®）について</span>
               </h3>
             </FadeIn>
 

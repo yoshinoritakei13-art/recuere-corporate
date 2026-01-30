@@ -142,7 +142,7 @@ export default function LiquidGradientUnified({
   const touchTextureRef = useRef<TouchTexture | null>(null);
   const frameRef = useRef<number>(undefined);
   const materialRef = useRef<THREE.ShaderMaterial | null>(null);
-  const startTimeRef = useRef(Date.now());
+  const startTimeRef = useRef<number>(0);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     if (!touchTextureRef.current || !containerRef.current) return;
@@ -163,6 +163,9 @@ export default function LiquidGradientUnified({
 
   useEffect(() => {
     if (!containerRef.current) return;
+
+    // 開始時刻を初期化
+    startTimeRef.current = Date.now();
 
     const container = containerRef.current;
     const width = container.clientWidth;

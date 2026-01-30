@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import FadeIn from '@/components/FadeIn';
 import ArrowLink from '@/components/ArrowLink';
 import { useMouseGlow } from '@/hooks/useMouseGlow';
@@ -33,9 +34,6 @@ const qualifications = [
   'ACU (Academy of Universe Code)　コンシャスネスアストロロジー LEVEL 1、2 修了',
 ];
 
-// 肩書き
-const title = 'コンサルタント、上級心理カウンセラー、ヒプノセラピスト';
-
 export default function CompanyPage() {
   const cardsRef = useRef<HTMLDivElement>(null);
 
@@ -53,15 +51,15 @@ export default function CompanyPage() {
         <section className="relative min-h-[60vh] flex items-center pt-20 pb-24 px-8 overflow-hidden bg-white">
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             <div className="md:ml-[10%]">
-            <FadeIn>
+            <FadeIn blur>
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-8 uppercase font-medium">Company</p>
             </FadeIn>
-            <FadeIn delay={0.1}>
+            <FadeIn blur delay={0.1}>
               <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[var(--color-text)] mb-6">
                 会社情報
               </h1>
             </FadeIn>
-            <FadeIn delay={0.2}>
+            <FadeIn blur delay={0.2}>
               <p className="text-[var(--color-text-faint)] text-[0.9rem] tracking-[0.1em] font-light">
                 About recuere
               </p>
@@ -76,12 +74,12 @@ export default function CompanyPage() {
         {/* Company Info Section - 白背景 */}
         <section className="relative py-[60px] px-8 md:py-[80px] z-10 bg-white" ref={cardsRef}>
           <div className="max-w-[900px] mx-auto">
-            <FadeIn>
+            <FadeIn blur>
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-12 uppercase font-medium">Overview</p>
             </FadeIn>
 
             {/* シンプルなカード - 白背景＋ネイビーボーダー */}
-            <FadeIn delay={0.1}>
+            <FadeIn blur delay={0.1}>
               <div
                 className="glass-card relative rounded-2xl p-8 md:p-12 overflow-hidden"
                 style={{
@@ -160,28 +158,29 @@ export default function CompanyPage() {
           <div className="max-w-[900px] mx-auto relative z-[2]">
             {/* SP版: 画像（円形）→タイトル→テキスト */}
             <div className="md:hidden">
-              <FadeIn>
+              <FadeIn blur>
                 <p className="tracking-[0.5em] text-[0.65rem] text-white/60 mb-8 uppercase font-light text-center">Founder</p>
               </FadeIn>
 
               {/* 画像 - SP版は円形で上部に中央配置 */}
-              <FadeIn delay={0.1}>
+              <FadeIn blur delay={0.1}>
                 <div className="flex justify-center mb-8">
                   <div
                     className="w-[180px] h-[180px] rounded-full overflow-hidden"
                     style={{ boxShadow: '0 15px 30px rgba(0, 0, 0, 0.3)' }}
                   >
-                    <img
+                    <Image
                       src="/images/rinosan2.jpg"
                       alt="代表 たなか里乃"
+                      width={180}
+                      height={180}
                       className="w-full h-full object-cover object-top"
-                      loading="lazy"
                     />
                   </div>
                 </div>
               </FadeIn>
 
-              <FadeIn delay={0.2}>
+              <FadeIn blur delay={0.2}>
                 <div className="text-center mb-8">
                   <p className="text-white/50 tracking-[0.1em] text-[0.6rem] mb-2 leading-[1.8]">
                     コンサルタント<br />上級心理カウンセラー<br />ヒプノセラピスト
@@ -193,7 +192,7 @@ export default function CompanyPage() {
               </FadeIn>
 
               {/* テキスト */}
-              <FadeIn delay={0.3}>
+              <FadeIn blur delay={0.3}>
                 <div className="leading-[2.2] text-white/80 text-[0.9rem] mb-8 font-light space-y-4">
                   <p>
                     人は、誰かに教えられて変わるのではなく、自分で気づいたときに、自然と動き出します。
@@ -211,7 +210,7 @@ export default function CompanyPage() {
               </FadeIn>
 
               {/* 経歴 */}
-              <FadeIn delay={0.4}>
+              <FadeIn blur delay={0.4}>
                 <div className="pt-6 border-t border-white/10">
                   <p className="text-[0.6rem] text-white/40 mb-3 tracking-[0.3em] uppercase">Career</p>
                   <ul className="text-[0.8rem] text-white/70 leading-[2] font-light space-y-1">
@@ -223,7 +222,7 @@ export default function CompanyPage() {
               </FadeIn>
 
               {/* 資格・所属団体 */}
-              <FadeIn delay={0.5}>
+              <FadeIn blur delay={0.5}>
                 <div className="pt-6 border-t border-white/10">
                   <p className="text-[0.6rem] text-white/40 mb-3 tracking-[0.3em] uppercase">Qualifications & Affiliations</p>
                   <ul className="text-[0.75rem] text-white/60 leading-[2] font-light space-y-1">
@@ -237,11 +236,11 @@ export default function CompanyPage() {
 
             {/* PC版: 従来のレイアウト */}
             <div className="hidden md:block">
-              <FadeIn>
+              <FadeIn blur>
                 <p className="tracking-[0.5em] text-[0.65rem] text-white/60 mb-12 uppercase font-light">Founder</p>
               </FadeIn>
 
-              <FadeIn delay={0.2} duration={1.0}>
+              <FadeIn blur delay={0.2} duration={1.0}>
                 <div
                   className="flex flex-row gap-16 items-start p-12 rounded-2xl"
                   style={{
@@ -253,17 +252,18 @@ export default function CompanyPage() {
                   }}
                 >
                   {/* 画像 */}
-                  <FadeIn delay={0.4} direction="up" duration={0.8}>
+                  <FadeIn blur delay={0.4} direction="up" duration={0.8}>
                     <div className="w-[280px] shrink-0">
                       <div
                         className="relative overflow-hidden rounded-xl"
                         style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)' }}
                       >
-                        <img
+                        <Image
                           src="/images/rinosan2.jpg"
                           alt="代表 たなか里乃"
+                          width={280}
+                          height={373}
                           className="w-full aspect-[3/4] object-cover object-top"
-                          loading="lazy"
                         />
                       </div>
                     </div>
@@ -271,17 +271,17 @@ export default function CompanyPage() {
 
                   {/* テキスト */}
                   <div className="flex-1">
-                    <FadeIn delay={0.5} direction="up" duration={0.7}>
+                    <FadeIn blur delay={0.5} direction="up" duration={0.7}>
                       <p className="text-white/50 tracking-[0.1em] text-[0.65rem] mb-4">
                         コンサルタント、上級心理カウンセラー、ヒプノセラピスト
                       </p>
                     </FadeIn>
-                    <FadeIn delay={0.6} direction="up" duration={0.7}>
+                    <FadeIn blur delay={0.6} direction="up" duration={0.7}>
                       <h3 className="text-[3rem] tracking-[-0.02em] font-extralight text-white mb-10 leading-[1.1]">
                         たなか里乃
                       </h3>
                     </FadeIn>
-                    <FadeIn delay={0.7} direction="up" duration={0.7}>
+                    <FadeIn blur delay={0.7} direction="up" duration={0.7}>
                       <div className="leading-[2.2] text-white/80 text-[0.95rem] mb-8 font-light space-y-4">
                         <p>
                           人は、誰かに教えられて変わるのではなく、<br />
@@ -302,7 +302,7 @@ export default function CompanyPage() {
                       </div>
                     </FadeIn>
                     {/* 経歴 */}
-                    <FadeIn delay={0.8} direction="up" duration={0.7}>
+                    <FadeIn blur delay={0.8} direction="up" duration={0.7}>
                       <div className="pt-8 border-t border-white/10">
                         <p className="text-[0.65rem] text-white/40 mb-4 tracking-[0.3em] uppercase">Career</p>
                         <ul className="text-[0.85rem] text-white/70 leading-[2] font-light space-y-1">
@@ -314,7 +314,7 @@ export default function CompanyPage() {
                     </FadeIn>
 
                     {/* 資格・所属団体 */}
-                    <FadeIn delay={0.9} direction="up" duration={0.7}>
+                    <FadeIn blur delay={0.9} direction="up" duration={0.7}>
                       <div className="pt-8 border-t border-white/10">
                         <p className="text-[0.65rem] text-white/40 mb-4 tracking-[0.3em] uppercase">Qualifications & Affiliations</p>
                         <ul className="text-[0.8rem] text-white/60 leading-[2.2] font-light space-y-1">
@@ -334,20 +334,20 @@ export default function CompanyPage() {
         {/* Contact CTA Section */}
         <section className="relative pt-[60px] pb-[60px] px-8 md:pt-[100px] md:pb-[80px] bg-white z-30">
           <div className="relative z-10 max-w-[800px] mx-auto text-center">
-            <FadeIn>
+            <FadeIn blur>
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-10 uppercase font-medium">Contact</p>
             </FadeIn>
-            <FadeIn delay={0.1}>
+            <FadeIn blur delay={0.1}>
               <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] font-extralight leading-[1.4] text-[var(--color-text)] mb-10">
                 まずは、お気軽に<br className="md:hidden" />ご相談ください
               </h2>
             </FadeIn>
-            <FadeIn delay={0.2}>
+            <FadeIn blur delay={0.2}>
               <p className="text-[var(--color-text-muted)] leading-[2.2] mb-14 font-light text-[0.95rem]">
                 企業の課題整理から、個人の内面の整理まで。<br className="hidden md:block" />目的に合わせて、最適な関わり方をご提案します。
               </p>
             </FadeIn>
-            <FadeIn delay={0.3}>
+            <FadeIn blur delay={0.3}>
               <ArrowLink href="/contact">
                 Contact Us
               </ArrowLink>

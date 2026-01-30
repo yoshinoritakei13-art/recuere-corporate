@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import FloatingParticles from '@/components/FloatingParticles';
@@ -44,20 +43,12 @@ const hypnoThemes = [
 ];
 
 export default function SessionPage() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* パステルグラデーション背景 */}
-      {mounted && (
-        <div className="fixed inset-0 -z-10">
-          <LiquidGradient preset="pastel" opacity={0.8} />
-        </div>
-      )}
+      <div className="fixed inset-0 -z-10">
+        <LiquidGradient preset="pastel" opacity={0.8} />
+      </div>
 
       {/* メインコンテンツ */}
       <div className="relative z-10">
@@ -80,7 +71,7 @@ export default function SessionPage() {
           />
 
           <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-            <FadeIn className="md:ml-[10%]">
+            <FadeIn blur className="md:ml-[10%]">
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-6 uppercase font-medium">Session</p>
               <h1 className="text-[clamp(2.5rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[var(--color-text)] mb-6">
                 心と向き合い、<br />
@@ -117,7 +108,7 @@ export default function SessionPage() {
               </div>
 
               {/* 画像（PC版風に複数配置） */}
-              <FadeIn delay={0.1} className="mb-8">
+              <FadeIn blur delay={0.1} className="mb-8">
                 <div className="relative h-[180px]">
                   {/* メイン画像 */}
                   <div className="absolute left-0 top-0 w-[140px] aspect-[4/3] rounded-lg overflow-hidden shadow-sm">
@@ -135,7 +126,7 @@ export default function SessionPage() {
               </FadeIn>
 
               {/* テキスト */}
-              <FadeIn delay={0.2}>
+              <FadeIn blur delay={0.2}>
                 <div className="text-gray-600 text-[0.9rem] leading-relaxed space-y-4 mb-8">
                   <p>
                     アウェイキングセッションでは、答えを与えたり、何かを変えたりするためのセッションではありません。
@@ -158,23 +149,23 @@ export default function SessionPage() {
               {/* 左上：タイトル */}
               <div className="absolute -top-12 left-[10%] z-10">
                 <div className="relative">
-                  <FadeIn direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-7xl lg:text-8xl font-extralight tracking-wider absolute -top-6 -left-2">
+                  <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-7xl lg:text-8xl font-extralight tracking-wider absolute -top-6 -left-2">
                     Awakening
                   </FadeIn>
-                  <FadeIn direction="clipReveal" delay={0.4} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-8">
+                  <FadeIn blur direction="clipReveal" delay={0.4} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-8">
                     Awakening Session
                   </FadeIn>
-                  <FadeIn direction="clipReveal" delay={0.8} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                  <FadeIn blur direction="clipReveal" delay={0.8} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                     アウェイキングセッション
                   </FadeIn>
-                  <FadeIn delay={1.0} className="text-[0.9rem] text-[var(--color-text-muted)] mt-2 relative z-10">
+                  <FadeIn blur delay={1.0} className="text-[0.9rem] text-[var(--color-text-muted)] mt-2 relative z-10">
                     （気づきのセッション）
                   </FadeIn>
                 </div>
               </div>
 
               {/* 画像1：右上 */}
-              <FadeIn delay={0.1} className="absolute top-[80px] right-[25%] w-[180px]">
+              <FadeIn blur delay={0.1} className="absolute top-[80px] right-[25%] w-[180px]">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <Image src="/images/Firefly_c6aa9de6-66d4-4fa3-9824-32e22229655f.jpeg" alt="セッション風景" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white" />
@@ -182,7 +173,7 @@ export default function SessionPage() {
               </FadeIn>
 
               {/* 画像2：左 */}
-              <FadeIn delay={0.2} className="absolute top-[200px] left-[5%] w-[200px]">
+              <FadeIn blur delay={0.2} className="absolute top-[200px] left-[5%] w-[200px]">
                 <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
                   <Image src="/images/AdobeStock_1581418014.jpeg" alt="リラックスしたセッション" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white" />
@@ -190,7 +181,7 @@ export default function SessionPage() {
               </FadeIn>
 
               {/* 画像3：右下 */}
-              <FadeIn delay={0.4} className="absolute bottom-[30px] right-[5%] w-[280px]">
+              <FadeIn blur delay={0.4} className="absolute bottom-[30px] right-[5%] w-[280px]">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <Image src="/images/AdobeStock_1718433882.jpeg" alt="心の安らぎ" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/50 to-white" />
@@ -198,7 +189,7 @@ export default function SessionPage() {
               </FadeIn>
 
               {/* 中央：白いカード */}
-              <FadeIn delay={0.3} className="absolute top-[200px] left-[25%] w-[45%]">
+              <FadeIn blur delay={0.3} className="absolute top-[200px] left-[25%] w-[45%]">
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-sm">
                   <div className="text-gray-600 text-sm leading-relaxed space-y-4">
                     <p>
@@ -220,7 +211,7 @@ export default function SessionPage() {
 
             {/* 料金セクション */}
             <div id="awakening-price" className="mt-4 md:mt-8">
-              <FadeIn>
+              <FadeIn blur>
                 <div className="bg-white/50 md:bg-white/50 md:backdrop-blur-md border border-gray-100 md:border-white/60 rounded-2xl p-5 md:p-8 max-w-5xl mx-auto">
                   <div className="relative mb-6 text-center">
                     <p className="text-[var(--color-navy)]/10 text-4xl md:text-5xl font-extralight tracking-wider">
@@ -299,7 +290,7 @@ export default function SessionPage() {
                         {/* PC版 */}
                         <div className="hidden md:flex items-center gap-8">
                           {/* 左: タロット画像 */}
-                          <FadeIn delay={0.2}>
+                          <FadeIn blur delay={0.2}>
                             <div className="w-[180px] aspect-[3/4] rounded-lg overflow-hidden shrink-0">
                               <Image src="/images/t1.png" alt="ボイジャータロット" width={180} height={240} className="object-cover w-full h-full" />
                             </div>
@@ -316,7 +307,7 @@ export default function SessionPage() {
                           </div>
 
                           {/* 右: りのさん */}
-                          <FadeIn delay={0.3}>
+                          <FadeIn blur delay={0.3}>
                             <div className="w-[180px] aspect-[3/4] rounded-lg overflow-hidden shrink-0">
                               <Image src="/images/rinosan3.jpg" alt="たなか里乃" width={180} height={240} className="object-cover object-top w-full h-full" />
                             </div>
@@ -351,7 +342,7 @@ export default function SessionPage() {
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-center">
               {/* 画像（SP: 2番目、PC: 左） */}
-              <FadeIn direction="left">
+              <FadeIn blur direction="left">
                 <div className="relative group">
                   {/* SP版: メイン左、サブ右下にがっつり重ねる */}
                   <div className="md:hidden relative h-[150px]">
@@ -387,17 +378,17 @@ export default function SessionPage() {
               </FadeIn>
 
               {/* テキスト（SP: 3番目、PC: 右） */}
-              <FadeIn delay={0.2} direction="right">
+              <FadeIn blur delay={0.2} direction="right">
                 <div className="md:pl-8">
                   {/* PC版のみタイトル表示 */}
                   <div className="relative mb-6 hidden md:block">
-                    <FadeIn direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
+                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
                       Coaching
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.3} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
+                    <FadeIn blur direction="clipReveal" delay={0.3} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                       Personal Coaching
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.6} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                    <FadeIn blur direction="clipReveal" delay={0.6} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                       パーソナルコーチングセッション
                     </FadeIn>
                   </div>
@@ -496,16 +487,16 @@ export default function SessionPage() {
             {/* PC版レイアウト */}
             <div className="hidden md:grid md:grid-cols-2 gap-16">
               {/* 左：テキスト */}
-              <FadeIn direction="left">
+              <FadeIn blur direction="left">
                 <div>
                   <div className="relative mb-6">
-                    <FadeIn direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
+                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
                       Hypno
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
+                    <FadeIn blur direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                       Hypnotherapy
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                    <FadeIn blur direction="clipReveal" delay={0.5} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                       ヒプノセラピー
                     </FadeIn>
                   </div>
@@ -537,7 +528,7 @@ export default function SessionPage() {
               </FadeIn>
 
               {/* 右：画像+料金 */}
-              <FadeIn delay={0.2} direction="right">
+              <FadeIn blur delay={0.2} direction="right">
                 <div className="space-y-8">
                   <div className="relative aspect-[4/3] max-w-[400px] rounded-2xl overflow-hidden">
                     <Image
@@ -594,17 +585,17 @@ export default function SessionPage() {
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               {/* SP版：画像を先に / PC版：テキスト左 */}
-              <FadeIn direction="left" className="order-2 md:order-1">
+              <FadeIn blur direction="left" className="order-2 md:order-1">
                 <div>
                   {/* PC版のみタイトル表示 */}
                   <div className="relative mb-6 hidden md:block">
-                    <FadeIn direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
+                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
                       Brand
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
+                    <FadeIn blur direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
                       Branding
                     </FadeIn>
-                    <FadeIn direction="clipReveal" delay={0.4} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                    <FadeIn blur direction="clipReveal" delay={0.4} className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
                       ブランディング構築セッション
                     </FadeIn>
                   </div>
@@ -634,7 +625,7 @@ export default function SessionPage() {
               </FadeIn>
 
               {/* SP版：画像が先 / PC版：画像右 */}
-              <FadeIn delay={0.2} direction="right" className="order-1 md:order-2">
+              <FadeIn blur delay={0.2} direction="right" className="order-1 md:order-2">
                 {/* SP版: 1枚中央配置 */}
                 <div className="md:hidden flex justify-center">
                   <div className="relative w-[260px] aspect-[4/3] rounded-lg overflow-hidden shadow-md">
@@ -659,7 +650,7 @@ export default function SessionPage() {
         {/* ===== CTA ===== */}
         <section className="py-24 bg-white">
           <div className="max-w-3xl mx-auto px-6 text-center">
-            <FadeIn direction="scaleUp">
+            <FadeIn blur direction="scaleUp">
               <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-8 uppercase font-medium">Contact</p>
               <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] mb-6">
                 まずはお気軽にご相談ください
