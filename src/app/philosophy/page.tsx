@@ -198,25 +198,25 @@ export default function PhilosophyPage() {
 
             <FadeIn delay={0.4}>
               <p className="text-body-md md:text-body-lg leading-[2.2] text-[var(--color-text-light)] max-w-[650px] font-light">
-                <strong className="font-medium">recuere®（リキュウレ®）</strong>は、心理学用語 cue（無意識に反応を引き起こす「気づきのきっかけ」）と、re（再び・繰り返し）を組み合わせた言葉です。
+                <strong className="font-medium">recuere®（リキュウレ®）</strong>は、<br className="md:hidden" />心理学用語 cue（無意識に反応を引き起こす<br className="md:hidden" />「気づきのきっかけ」）と、<br className="md:hidden" />re（再び・繰り返し）を<br className="md:hidden" />組み合わせた言葉です。
               </p>
             </FadeIn>
 
             <FadeIn delay={0.5}>
               <p className="text-body-sm md:text-body-md leading-[2.2] text-[var(--color-text-muted)] mt-8 max-w-[650px] font-light">
-                人は、一度の気づきだけで変われるほど単純ではありません。だからこそ、立ち止まり、気づき直す瞬間が、人生や仕事の中で何度も必要だと、私たちは考えています。
+                人は、一度の気づきだけで<br className="md:hidden" />変われるほど単純ではありません。<br className="md:hidden" />だからこそ、立ち止まり、<br className="md:hidden" />気づき直す瞬間が、<br className="md:hidden" />人生や仕事の中で何度も必要だと、<br className="md:hidden" />私たちは考えています。
               </p>
             </FadeIn>
 
             <FadeIn delay={0.6}>
               <p className="text-body-sm md:text-body-md leading-[2.2] text-[var(--color-text-muted)] mt-6 max-w-[650px] font-light">
-                recuere®は、その節目ごとに、何度でも「気づきのきっかけ（cue）」を差し出し、自分らしい選択へとつながる時間を支える存在でありたい。
+                recuere®は、その節目ごとに、<br className="md:hidden" />何度でも「気づきのきっかけ（cue）」を差し出し、<br className="md:hidden" />自分らしい選択へとつながる時間を<br className="md:hidden" />支える存在でありたい。
               </p>
             </FadeIn>
 
             <FadeIn delay={0.7}>
               <p className="text-body-sm md:text-body-md leading-[2.2] text-[var(--color-text-muted)] mt-6 max-w-[650px] font-light">
-                気づきが一過性で終わらず、人が自分らしく、輝き続けるための伴走者であり続けたいと考えています。
+                気づきが一過性で終わらず、<br className="md:hidden" />人が自分らしく、<br className="md:hidden" />輝き続けるための伴走者で<br className="md:hidden" />あり続けたいと考えています。
               </p>
             </FadeIn>
           </div>

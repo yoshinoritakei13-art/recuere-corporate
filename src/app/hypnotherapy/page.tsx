@@ -208,12 +208,17 @@ export default function HypnotherapyPage() {
 
             <FadeIn blur delay={0.3} direction="up" duration={1}>
               <p className="text-gray-500 text-[0.95rem] leading-[2.2] mb-6">
-                ヒプノセラピーは、催眠状態（深くリラックスした状態）で、潜在意識（普段は意識に上りにくい思考や感情）に静かに意識を向けていく心理療法です。
+                ヒプノセラピーは、<br className="md:hidden" />
+                催眠状態（深くリラックスした状態）で、<br className="md:hidden" />
+                潜在意識（普段は意識に上りにくい<br className="md:hidden" />思考や感情）に<br className="md:hidden" />
+                静かに意識を向けていく心理療法です。
               </p>
             </FadeIn>
             <FadeIn blur delay={0.45} direction="up" duration={1}>
               <p className="text-gray-500 text-[0.95rem] leading-[2.2] mb-6">
-                安心できる空間の中で、心の深い部分にあるテーマに気づき、自分自身への理解を深めていくセッションです。
+                安心できる空間の中で、<br className="md:hidden" />
+                心の深い部分にあるテーマに気づき、<br className="md:hidden" />
+                自分自身への理解を深めていく<br className="md:hidden" />セッションです。
               </p>
             </FadeIn>
             <FadeIn blur delay={0.6} direction="up" duration={1}>
@@ -279,7 +284,7 @@ export default function HypnotherapyPage() {
                   ヒプノセラピーで用いる<br />主なアプローチ
                 </h2>
                 <p className="text-gray-500 text-sm mt-4">
-                  セッションでは、お悩みやご希望に応じて最適な療法を選択します。
+                  セッションでは、<br className="md:hidden" />お悩みやご希望に応じて<br className="md:hidden" />最適な療法を選択します。
                 </p>
               </div>
             </FadeIn>
@@ -327,7 +332,7 @@ export default function HypnotherapyPage() {
 
             <FadeIn blur delay={0.5}>
               <p className="text-gray-400 text-xs text-center mt-12">
-                ※ ヒプノセラピーは医療行為ではありません。精神疾患の治療を目的としたものではなく、心の探求や自己理解を深めるためのセッションです。
+                ※ ヒプノセラピーは医療行為ではありません。<br className="md:hidden" />精神疾患の治療を目的としたものではなく、<br className="md:hidden" />心の探求や自己理解を深めるための<br className="md:hidden" />セッションです。
               </p>
             </FadeIn>
           </div>
@@ -428,7 +433,7 @@ export default function HypnotherapyPage() {
                 まずはお気軽にご相談ください
               </h2>
               <p className="text-[#666] text-[0.95rem] leading-[2] mb-10 font-light">
-                ご不明な点やご質問がございましたら、お気軽にお問い合わせください。
+                ご不明な点やご質問がございましたら、<br className="md:hidden" />お気軽にお問い合わせください。
               </p>
               <ArrowLink href="/contact">
                 Contact Us
