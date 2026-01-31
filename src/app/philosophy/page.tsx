@@ -198,7 +198,7 @@ export default function PhilosophyPage() {
                 <div className="flex items-center justify-center gap-3 pt-4">
                   <span className="text-[1.3rem] font-light text-[var(--color-navy)]">re + cue + re</span>
                   <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝</span>
-                  <span className="text-[1.8rem] font-light text-[var(--color-navy)] font-['Sweet_Apricot',cursive]">recuere</span>
+                  <span className="text-[1.8rem] font-extralight text-[var(--color-text)] tracking-wide">recuere</span>
                 </div>
               </div>
             </FadeIn>
