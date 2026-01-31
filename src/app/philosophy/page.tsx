@@ -167,11 +167,14 @@ export default function PhilosophyPage() {
             {/* 数式風の表現 - PC版 */}
             <FadeIn delay={0.3}>
               <div className="hidden md:flex items-center gap-4 mb-10 flex-wrap">
+                <span className="text-[1.4rem] font-light text-[var(--color-navy)]">re</span>
+                <span className="text-[0.75rem] text-[var(--color-text-faint)]">再び・繰り返し</span>
+                <span className="text-[1.3rem] text-[var(--color-border)]">+</span>
                 <span className="text-[1.4rem] font-light text-[var(--color-navy)]">cue</span>
                 <span className="text-[0.75rem] text-[var(--color-text-faint)]">気づきのきっかけ</span>
                 <span className="text-[1.3rem] text-[var(--color-border)]">+</span>
                 <span className="text-[1.4rem] font-light text-[var(--color-navy)]">re</span>
-                <span className="text-[0.75rem] text-[var(--color-text-faint)]">再び・繰り返し</span>
+                <span className="text-[0.75rem] text-[var(--color-text-faint)]">何度でも</span>
                 <span className="text-[1.3rem] text-[var(--color-border)]">=</span>
                 <span className="text-[1.8rem] font-extralight text-[var(--color-text)] tracking-wide">recuere</span>
               </div>
@@ -181,15 +184,19 @@ export default function PhilosophyPage() {
             <FadeIn delay={0.3}>
               <div className="md:hidden mb-10 space-y-4 text-center">
                 <div className="flex items-center justify-center gap-3">
+                  <span className="text-[1.3rem] font-light text-[var(--color-navy)]">re</span>
+                  <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝ 再び・繰り返し</span>
+                </div>
+                <div className="flex items-center justify-center gap-3">
                   <span className="text-[1.3rem] font-light text-[var(--color-navy)]">cue</span>
                   <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝ 気づきのきっかけ</span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <span className="text-[1.3rem] font-light text-[var(--color-navy)]">re</span>
-                  <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝ 再び・繰り返し</span>
+                  <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝ 何度でも</span>
                 </div>
                 <div className="flex items-center justify-center gap-3 pt-4">
-                  <span className="text-[1.3rem] font-light text-[var(--color-navy)]">cue + re</span>
+                  <span className="text-[1.3rem] font-light text-[var(--color-navy)]">re + cue + re</span>
                   <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝</span>
                   <span className="text-[1.8rem] font-light text-[var(--color-navy)] font-['Sweet_Apricot',cursive]">recuere</span>
                 </div>
