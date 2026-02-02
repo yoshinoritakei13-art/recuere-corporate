@@ -182,23 +182,26 @@ export default function PhilosophyPage() {
 
             {/* 数式風の表現 - SP版 */}
             <FadeIn delay={0.3}>
-              <div className="md:hidden mb-10 space-y-4 text-center">
+              <div className="md:hidden mb-8 space-y-3 px-4">
                 <div className="flex items-center justify-center gap-3">
-                  <span className="text-[1.3rem] font-light text-[var(--color-navy)]">re</span>
-                  <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝ 再び・繰り返し</span>
+                  <span className="text-[1.2rem] font-light text-[var(--color-navy)] w-[110px] text-right">re</span>
+                  <span className="text-[0.9rem]">🟰</span>
+                  <span className="text-[0.85rem] text-[var(--color-text-faint)] w-[110px] text-left">再び・繰り返し</span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
-                  <span className="text-[1.3rem] font-light text-[var(--color-navy)]">cue</span>
-                  <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝ 気づきのきっかけ</span>
+                  <span className="text-[1.2rem] font-light text-[var(--color-navy)] w-[110px] text-right">cue</span>
+                  <span className="text-[0.9rem]">🟰</span>
+                  <span className="text-[0.85rem] text-[var(--color-text-faint)] w-[110px] text-left">気づきのきっかけ</span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
-                  <span className="text-[1.3rem] font-light text-[var(--color-navy)]">re</span>
-                  <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝ 何度でも</span>
+                  <span className="text-[1.2rem] font-light text-[var(--color-navy)] w-[110px] text-right">re</span>
+                  <span className="text-[0.9rem]">🟰</span>
+                  <span className="text-[0.85rem] text-[var(--color-text-faint)] w-[110px] text-left">何度でも</span>
                 </div>
-                <div className="flex items-center justify-center gap-3 pt-4">
-                  <span className="text-[1.3rem] font-light text-[var(--color-navy)]">re + cue + re</span>
-                  <span className="text-[0.8rem] text-[var(--color-text-faint)]">＝</span>
-                  <span className="text-[1.8rem] font-extralight text-[var(--color-text)] tracking-wide">recuere</span>
+                <div className="flex items-center justify-center gap-3 pt-3">
+                  <span className="text-[1.2rem] font-light text-[var(--color-navy)] w-[110px] text-right whitespace-nowrap">re + cue + re</span>
+                  <span className="text-[0.9rem]">🟰</span>
+                  <span className="text-[1.2rem] font-extralight text-[var(--color-text)] tracking-wide w-[110px] text-left">recuere</span>
                 </div>
               </div>
             </FadeIn>

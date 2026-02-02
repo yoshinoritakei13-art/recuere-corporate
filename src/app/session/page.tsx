@@ -459,7 +459,7 @@ export default function SessionPage() {
 
               {/* 料金カード */}
               <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 mb-6">
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 text-center">
                   <div>
                     <p className="text-gray-500 text-sm mb-1">約3時間</p>
                     <p className="font-serif text-2xl text-gray-800">

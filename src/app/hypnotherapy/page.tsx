@@ -224,8 +224,8 @@ export default function HypnotherapyPage() {
                 安心できる空間の中で、心の深い部分にあるテーマに気づき、<br />
                 自分自身への理解を深めていくセッションです。
               </p>
-              {/* SP版 - 左揃え */}
-              <div className="md:hidden text-gray-500 text-[0.9rem] leading-[2.2] space-y-5 text-left max-w-[340px] mx-auto">
+              {/* SP版 - 中央揃え */}
+              <div className="md:hidden text-gray-500 text-[0.9rem] leading-[2.2] space-y-5 text-center">
                 <p>
                   ヒプノセラピーは、催眠状態（深くリラックスした状態）で、潜在意識（普段は意識に上りにくい思考や感情）に静かに意識を向けていく心理療法です。
                 </p>
@@ -236,7 +236,7 @@ export default function HypnotherapyPage() {
             </FadeIn>
 
             <FadeIn blur delay={0.6} direction="up" duration={1}>
-              <p className="text-gray-400 text-sm mt-8 md:mt-10 md:text-center text-left max-w-[340px] mx-auto md:max-w-none">
+              <p className="text-gray-400 text-sm mt-8 md:mt-10 text-center">
                 ※事前面談・セラピー・事後面談を含め、3時間程度のセッションとなります。
               </p>
             </FadeIn>
