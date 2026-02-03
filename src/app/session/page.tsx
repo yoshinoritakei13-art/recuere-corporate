@@ -154,8 +154,8 @@ export default function SessionPage() {
             <div className="relative min-h-[650px] hidden md:block">
               {/* 左上：タイトル */}
               <div className="absolute -top-12 left-[10%] z-10">
-                <div className="relative">
-                  <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-7xl lg:text-8xl font-extralight tracking-wider absolute -top-6 -left-2">
+                <div className="relative isolation-auto">
+                  <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-7xl lg:text-8xl font-extralight tracking-wider absolute -top-6 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
                     Awakening
                   </FadeIn>
                   <FadeIn blur direction="clipReveal" delay={0.4} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-8">
@@ -387,8 +387,8 @@ export default function SessionPage() {
               <FadeIn blur delay={0.2} direction="right">
                 <div className="md:pl-8">
                   {/* PC版のみタイトル表示 */}
-                  <div className="relative mb-6 hidden md:block">
-                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
+                  <div className="relative mb-6 hidden md:block isolation-auto">
+                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
                       Coaching
                     </FadeIn>
                     <FadeIn blur direction="clipReveal" delay={0.3} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
@@ -495,8 +495,8 @@ export default function SessionPage() {
               {/* 左：テキスト */}
               <FadeIn blur direction="left">
                 <div>
-                  <div className="relative mb-6">
-                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
+                  <div className="relative mb-6 isolation-auto">
+                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-6xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
                       Hypno
                     </FadeIn>
                     <FadeIn blur direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
@@ -594,8 +594,8 @@ export default function SessionPage() {
               <FadeIn blur direction="left" className="order-2 md:order-1">
                 <div>
                   {/* PC版のみタイトル表示 */}
-                  <div className="relative mb-6 hidden md:block">
-                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2">
+                  <div className="relative mb-6 hidden md:block isolation-auto">
+                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
                       Brand
                     </FadeIn>
                     <FadeIn blur direction="clipReveal" delay={0.2} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
