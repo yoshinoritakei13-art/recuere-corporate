@@ -443,9 +443,16 @@ export default function SessionPage() {
               </div>
 
               {/* テキスト */}
-              <p className="text-gray-500 leading-relaxed mb-6 text-[0.9rem] max-w-[300px]">
+              <p className="text-gray-500 leading-relaxed mb-4 text-[0.9rem] max-w-[300px]">
                 催眠状態で潜在意識にアクセスし、心の深い部分にある課題に働きかける心理療法です。安心できる空間で、あなたの内なる世界を探求します。
               </p>
+
+              {/* 詳しく見るリンク */}
+              <div className="flex justify-end mb-6">
+                <ArrowLink href="/hypnotherapy">
+                  詳しく見る
+                </ArrowLink>
+              </div>
 
               {/* テーマタグ */}
               <p className="text-gray-600 text-sm mb-4">扱えるテーマ</p>
@@ -478,14 +485,9 @@ export default function SessionPage() {
                 </div>
               </div>
 
-              <p className="text-gray-500 text-xs mb-4">
+              <p className="text-gray-500 text-xs">
                 ※ 医療行為ではありません
               </p>
-              <div className="flex justify-end">
-                <ArrowLink href="/hypnotherapy">
-                  詳しく見る
-                </ArrowLink>
-              </div>
             </div>
 
             {/* PC版レイアウト */}
@@ -534,7 +536,7 @@ export default function SessionPage() {
               {/* 右：画像+料金 */}
               <FadeIn blur delay={0.2} direction="right">
                 <div className="space-y-8">
-                  <div className="relative aspect-[4/3] max-w-[400px] rounded-2xl overflow-hidden">
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                     <Image
                       src="/images/AdobeStock_1686407697.webp"
                       alt="ヒプノセラピーイメージ"
@@ -545,8 +547,8 @@ export default function SessionPage() {
                   </div>
 
                   <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                    <div className="flex items-end justify-between gap-4">
-                      <div>
+                    <div className="flex items-end justify-center gap-8">
+                      <div className="text-center">
                         <p className="text-gray-500 text-sm mb-1">約3時間</p>
                         <p className="font-serif text-3xl text-gray-800">
                           ¥33,000
