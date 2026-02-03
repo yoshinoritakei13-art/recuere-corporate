@@ -75,12 +75,16 @@ export default function FadeIn({
       ref={ref}
       className={className}
       style={{
+        position: 'relative',
+        zIndex: 1,
         opacity: isVisible ? 1 : 0,
         transform: getTransform(),
         filter: blur ? (isVisible ? 'blur(0px)' : 'blur(6px)') : 'none',
         transition: `opacity ${duration}s ease-out ${delay}s, transform ${duration}s ease-out ${delay}s, filter ${duration}s ease-out ${delay}s`,
         willChange: 'opacity, transform, filter',
         backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+        isolation: 'isolate',
       }}
     >
       {children}
