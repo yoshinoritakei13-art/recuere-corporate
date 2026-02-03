@@ -126,7 +126,7 @@ export default function AboutPage() {
                   <li>人事評価・報酬制度構築</li>
                   <li>人材育成・研修</li>
                 </ul>
-                <ArrowLink href="/services#business">
+                <ArrowLink href="/consulting#business">
                   企業向けサービスを見る
                 </ArrowLink>
               </article>
@@ -265,7 +265,7 @@ export default function AboutPage() {
               </div>
               <div className="flex gap-3 flex-wrap shrink-0">
                 <Link
-                  href="/services"
+                  href="/consulting"
                   className="inline-flex items-center justify-center px-5 py-3 rounded-full text-[0.92rem] tracking-[0.06em] bg-[#7aa9c6] text-white border border-transparent hover:bg-[#5B8FA8] transition-colors"
                 >
                   サービスを見る

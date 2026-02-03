@@ -16,7 +16,7 @@ const MENU_ITEMS = [
   { href: '/', label: 'Top', labelJa: 'トップ' },
   { href: '/company', label: 'Company', labelJa: '会社概要' },
   { href: '/philosophy', label: 'Mission', labelJa: '理念' },
-  { href: '/services', label: 'Consulting', labelJa: 'コンサルティング' },
+  { href: '/consulting', label: 'Consulting', labelJa: 'コンサルティング' },
   { href: '/session', label: 'Personal Session', labelJa: '個人セッション' },
   { href: '/hypnotherapy', label: 'Hypnotherapy', labelJa: 'ヒプノセラピー' },
   { href: '/contact', label: 'Contact', labelJa: 'お問い合わせ' },

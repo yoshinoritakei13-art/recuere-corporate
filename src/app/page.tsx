@@ -290,7 +290,7 @@ export default function HomePage() {
                     <li>人材育成研修</li>
                   </ul>
                   <div className="flex items-start justify-between">
-                    <ArrowLink href="/services#business">くわしく見る</ArrowLink>
+                    <ArrowLink href="/consulting#business">くわしく見る</ArrowLink>
                     <div className="animate-poyopoyo-slow -mt-16">
                       <BlobImage imageSrc="/images/S__69246981.webp" size={180} direction="left" disableScrollEffect />
                     </div>
@@ -335,7 +335,7 @@ export default function HomePage() {
                   'プロジェクト遂行支援',
                   '人材育成研修',
                 ]}
-                href="/services#business"
+                href="/consulting#business"
                 colorFrom="var(--color-primary)"
                 colorTo="var(--color-tertiary)"
                 hoverBorderColor="var(--color-primary)"
