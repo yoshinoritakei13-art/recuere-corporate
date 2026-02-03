@@ -49,7 +49,7 @@ export default function ServicesPage() {
           <div className="relative z-10 max-w-[1100px] mx-auto w-full">
             <div className="md:ml-[10%]">
               <FadeIn blur>
-                <p className="tracking-[0.5em] text-[0.65rem] text-white/60 mb-6 uppercase font-medium">Services</p>
+                <p className="tracking-[0.5em] text-[0.65rem] text-white/60 mb-6 uppercase font-medium">Consulting</p>
               </FadeIn>
               <FadeIn blur delay={0.1}>
                 <h1 className="text-[clamp(1.6rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-white mb-6">
