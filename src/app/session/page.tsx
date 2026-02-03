@@ -99,8 +99,8 @@ export default function SessionPage() {
             <div className="md:hidden">
               {/* タイトル */}
               <div className="mb-8">
-                <div className="relative">
-                  <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
+                <div className="relative isolation-auto">
+                  <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
                     Awakening
                   </div>
                   <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
@@ -333,8 +333,8 @@ export default function SessionPage() {
           <div className="max-w-7xl mx-auto px-6">
             {/* SP版：タイトルを先に */}
             <div className="md:hidden mb-8">
-              <div className="relative mb-6">
-                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
+              <div className="relative mb-6 isolation-auto">
+                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
                   Coaching
                 </div>
                 <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
@@ -425,8 +425,8 @@ export default function SessionPage() {
             {/* SP版レイアウト */}
             <div className="md:hidden">
               {/* タイトル */}
-              <div className="relative mb-6">
-                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
+              <div className="relative mb-6 isolation-auto">
+                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
                   Hypno
                 </div>
                 <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
@@ -576,8 +576,8 @@ export default function SessionPage() {
           <div className="max-w-7xl mx-auto px-6">
             {/* SP版：タイトルを先に */}
             <div className="md:hidden mb-8">
-              <div className="relative mb-6">
-                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2">
+              <div className="relative mb-6 isolation-auto">
+                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
                   Brand
                 </div>
                 <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
