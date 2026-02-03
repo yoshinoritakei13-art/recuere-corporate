@@ -47,7 +47,7 @@ function PhilosophyDesktop() {
 
       <FadeIn delay={0.3}>
         <p className="text-[0.95rem] tracking-[0.1em] text-[#666] mb-16">
-          ひとつの気づきが、行動を変え、現実を動かす。
+          ひとつの気づきが、<br />行動を変え、現実を動かす。
         </p>
       </FadeIn>
 
