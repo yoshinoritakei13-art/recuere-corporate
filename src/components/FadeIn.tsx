@@ -70,13 +70,14 @@ export default function FadeIn({
     return direction === 'scaleUp' ? 'scale(1)' : 'none';
   };
 
+  // classNameにabsoluteが含まれている場合はpositionを上書きしない
+  const hasAbsolute = className.includes('absolute');
+
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        position: 'relative',
-        zIndex: 1,
         opacity: isVisible ? 1 : 0,
         transform: getTransform(),
         filter: blur ? (isVisible ? 'blur(0px)' : 'blur(6px)') : 'none',
@@ -84,7 +85,6 @@ export default function FadeIn({
         willChange: 'opacity, transform, filter',
         backfaceVisibility: 'hidden',
         WebkitBackfaceVisibility: 'hidden',
-        isolation: 'isolate',
       }}
     >
       {children}
