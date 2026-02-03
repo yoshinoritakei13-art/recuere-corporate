@@ -265,7 +265,7 @@ export default function HomePage() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <h2 className="font-serif text-[clamp(1.8rem,3vw,2.4rem)] tracking-[0.02em] font-medium leading-[1.5] mb-10">
+              <h2 className="font-sans text-[clamp(1.8rem,3vw,2.4rem)] tracking-[0.02em] !font-bold leading-[1.5] mb-10">
                 <span className="services-gradient-text">目的に応じた、<br className="md:hidden" />二つのアプローチ</span>
               </h2>
             </FadeIn>
