@@ -79,6 +79,8 @@ export default function FadeIn({
         transform: getTransform(),
         filter: blur ? (isVisible ? 'blur(0px)' : 'blur(6px)') : 'none',
         transition: `opacity ${duration}s ease-out ${delay}s, transform ${duration}s ease-out ${delay}s, filter ${duration}s ease-out ${delay}s`,
+        willChange: 'opacity, transform, filter',
+        backfaceVisibility: 'hidden',
       }}
     >
       {children}

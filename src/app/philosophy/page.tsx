@@ -23,21 +23,23 @@ export default function PhilosophyPage() {
       <div className="relative">
         {/* Hero / Philosophy Section - Session風の左寄せレイアウト */}
         <section className="relative min-h-[80vh] flex items-center pt-20 pb-32 px-8 overflow-hidden">
-          {/* 浮遊パーティクル */}
+          {/* 背景画像 - z-index: 0 */}
+          <div className="absolute inset-0 pointer-events-none bg-[url('/images/AdobeStock_1597965362.webp')] bg-cover bg-center opacity-[0.12]" style={{ zIndex: 0 }} />
+
+          {/* 浮遊パーティクル - z-index: 1 */}
           <FloatingParticles count={25} color="var(--color-navy)" />
 
-          {/* 背景画像 */}
-          <div className="absolute inset-0 pointer-events-none bg-[url('/images/AdobeStock_1597965362.webp')] bg-cover bg-center opacity-[0.12]" />
-
-          {/* 下部グラデーション（白に溶ける） */}
+          {/* 下部グラデーション（白に溶ける） - z-index: 2 */}
           <div
             className="absolute bottom-0 left-0 right-0 h-[300px] pointer-events-none"
             style={{
               background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,1) 100%)',
+              zIndex: 2,
             }}
           />
 
-          <div className="relative z-10 max-w-7xl mx-auto w-full">
+          {/* テキストコンテンツ - z-index: 10 */}
+          <div className="relative max-w-7xl mx-auto w-full" style={{ zIndex: 10, position: 'relative' }}>
             <div className="md:ml-[10%]">
               <FadeIn blur>
                 <p className="tracking-[0.3em] text-[0.7rem] text-[#666] mb-6 uppercase">Philosophy</p>
