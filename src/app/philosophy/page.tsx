@@ -47,7 +47,7 @@ export default function PhilosophyPage() {
 
               {/* メインキャッチコピー */}
               <FadeIn delay={0.1} blur>
-                <h1 className="text-[clamp(1.8rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[var(--color-text)] mb-6">
+                <h1 className="text-[clamp(1.8rem,5vw,4rem)] tracking-[-0.02em] font-extralight leading-[1.3] text-[var(--color-text)] mb-6 max-w-[10em]">
                   気づきから、<br />
                   豊かさへ。
                 </h1>
