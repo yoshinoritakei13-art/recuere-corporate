@@ -55,7 +55,8 @@ export default function PhilosophyPage() {
 
               <FadeIn delay={0.2}>
                 <p className="text-[var(--color-text-faint)] text-label-md font-light mb-8">
-                  From awareness to abundance
+                  ひとつの気づきが、<br />
+                  行動を変え、現実を動かす。
                 </p>
               </FadeIn>
 
