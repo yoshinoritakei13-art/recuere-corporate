@@ -153,11 +153,11 @@ export default function SessionPage() {
             {/* PC版：絶対配置のオーバーラップレイアウト */}
             <div className="relative min-h-[650px] hidden md:block">
               {/* 左上：タイトル */}
-              <div className="absolute -top-12 left-[10%] z-10">
-                <div className="relative isolation-auto">
-                  <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-7xl lg:text-8xl font-extralight tracking-wider absolute -top-6 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
+              <div className="absolute -top-12 left-[10%] z-20">
+                <div className="relative">
+                  <div className="text-[var(--color-navy)]/10 text-7xl lg:text-8xl font-extralight tracking-wider absolute -top-6 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
                     Awakening
-                  </FadeIn>
+                  </div>
                   <FadeIn blur direction="clipReveal" delay={0.4} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-8">
                     Awakening Session
                   </FadeIn>
