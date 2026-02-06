@@ -77,9 +77,9 @@ export default function ParallaxSection({
       style={{
         transform: `translateY(${offset}px)`,
         opacity: fadeIn ? (isVisible ? 1 : 0) : 1,
-        filter: blur ? (isVisible ? 'blur(0px)' : 'blur(8px)') : 'none',
-        transition: 'opacity 0.8s ease-out, filter 0.8s ease-out',
-        willChange: 'transform, opacity, filter',
+        filter: blur ? (isVisible ? 'blur(0px)' : 'blur(4px)') : 'none',
+        transition: `opacity 0.8s ease-out${blur ? ', filter 0.8s ease-out' : ''}`,
+        willChange: 'transform, opacity',
       }}
     >
       {children}

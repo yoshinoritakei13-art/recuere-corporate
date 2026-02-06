@@ -23,16 +23,25 @@ export default function HeroAnimation() {
   }, []);
 
   // スクロールで背景をフェードアウト（3画面分かけてゆっくり）
+  // Windows対応: passive + requestAnimationFrameでスロットリング
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      // 3画面分スクロールしたら完全に消える（さらにゆっくり）
-      const opacity = Math.max(0, 1 - (scrollY / (windowHeight * 3)));
-      setScrollOpacity(opacity);
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        // 3画面分スクロールしたら完全に消える（さらにゆっくり）
+        const opacity = Math.max(0, 1 - (scrollY / (windowHeight * 3)));
+        setScrollOpacity(opacity);
+        ticking = false;
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

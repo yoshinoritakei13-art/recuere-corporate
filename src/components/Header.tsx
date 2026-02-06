@@ -150,12 +150,12 @@ function MobileMenuOverlay({
           background: 'rgba(255,255,255,0.25)',
         }}
       />
-      {/* 中央の光 */}
+      {/* 中央の光 - blurを軽量化 */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.5) 30%, rgba(255,255,255,0.2) 50%, transparent 70%)',
-          filter: 'blur(50px)',
+          background: 'radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.15) 50%, transparent 70%)',
+          filter: 'blur(30px)',
         }}
       />
       <div className="relative flex flex-col justify-center h-full px-8">
@@ -242,7 +242,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 w-full z-[100] px-12 py-6 flex justify-between items-center bg-white/95 backdrop-blur-sm border-b border-black/[0.03] max-md:px-6 max-md:py-4">
+      <header className="sticky top-0 w-full z-[100] px-12 py-6 flex justify-between items-center bg-white border-b border-black/[0.03] max-md:px-6 max-md:py-4">
         <Logo />
         <DesktopNav />
         <HamburgerButton isOpen={isMenuOpen} onClick={toggleMenu} />
