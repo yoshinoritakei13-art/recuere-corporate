@@ -638,21 +638,36 @@ img {
 }
 
 /* ========================================
-   14. Snap Scroll (CSS版 - 参考用)
+   14. Snap Scroll (CSS版)
    ======================================== */
 
-html.snap-scroll {
-  scroll-snap-type: y proximity;
+/* コンテナ - PC版のみスナップ有効 */
+.snap-scroll-container {
+  /* デフォルトは通常スクロール */
+}
+
+@media (min-width: 768px) {
+  .snap-scroll-container {
+    /* PC版: CSSスナップスクロール有効 */
+  }
+
+  html:has(.snap-scroll-container) {
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+  }
 }
 
 .snap-section {
   scroll-snap-align: start;
   min-height: 100vh;
   position: relative;
-  /* GPUアクセラレーション */
-  transform: translateZ(0);
-  will-change: transform;
-  backface-visibility: hidden;
+}
+
+/* SP版ではスナップ無効 */
+@media (max-width: 767px) {
+  .snap-section {
+    scroll-snap-align: none;
+  }
 }
 
 /* ========================================
