@@ -657,7 +657,7 @@ img {
   }
 }
 
-.snap-section {
+[data-snap-section] {
   scroll-snap-align: start;
   min-height: 100vh;
   position: relative;
@@ -665,7 +665,7 @@ img {
 
 /* SP版ではスナップ無効 */
 @media (max-width: 767px) {
-  .snap-section {
+  [data-snap-section] {
     scroll-snap-align: none;
   }
 }
