@@ -24,6 +24,9 @@ interface ContactFormData {
   phone?: string;
   message: string;
   recaptchaToken: string;
+  // スパム対策フィールド
+  _honeypot?: string;
+  _timestamp?: number;
 }
 
 interface ReCaptchaResponse {
@@ -61,6 +64,41 @@ async function verifyRecaptcha(token: string): Promise<{ success: boolean; score
     console.error('reCAPTCHA verification failed:', error);
     return { success: false, score: 0 };
   }
+}
+
+// ひらがなを含むかチェック（スパム対策）
+function containsHiragana(text: string): boolean {
+  return /[\u3040-\u309F]/.test(text);
+}
+
+// スパム対策チェック
+function checkSpamProtection(data: ContactFormData): { isSpam: boolean; reason?: string } {
+  // 1. ハニーポットチェック（隠しフィールドに入力があればボット）
+  if (data._honeypot && data._honeypot.trim() !== '') {
+    console.log('[SPAM] Honeypot triggered');
+    return { isSpam: true, reason: 'honeypot' };
+  }
+
+  // 2. 送信時間チェック（3秒未満で送信はボット）
+  if (data._timestamp) {
+    const timeTaken = Date.now() - data._timestamp;
+    if (timeTaken < 3000) {
+      console.log(`[SPAM] Submission too fast: ${timeTaken}ms`);
+      return { isSpam: true, reason: 'too_fast' };
+    }
+  }
+
+  // 3. ひらがな必須チェック（日本語が含まれないスパムをブロック）
+  // お名前またはメッセージにひらがなが必要
+  const hasHiraganaInName = containsHiragana(data.name || '');
+  const hasHiraganaInMessage = containsHiragana(data.message || '');
+
+  if (!hasHiraganaInName && !hasHiraganaInMessage) {
+    console.log('[SPAM] No hiragana in name or message');
+    return { isSpam: true, reason: 'no_hiragana' };
+  }
+
+  return { isSpam: false };
 }
 
 // バリデーション
@@ -216,7 +254,14 @@ export async function POST(request: NextRequest) {
   try {
     const body: ContactFormData = await request.json();
 
-    // 1. reCAPTCHA検証
+    // 1. スパム対策チェック（ハニーポット、送信時間、ひらがな）
+    const spamCheck = checkSpamProtection(body);
+    if (spamCheck.isSpam) {
+      // スパムにはあえて成功レスポンスを返す（ボットに検知されないため）
+      return NextResponse.json({ success: true }, { status: 200 });
+    }
+
+    // 2. reCAPTCHA検証
     const recaptchaResult = await verifyRecaptcha(body.recaptchaToken);
     const threshold = parseFloat(process.env.RECAPTCHA_THRESHOLD || '0.5');
 
@@ -227,7 +272,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 2. バリデーション
+    // 3. バリデーション
     const validation = validateFormData(body);
     if (!validation.valid) {
       return NextResponse.json(
@@ -236,7 +281,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 3. Resend初期化
+    // 4. Resend初期化
     const resendApiKey = process.env.RESEND_API_KEY;
 
     if (!resendApiKey) {
@@ -249,7 +294,7 @@ export async function POST(request: NextRequest) {
       timeZone: 'Asia/Tokyo',
     });
 
-    // 4. メール送信（管理者通知 + 自動返信を並列で）
+    // 5. メール送信（管理者通知 + 自動返信を並列で）
     await Promise.all([
       sendAdminNotification(resend, body, submittedAt),
       sendAutoReply(resend, body),

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import FadeIn from '@/components/FadeIn';
 import ParallaxText from '@/components/ParallaxText';
@@ -11,6 +11,11 @@ import ParallaxText from '@/components/ParallaxText';
  * NSSG風のミニマルデザイン
  * 企業/個人の切り替えタブ
  * reCAPTCHA v3 + Resend送信
+ *
+ * スパム対策:
+ * - ハニーポット（隠しフィールド）
+ * - 送信時間チェック（3秒未満ブロック）
+ * - ひらがな必須チェック（サーバー側）
  */
 
 type InquiryType = 'business' | 'personal';
@@ -21,6 +26,9 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<string[]>([]);
+
+  // スパム対策: フォーム表示時刻を記録
+  const formLoadTime = useRef(Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -49,6 +57,9 @@ export default function ContactPage() {
         phone: formData.get('phone') as string || undefined,
         message: formData.get('message') as string,
         recaptchaToken,
+        // スパム対策フィールド
+        _honeypot: formData.get('website') as string || '',
+        _timestamp: formLoadTime.current,
       };
 
       const response = await fetch('/api/contact', {
@@ -190,6 +201,27 @@ export default function ContactPage() {
 
                 {/* フォーム */}
                 <form onSubmit={handleSubmit}>
+                  {/* ハニーポット（スパム対策 - 人間には見えない） */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      left: '-9999px',
+                      width: '1px',
+                      height: '1px',
+                      overflow: 'hidden',
+                    }}
+                    aria-hidden="true"
+                  >
+                    <label htmlFor="website">ウェブサイト</label>
+                    <input
+                      type="text"
+                      name="website"
+                      id="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+
                   <div className="space-y-6">
                     {/* 会社名（企業向けのみ） */}
                     {inquiryType === 'business' && (
