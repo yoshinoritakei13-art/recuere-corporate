@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import FadeIn from '@/components/FadeIn';
 import ParallaxText from '@/components/ParallaxText';
@@ -20,7 +20,8 @@ import ParallaxText from '@/components/ParallaxText';
 
 type InquiryType = 'business' | 'personal';
 
-export default function ContactPage() {
+// useSearchParamsを使うコンポーネントを分離
+function ContactForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [inquiryType, setInquiryType] = useState<InquiryType>('business');
@@ -344,5 +345,18 @@ export default function ContactPage() {
 
       </div>
     </>
+  );
+}
+
+// メインページコンポーネント - Suspenseでラップ
+export default function ContactPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-gray-400">読み込み中...</div>
+      </div>
+    }>
+      <ContactForm />
+    </Suspense>
   );
 }
