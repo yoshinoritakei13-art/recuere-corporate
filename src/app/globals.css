@@ -652,7 +652,7 @@ img {
   }
 
   html:has(.snap-scroll-container) {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
   }
 }

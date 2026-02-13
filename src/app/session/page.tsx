@@ -328,99 +328,8 @@ export default function SessionPage() {
           </div>
         </section>
 
-        {/* ===== パーソナルコーチング（SP: タイトル→画像→テキスト） ===== */}
-        <section className="py-16 md:py-24 bg-[#faf8f5]">
-          <div className="max-w-7xl mx-auto px-6">
-            {/* SP版：タイトルを先に */}
-            <div className="md:hidden mb-8">
-              <div className="relative mb-6 isolation-auto">
-                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
-                  Coaching
-                </div>
-                <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
-                  Personal Coaching
-                </p>
-                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
-                  パーソナルコーチング<br />セッション
-                </h2>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-center">
-              {/* 画像（SP: 2番目、PC: 左） */}
-              <FadeIn blur direction="left">
-                <div className="relative group">
-                  {/* SP版: メイン左、サブ右下にがっつり重ねる */}
-                  <div className="md:hidden relative h-[150px]">
-                    <div className="absolute left-0 top-0 w-[180px] aspect-[4/3] rounded-lg overflow-hidden shadow-md z-0">
-                      <Image src="/images/AdobeStock_1517811434.webp" alt="パーソナルコーチング" fill className="object-cover" />
-                    </div>
-                    <div className="absolute right-8 bottom-[-10px] w-[100px] aspect-square rounded-lg overflow-hidden shadow-lg z-10">
-                      <Image src="/images/AdobeStock_1524162172.webp" alt="穏やかなセッション空間" fill className="object-cover" />
-                    </div>
-                  </div>
-                  {/* PC版: 2枚重ねレイアウト */}
-                  <div className="hidden md:block relative h-[400px]">
-                    {/* メイン画像（左上） */}
-                    <div className="absolute left-[60px] top-[60px] w-[320px] aspect-[4/3] rounded-lg overflow-hidden">
-                      <Image
-                        src="/images/AdobeStock_1517811434.webp"
-                        alt="パーソナルコーチングセッションイメージ"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    {/* サブ画像（右下に重ねる） */}
-                    <div className="absolute right-[-60px] bottom-0 w-[200px] aspect-[4/3] rounded-lg overflow-hidden">
-                      <Image
-                        src="/images/AdobeStock_1524162172.webp"
-                        alt="穏やかなセッション空間"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-
-              {/* テキスト（SP: 3番目、PC: 右） */}
-              <FadeIn blur delay={0.2} direction="right">
-                <div className="md:pl-8">
-                  {/* PC版のみタイトル表示 */}
-                  <div className="relative mb-6 hidden md:block isolation-auto">
-                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
-                      Coaching
-                    </FadeIn>
-                    <FadeIn blur direction="clipReveal" delay={0.3} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
-                      Personal Coaching
-                    </FadeIn>
-                    <FadeIn blur direction="clipReveal" delay={0.6} className="text-[clamp(1.4rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
-                      パーソナルコーチングセッション
-                    </FadeIn>
-                  </div>
-                  <div className="text-gray-500 leading-relaxed mb-8 text-[0.9rem] space-y-4 max-w-[300px] md:max-w-none">
-                    <p>
-                      気づきを現実の選択や行動につなげていくための継続的なサポートです。
-                    </p>
-                    <p>
-                      このコースは定期的にお話しながら今の状況や心の状態を整理し、次の一歩を一緒にみつけていく継続的なサポートです。
-                    </p>
-                    <p>
-                      目標や進め方はクライアント様一人ひとりに合わせて柔軟に組み立てます。
-                    </p>
-                  </div>
-
-                  <p className="text-gray-500 text-xs">
-                    ※ 費用は個別にご相談にて決定します
-                  </p>
-                </div>
-              </FadeIn>
-            </div>
-          </div>
-        </section>
-
         {/* ===== ヒプノセラピー ===== */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-[#faf8f5]">
           <div className="max-w-7xl mx-auto px-6">
             {/* SP版レイアウト */}
             <div className="md:hidden">
@@ -571,6 +480,103 @@ export default function SessionPage() {
           </div>
         </section>
 
+        {/* ===== パーソナルコーチング（SP: タイトル→画像→テキスト） ===== */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            {/* SP版：タイトルを先に */}
+            <div className="md:hidden mb-8">
+              <div className="relative mb-6 isolation-auto">
+                <div className="text-[var(--color-navy)]/10 text-4xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
+                  Coaching
+                </div>
+                <p className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
+                  Personal Coaching
+                </p>
+                <h2 className="text-[1.8rem] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                  パーソナルコーチング<br />セッション
+                </h2>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-center">
+              {/* 画像（SP: 2番目、PC: 左） */}
+              <FadeIn blur direction="left">
+                <div className="relative group">
+                  {/* SP版: メイン左、サブ右下にがっつり重ねる */}
+                  <div className="md:hidden relative h-[150px]">
+                    <div className="absolute left-0 top-0 w-[180px] aspect-[4/3] rounded-lg overflow-hidden shadow-md z-0">
+                      <Image src="/images/AdobeStock_1517811434.webp" alt="パーソナルコーチング" fill className="object-cover" />
+                    </div>
+                    <div className="absolute right-8 bottom-[-10px] w-[100px] aspect-square rounded-lg overflow-hidden shadow-lg z-10">
+                      <Image src="/images/AdobeStock_1524162172.webp" alt="穏やかなセッション空間" fill className="object-cover" />
+                    </div>
+                  </div>
+                  {/* PC版: 2枚重ねレイアウト */}
+                  <div className="hidden md:block relative h-[400px]">
+                    {/* メイン画像（左上） */}
+                    <div className="absolute left-[60px] top-[60px] w-[320px] aspect-[4/3] rounded-lg overflow-hidden">
+                      <Image
+                        src="/images/AdobeStock_1517811434.webp"
+                        alt="パーソナルコーチングセッションイメージ"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    {/* サブ画像（右下に重ねる） */}
+                    <div className="absolute right-[-60px] bottom-0 w-[200px] aspect-[4/3] rounded-lg overflow-hidden">
+                      <Image
+                        src="/images/AdobeStock_1524162172.webp"
+                        alt="穏やかなセッション空間"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+
+              {/* テキスト（SP: 3番目、PC: 右） */}
+              <FadeIn blur delay={0.2} direction="right">
+                <div className="md:pl-8">
+                  {/* PC版のみタイトル表示 */}
+                  <div className="relative mb-6 hidden md:block isolation-auto">
+                    <FadeIn blur direction="clipReveal" delay={0} className="text-[var(--color-navy)]/10 text-4xl md:text-6xl font-extralight tracking-wider absolute -top-4 -left-2 z-0 select-none pointer-events-none" aria-hidden="true">
+                      Coaching
+                    </FadeIn>
+                    <FadeIn blur direction="clipReveal" delay={0.3} className="tracking-[0.5em] text-[0.65rem] text-[var(--color-navy)] mb-3 uppercase font-medium relative z-10 pt-6">
+                      Personal Coaching
+                    </FadeIn>
+                    <FadeIn blur direction="clipReveal" delay={0.6} className="text-[clamp(1.4rem,4vw,2.5rem)] tracking-[-0.02em] font-extralight text-[var(--color-text)] relative z-10">
+                      パーソナルコーチングセッション
+                    </FadeIn>
+                  </div>
+                  <div className="text-gray-500 leading-relaxed mb-8 text-[0.9rem] space-y-4 max-w-[300px] md:max-w-none">
+                    <p>
+                      気づきを現実の選択や行動につなげていくための継続的なサポートです。
+                    </p>
+                    <p>
+                      このコースは定期的にお話しながら今の状況や心の状態を整理し、次の一歩を一緒にみつけていく継続的なサポートです。
+                    </p>
+                    <p>
+                      目標や進め方はクライアント様一人ひとりに合わせて柔軟に組み立てます。
+                    </p>
+                  </div>
+
+                  <p className="text-gray-500 text-xs mb-6">
+                    ※ 費用は個別にご相談にて決定します
+                  </p>
+
+                  <div className="flex justify-end">
+                    <ArrowLink href="/contact?type=personal">
+                      ご相談はこちら
+                    </ArrowLink>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+
         {/* ===== ブランディング（SP: タイトル→画像→テキスト） ===== */}
         <section className="py-16 md:py-24 bg-[#f5f8fa]">
           <div className="max-w-7xl mx-auto px-6">
@@ -624,9 +630,15 @@ export default function SessionPage() {
                       ¥250,000〜<span className="text-xs text-gray-500 ml-1">税込</span>
                     </p>
                   </div>
-                  <p className="text-gray-500 text-xs">
+                  <p className="text-gray-500 text-xs mb-6">
                     ※ ロゴ、WEBデザイン等の作成は、別途費用をいただきます
                   </p>
+
+                  <div className="flex justify-end">
+                    <ArrowLink href="/contact?type=personal">
+                      ご相談はこちら
+                    </ArrowLink>
+                  </div>
                 </div>
               </FadeIn>
 

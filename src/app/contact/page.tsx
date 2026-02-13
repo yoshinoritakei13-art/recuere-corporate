@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useRef, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import FadeIn from '@/components/FadeIn';
 import ParallaxText from '@/components/ParallaxText';
 
@@ -22,6 +22,7 @@ type InquiryType = 'business' | 'personal';
 
 export default function ContactPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [inquiryType, setInquiryType] = useState<InquiryType>('business');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -29,6 +30,16 @@ export default function ContactPage() {
 
   // スパム対策: フォーム表示時刻を記録
   const formLoadTime = useRef(Date.now());
+
+  // URLパラメータで個人/企業を切り替え
+  useEffect(() => {
+    const type = searchParams.get('type');
+    if (type === 'personal') {
+      setInquiryType('personal');
+    } else if (type === 'business') {
+      setInquiryType('business');
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
