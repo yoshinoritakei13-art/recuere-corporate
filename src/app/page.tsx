@@ -467,10 +467,9 @@ export default function HomePage() {
         </section>
 
         {/* ========================================
-           Contact Section
+           Contact Section（スナップ対象外 → Footerへ自然にスクロール）
            ======================================== */}
         <section
-          data-snap-section
           className="relative py-[120px] px-8 max-md:py-[80px] bg-white"
         >
           <div
